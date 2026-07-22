@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Tabs -->
+    <nav class="app-tabs">
+        <button class="tab-btn active" id="tab-travel">✈️ Travel Planner</button>
+        <button class="tab-btn" id="tab-support">🎧 Support AI</button>
+    </nav>
+
+    <!-- TRAVEL APP VIEW -->
+    <div id="travel-view" class="view-container active">
+        <div class="app-container">
+            <!-- Travel Agent Status Panel -->
+            <aside class="sidebar">
+                <div class="logo">
+                    <h2>Voyage<span>AI</span></h2>
+                </div>
+                
+                <div class="agent-panel">
+                    <h3>Agent Status</h3>
+                    
+                    <div class="agent-item" id="agent-orchestrator">
+                        <div class="agent-icon">🤖</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Orchestrator</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-flight">
+                        <div class="agent-icon">✈️</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Flight Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-hotel">
+                        <div class="agent-icon">🏨</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Hotel Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-dayplan">
+                        <div class="agent-icon">🗺️</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Day Planner</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-budget">
+                        <div class="agent-icon">💰</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Budget Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-mcp">
+                        <div class="agent-icon">🕸️</div>
+                        <div class="agent-details">
+                            <span class="agent-name">MCP Scraper</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-prompts">
+                    <h3>Try Asking</h3>
+                    <button class="prompt-btn travel-prompt">Plan a 5-day trip to Paris for 2 people from Mumbai in July</button>
+                    <button class="prompt-btn travel-prompt">Find flights from New York to London for next weekend</button>
+                    <button class="prompt-btn travel-prompt">Build a 3-day itinerary for Tokyo</button>
+                    <button class="prompt-btn travel-prompt" style="border-color: var(--accent-purple);">Find external packages for Bali using MCP Tool</button>
+                </div>
+            </aside>
+            
+            <!-- Travel Main Chat Area -->
+            <main class="chat-area">
+                <header class="chat-header">
+                    <h1>AI Travel Planner</h1>
+                    <p>Multi-agent system working together to build your perfect trip</p>
+                </header>
+                
+                <div class="chat-history" id="chat-history">
+                    <div class="message system-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            Hello! I'm your VoyageAI Orchestrator. Tell me about your dream vacation, and my team of specialized AI agents will plan everything for you. 
+                            Where would you like to go?
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <textarea id="user-input" placeholder="e.g. Plan a 5-day trip to Bali for 2 people..." rows="2"></textarea>
+                    <button id="send-btn" class="send-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- SUPPORT APP VIEW -->
+    <div id="support-view" class="view-container">
+        <div class="app-container">
+            <!-- Support Agent Status Panel -->
+            <aside class="sidebar" style="background: rgba(26, 15, 20, 0.6);">
+                <div class="logo">
+                    <h2>Resolve<span>AI</span></h2>
+                </div>
+                
+                <div class="agent-panel">
+                    <h3>Agent Status</h3>
+                    
+                    <div class="agent-item" id="agent-sup-orchestrator">
+                        <div class="agent-icon">🤖</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Support Master</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-sup-triage">
+                        <div class="agent-icon">🔍</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Triage Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-sup-policy">
+                        <div class="agent-icon">📜</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Policy Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-item" id="agent-sup-action">
+                        <div class="agent-icon">⚡</div>
+                        <div class="agent-details">
+                            <span class="agent-name">Action Agent</span>
+                            <span class="agent-status status-idle">Ready</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-prompts">
+                    <h3>Example Tickets</h3>
+                    <button class="prompt-btn support-prompt">My laptop arrived with a cracked screen yesterday! I want a refund now!</button>
+                    <button class="prompt-btn support-prompt">I bought this phone 3 months ago and it stopped working. Can I return it?</button>
+                    <button class="prompt-btn support-prompt">I need help setting up my new smart TV.</button>
+                </div>
+            </aside>
+            
+            <!-- Support Main Chat Area -->
+            <main class="chat-area">
+                <header class="chat-header" style="background: rgba(26, 15, 20, 0.4);">
+                    <h1>Customer Support AI</h1>
+                    <p>Automated Triaging, Policy Checking, and Resolution</p>
+                </header>
+                
+                <div class="chat-history" id="support-chat-history">
+                    <div class="message system-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            Hello! I am the Support Orchestrator. Submit a customer complaint or ticket below, and my team of AI agents will process the resolution automatically.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <textarea id="support-user-input" placeholder="Paste a customer complaint here..." rows="2"></textarea>
+                    <button id="support-send-btn" class="send-btn" style="background: linear-gradient(135deg, #f43f5e, #be123c);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Tester Diagnostic Panel -->
+    <div id="tester-panel" class="tester-panel collapsed">
+        <div class="tester-header" id="tester-header">
+            <span>⚙️ Diagnostic Console</span>
+            <span class="toggle-icon">▲</span>
+        </div>
+        <div class="tester-body" id="tester-log">
+            <!-- Logs will appear here -->
+        </div>
+    </div>
+
+    <!-- Load Scripts -->
+    <script src="app.js"></script>
+    <script src="supportApp.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
