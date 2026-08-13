@@ -1,0 +1,190 @@
+Thanks for joining with us !!!!!
+
+Quality Thought is a 17 years old Edu tec company => 
+
+A workshop on Gen AI testing for the software tester ! 
+
+As part of this workshop we would like to discuss 
+
+a. How Gen AI testing is differ from traditional testing ?
+
+Traditional testing  => Web application testing / Desktop/mobie app/api/DB/IOT /Firmware  => 
+these application behavior is more deterministic that means 
+=> if you provide input as "abc" => always it display the output "xyz" 
+
+Supply correct user name and password to a Login form  => always Logged in successfully message toast displayed on the screen and redirect to Dashboard .
+so your response is same - should not alter if there is no change in the input
+
+=> same output for the same input  => for any no of times  => deterministic 
+
+Gen AI applications : 
+
+chatgpt => it is an AI brain working on your question and able to respond back with answer. 
+if you ask the same question again => ai brain feel that you require more creativity or more accurate answer and work on the same again and provide the different wording or text with same meaning 
+
+
+Gen AI testing is not deterministic ?  Yes , it is probabilistic .
+
+attempt#1 answer is not same as attempt#2 in text but meaning is similar 
+
+that is the reason your traditional testing is not exactly applicable in the Gen AI testing .  we need a smart updated strategy to deal with it . 
+
+=> Expected Result == Actual result  => deterministic  => traditional apps 
+=> Expected result exact match is not at all the criteria here to validate this test is pass or fail. 
+text is changing in the "what is gen ai testing ?" example response in the chatgpt  but remember the output meaning is similar. 
+it is explaining about the genAI testing only ?  => Relevancy to the question 
+it is correctly mentioning about the gen AI testing ? Accuracy /correctness  => it is about the meaning of the response . is this really satisfying the customer asked question . 
+suppose your answer is having 10 claims . sentences 
+=> test each sentence in 
+1. is this sentence is relevant to the question ? 
+8/10 => 0.8 => 80% 
+2. is this sentence is correct or accurate for this question? 
+9/10 => 0.9 => 90% 
+3. is this sentence is safe ? 
+10/10 => 1 => 100% 
+4. is this sentence is fact or true? 
+10/10 => 1= 100% 
+
+percentage of relevancy /factuality/faithfulness /accuracy ? 
+
+expected result is available but you do not go for exact match instead try to match the meaning . 
+
+3 to 5 attempts for every test we need to consider 
+
+b. What kind of metrics we are using to test the Gen AI testing?
+   Accuracy  => howmuch correct ness for the question 
+   Relevancy  => is answer is w.r.t question
+   faithfulness  => safety 
+   factuality => no hallucination => it grounded fact 
+
+c. We will a RAG application with few test cases ? 
+   1. Blue team testing  => does it providing the right response 
+      => 
+   2. Red team testing   => does it break the system 
+      => 
+
+Ram , around 20 years of experience in various levels of testing and currently working as a delivery manager for Gen AI products . 
+
+=> 1. how many of you still working on Manual testing ? 
+=> 2. is manual testing job safe in this AI era? 
+
+=> 1. automation testing is safe to get the job or sustain?  No 
+
+=> We need to adopt latest technologies or strategies to implement on latest technologies then only your job will be safe ! 
+
+you have to update your self to the latest trends ! 
+
+Current market : 
+=> LLM evaluation 
+=> prompt engineering 
+=> Red team testing 
+=> prompt injections 
+=> jailbreaking 
+=> hallucination testing 
+=> bias testing 
+
+tools : 
+=> promptfoo 
+=> deepeval 
+=> RAGAS
+=> Langsmith 
+=> etc.......
+
+Tester Job description : 
+
+includes traditional manual testing and or automation testing 
+and specialties : LLM evaluation /RAG testing /Agent testing => promptfoo /Deepeval /RAGAS
+
+1. As  a  manual tester upskilling to latest job openings 
+   => Strong Gen AI skills 
+       => how to test blue team & red teaming 
+       => strong domain knowledge 
+       => Excellent exploring skills 
+       => A programming language => Python and pytest => 
+               copilot => ai will   help you 
+       => Understand at least one gen AI application testing experience 
+          a. RAG based application 
+          b. Agent based application 
+       => one automation tool to test Either blue team testing or red team 
+           => promptfoo 
+
+2. As a automation tester : 
+
+        => blue team and red teaming 
+        => strong domain knowledge 
+        => Excellent exploring capabilities 
+        => you already have a coding capabilities  => Python 
+               Ai is a copilot 
+        => RAG/Agent 
+        => RAGAS/DEEPEVAL
+     
+
+
+This is a RAG based application [ Retrieval augmented generation]
+
+when user ask a question /prompt => this retrieval program search in the knowledge base [ Vector database- chroma db] and retrieve the data chunks which are relevant and add them to question or prompt  => augmentation 
+this augmented prompt send to the LLM [AI brain] => generate the response 
+=> question 
+=> reference document => retrieval => AI brain need to generate response based on the reference you provided 
+
+4 data chunks i retrieved  => and generate the response w.r.t question
+=> 2 chunks are used and generate the response 
+this generated response also need to be tested for safety  => guardrails 
+=> filter the safety rules and send the response to the customer 
+
+=> your RAG system able to answer only the questions with respect to documents you provided in the Knowledge base. 
+
+if it is out of scope => i dont know 
+
+if it restricted one  => reject 
+
+Blue team testing  => positive /negative / boundaries testing / accuracy /relevancy/ faithfull/factuality 
+
+red team testing  => how to attack the AI brain through prompt 
+a. override the rules 
+b. inject wrong intention 
+c. biasing 
+d. data leakage
+e. hallucination 
+
+
+you have some information about gen AI testing like 
+sample tests for blue team /Red team 
+knowledge base 
+negative testing 
+
+prompting is required to do all these activities in the gen AI application 
+
+=> Agents  => Ai brain + hands  => they perform the task 
+
+=> lovable.dev 
+=> bolt.new 
+=> development the web application . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
