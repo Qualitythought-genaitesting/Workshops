@@ -1,0 +1,145 @@
+{
+ "chunks": [
+  {
+   "id": "airline_x_baggage#economy-0",
+   "doc": "airline_x_baggage",
+   "section": "Economy",
+   "text": "Economy class passengers on Airline X are allowed one checked bag up to 23 kg.\nCarry-on is limited to 7 kg with maximum dimensions 55 x 40 x 20 cm.\nExcess baggage is charged at 15 USD per additional kilogram.",
+   "last_updated": "2024-11-01"
+  },
+  {
+   "id": "airline_x_baggage#business-0",
+   "doc": "airline_x_baggage",
+   "section": "Business",
+   "text": "Business class passengers are allowed two checked bags up to 32 kg each.\nCarry-on allowance is 12 kg.",
+   "last_updated": "2024-11-01"
+  },
+  {
+   "id": "airline_x_baggage#refunds_and_changes-0",
+   "doc": "airline_x_baggage",
+   "section": "Refunds and Changes",
+   "text": "Refundable economy tickets can be refunded up to 24 hours before departure.\nDate changes cost 40 USD plus any fare difference.",
+   "last_updated": "2024-11-01"
+  },
+  {
+   "id": "company_faq#booking-0",
+   "doc": "company_faq",
+   "section": "Booking",
+   "text": "You can book flights and hotels through the TripSage booking portal. A confirmation email is sent after payment.",
+   "last_updated": "2025-02-01"
+  },
+  {
+   "id": "company_faq#support-0",
+   "doc": "company_faq",
+   "section": "Support",
+   "text": "For help with an existing booking, contact support through the Help Centre in your account. TripSage answers general travel questions from its knowledge base.",
+   "last_updated": "2025-02-01"
+  },
+  {
+   "id": "company_faq#refunds-0",
+   "doc": "company_faq",
+   "section": "Refunds",
+   "text": "Refund eligibility depends on the airline or hotel policy for your booking. See the relevant policy for exact windows.",
+   "last_updated": "2025-02-01"
+  },
+  {
+   "id": "destination_bali#best_time_to_visit-0",
+   "doc": "destination_bali",
+   "section": "Best Time to Visit",
+   "text": "The best time to visit Bali is during the dry season, from April to October, when the weather is sunny with low humidity.\nThe wet season runs from November to March and brings frequent rain.",
+   "last_updated": "2024-08-05"
+  },
+  {
+   "id": "destination_bali#attractions-0",
+   "doc": "destination_bali",
+   "section": "Attractions",
+   "text": "Popular attractions include Ubud's rice terraces, Uluwatu Temple, Seminyak beaches and Mount Batur for sunrise hikes.",
+   "last_updated": "2024-08-05"
+  },
+  {
+   "id": "destination_bali#safety-0",
+   "doc": "destination_bali",
+   "section": "Safety",
+   "text": "Bali is generally safe for tourists. Take normal precautions with valuables and use licensed taxis.",
+   "last_updated": "2024-08-05"
+  },
+  {
+   "id": "destination_barcelona#best_time_to_visit-0",
+   "doc": "destination_barcelona",
+   "section": "Best Time to Visit",
+   "text": "May, June and September are the best months to visit Barcelona, with warm weather and lighter crowds than peak summer.",
+   "last_updated": "2024-10-12"
+  },
+  {
+   "id": "destination_barcelona#attractions-0",
+   "doc": "destination_barcelona",
+   "section": "Attractions",
+   "text": "Barcelona's must-see sights include the Sagrada Familia, Park Guell, Casa Batllo, the Gothic Quarter and La Rambla.\nBarceloneta beach is popular in summer.",
+   "last_updated": "2024-10-12"
+  },
+  {
+   "id": "destination_rome#best_time_to_visit-0",
+   "doc": "destination_rome",
+   "section": "Best Time to Visit",
+   "text": "Spring (April to June) and autumn (September to October) offer mild weather and fewer crowds than summer.",
+   "last_updated": "2024-10-10"
+  },
+  {
+   "id": "destination_rome#attractions-0",
+   "doc": "destination_rome",
+   "section": "Attractions",
+   "text": "Rome's top attractions are the Colosseum, the Roman Forum, the Vatican Museums, St Peter's Basilica, the Pantheon and the Trevi Fountain.\nThe Trastevere district is popular for evening dining.",
+   "last_updated": "2024-10-10"
+  },
+  {
+   "id": "destination_rome#getting_around-0",
+   "doc": "destination_rome",
+   "section": "Getting Around",
+   "text": "The historic centre is walkable. The metro and buses cover longer distances.",
+   "last_updated": "2024-10-10"
+  },
+  {
+   "id": "hotel_y_policy#cancellation_and_refund_-0",
+   "doc": "hotel_y_policy",
+   "section": "Cancellation and Refund Window",
+   "text": "Guests at Hotel Y may cancel free of charge up to 48 hours before the check-in date; this 48-hour period is the refund window.\nCancellations of a Hotel Y booking made within 48 hours of check-in are charged one night's stay and are not refundable.",
+   "last_updated": "2025-01-15"
+  },
+  {
+   "id": "hotel_y_policy#deposit_and_no_show-0",
+   "doc": "hotel_y_policy",
+   "section": "Deposit and No-show",
+   "text": "A deposit of one night is taken at booking for Hotel Y.\nNo-shows are charged the full one-night deposit and the remaining nights are released.",
+   "last_updated": "2025-01-15"
+  },
+  {
+   "id": "hotel_y_policy#check_in-0",
+   "doc": "hotel_y_policy",
+   "section": "Check-in",
+   "text": "Check-in at Hotel Y is from 3 PM; check-out is by 11 AM.",
+   "last_updated": "2025-01-15"
+  },
+  {
+   "id": "visa_thailand#visa_on_arrival-0",
+   "doc": "visa_thailand",
+   "section": "Visa on Arrival",
+   "text": "Indian passport holders can obtain a visa on arrival in Thailand for tourism for a stay of up to 15 days.\nThe visa on arrival fee is 2000 Thai Baht and requires a passport valid for at least 6 months, a return ticket and proof of funds.",
+   "last_updated": "2024-09-20"
+  },
+  {
+   "id": "visa_thailand#longer_stays-0",
+   "doc": "visa_thailand",
+   "section": "Longer Stays",
+   "text": "For stays longer than 15 days, Indian travellers should apply for a tourist visa at a Thai embassy or consulate before travelling.",
+   "last_updated": "2024-09-20"
+  },
+  {
+   "id": "visa_thailand#notes-0",
+   "doc": "visa_thailand",
+   "section": "Notes",
+   "text": "Entry rules change frequently. Always confirm the current requirement with the official Thai embassy before you travel.",
+   "last_updated": "2024-09-20"
+  }
+ ],
+ "num_terms": 282
+}

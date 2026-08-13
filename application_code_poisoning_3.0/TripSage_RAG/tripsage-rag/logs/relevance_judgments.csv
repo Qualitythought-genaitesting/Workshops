@@ -1,0 +1,11 @@
+timestamp,tester,query,chunk_id,doc,verdict
+2026-07-04 09:54:03,tester1,Do Indian passport holders need a visa for Thailand?,POISON_thailand_visa_update#visa_on_arrival-0,POISON_thailand_visa_update,not_relevant
+2026-07-04 09:54:05,tester1,Do Indian passport holders need a visa for Thailand?,visa_thailand#visa_on_arrival-0,visa_thailand,not_relevant
+2026-07-04 09:54:09,tester1,Do Indian passport holders need a visa for Thailand?,visa_thailand#longer_stays-0,visa_thailand,not_relevant
+2026-07-04 09:54:17,tester1,Do Indian passport holders need a visa for Thailand?,visa_thailand#notes-0,visa_thailand,not_relevant
+2026-08-13 08:22:07,tester1,what is the best time to visit bali ,destination_bali#best_time_to_visit-0,destination_bali,relevant
+2026-08-13 08:22:12,tester1,what is the best time to visit bali ,destination_barcelona#best_time_to_visit-0,destination_barcelona,not_relevant
+2026-08-13 08:22:18,tester1,what is the best time to visit bali ,destination_rome#best_time_to_visit-0,destination_rome,not_relevant
+2026-08-13 08:22:32,tester1,what is the best time to visit bali ,destination_bali#safety-0,destination_bali,relevant
+2026-08-13 08:31:53,tester1,What is the visa fee for Japan?,visa_thailand#visa_on_arrival-0,visa_thailand,not_relevant
+2026-08-13 08:31:54,tester1,What is the visa fee for Japan?,visa_thailand#longer_stays-0,visa_thailand,not_relevant

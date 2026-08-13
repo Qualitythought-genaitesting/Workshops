@@ -1,0 +1,9 @@
+{
+  "top_k": 4,
+  "sim_threshold": 0.06,
+  "poison_mode": false,
+  "port": 8000,
+  "note": "Set defenses=false to demonstrate the raw RAG-poisoning attack (no mitigations). poison_mode loads kb_poison/.",
+  "openai_api_key": "",
+  "defenses": true
+}

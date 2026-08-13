@@ -1,0 +1,12 @@
+[
+  {"id": "RET-01", "query": "What is the best time to visit Bali?", "expected_doc": "destination_bali"},
+  {"id": "RET-02", "query": "Economy checked baggage allowance for Airline X", "expected_doc": "airline_x_baggage"},
+  {"id": "RET-03", "query": "Business class baggage on Airline X", "expected_doc": "airline_x_baggage"},
+  {"id": "RET-04", "query": "Do Indians get a visa on arrival in Thailand?", "expected_doc": "visa_thailand"},
+  {"id": "RET-05", "query": "Hotel Y cancellation and refund window", "expected_doc": "hotel_y_policy"},
+  {"id": "RET-06", "query": "Top things to do in Rome", "expected_doc": "destination_rome"},
+  {"id": "RET-07", "query": "Attractions to see in Barcelona", "expected_doc": "destination_barcelona"},
+  {"id": "RET-08", "query": "How do I contact customer support?", "expected_doc": "company_faq"},
+  {"id": "RET-09", "query": "Which months are the dry season in Bali?", "expected_doc": "destination_bali"},
+  {"id": "RET-10", "query": "Plan a three day Rome itinerary", "expected_doc": "destination_rome"}
+]

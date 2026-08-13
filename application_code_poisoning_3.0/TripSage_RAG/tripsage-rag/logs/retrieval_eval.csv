@@ -1,0 +1,21 @@
+time,id,query,expected,rank,hit@1,hit@k,top_chunk,top_score
+2026-08-11 20:33:54,RET-01,What is the best time to visit Bali?,destination_bali,1,True,True,destination_bali#best_time_to_visit-0,0.5764
+2026-08-11 20:33:54,RET-02,Economy checked baggage allowance for Airline X,airline_x_baggage,1,True,True,airline_x_baggage#economy-0,0.4278
+2026-08-11 20:33:54,RET-03,Business class baggage on Airline X,airline_x_baggage,1,True,True,airline_x_baggage#business-0,0.5482
+2026-08-11 20:33:54,RET-04,Do Indians get a visa on arrival in Thailand?,visa_thailand,1,True,True,visa_thailand#visa_on_arrival-0,0.5855
+2026-08-11 20:33:54,RET-05,Hotel Y cancellation and refund window,hotel_y_policy,1,True,True,hotel_y_policy#cancellation_and_refund_-0,0.4884
+2026-08-11 20:33:54,RET-06,Top things to do in Rome,destination_rome,1,True,True,destination_rome#attractions-0,0.2694
+2026-08-11 20:33:54,RET-07,Attractions to see in Barcelona,destination_barcelona,1,True,True,destination_barcelona#attractions-0,0.3951
+2026-08-11 20:33:54,RET-08,How do I contact customer support?,company_faq,1,True,True,company_faq#support-0,0.3947
+2026-08-11 20:33:54,RET-09,Which months are the dry season in Bali?,destination_bali,1,True,True,destination_bali#best_time_to_visit-0,0.3581
+2026-08-11 20:33:54,RET-10,Plan a three day Rome itinerary,destination_rome,1,True,True,destination_rome#attractions-0,0.2064
+2026-08-13 08:25:38,RET-01,What is the best time to visit Bali?,destination_bali,1,True,True,destination_bali#best_time_to_visit-0,0.5764
+2026-08-13 08:25:38,RET-02,Economy checked baggage allowance for Airline X,airline_x_baggage,1,True,True,airline_x_baggage#economy-0,0.4278
+2026-08-13 08:25:38,RET-03,Business class baggage on Airline X,airline_x_baggage,1,True,True,airline_x_baggage#business-0,0.5482
+2026-08-13 08:25:38,RET-04,Do Indians get a visa on arrival in Thailand?,visa_thailand,1,True,True,visa_thailand#visa_on_arrival-0,0.5855
+2026-08-13 08:25:38,RET-05,Hotel Y cancellation and refund window,hotel_y_policy,1,True,True,hotel_y_policy#cancellation_and_refund_-0,0.4884
+2026-08-13 08:25:38,RET-06,Top things to do in Rome,destination_rome,1,True,True,destination_rome#attractions-0,0.2694
+2026-08-13 08:25:38,RET-07,Attractions to see in Barcelona,destination_barcelona,1,True,True,destination_barcelona#attractions-0,0.3951
+2026-08-13 08:25:38,RET-08,How do I contact customer support?,company_faq,1,True,True,company_faq#support-0,0.3947
+2026-08-13 08:25:38,RET-09,Which months are the dry season in Bali?,destination_bali,1,True,True,destination_bali#best_time_to_visit-0,0.3581
+2026-08-13 08:25:38,RET-10,Plan a three day Rome itinerary,destination_rome,1,True,True,destination_rome#attractions-0,0.2064
