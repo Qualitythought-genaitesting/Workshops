@@ -1,0 +1,207 @@
+Good Morning !!!!!
+=================
+As per yesterday discussion we understand 
+
+key difference between Traditional testing and Gen AI testing 
+
+=> Traditional testing is deterministic . 
+=> Gen AI testing is non deterministic or probabilistic
+============================================================================
+Instead of exact match we are trying to test the 
+a. Accuracy  => meaning correctness
+b. Relevancy  => is response really based on the prompt you supplied
+c. Factuality => is it really true or any hallucination or imagination 
+d. Faithfulness => is it safe 
+=============================================================================
+one attempt of execution is not sufficient we can execute every prompt min 3 to 5 times and average of these 3to5 attempts decides the test execution status .
+=============================================================================
+Testcase = prompt = question 
+==============================================================================
+
+Today topics : 
+
+Different types of Gen AI ? 
+
+============================================================================
+
+Gen AI applications : Generating the response based on the customer question
+
+=> Here we are having AI brain to generate the answers.  LLM 
+
+1. Finetune application : 
+2. RAG based applications: 
+
+Chatgpt is an example to generate the response for the given prompt . 
+
+I want to develop a flipkart like website for my store
+
+My AI brain generated the response like below : 
+
+Absolutely. A **Flipkart-like e-commerce website for your store** can be designed as a scalable marketplace-style application, but we should start with your own store's requirements rather than copying Flipkart's proprietary UI or functionality.
+
+### Recommended architecture
+
+**Customer website**
+
+* Home page with banners, categories, offers and recommendations
+* Product search, filters and sorting
+* Product details, images, variants, stock and reviews
+* Cart and wishlist
+* Address management
+* Coupon/discount system
+* Checkout
+* Online payment + Cash on Delivery
+* Order tracking
+* Cancellation/return/refund
+* Customer login/signup
+* Notifications
+
+**Store/Admin panel**
+
+* Dashboard
+* Product/category management
+* Inventory management
+* Pricing and discounts
+* Order management
+* Customer management
+* Coupon management
+* Sales reports
+* Banner/content management
+* Return/refund management
+
+### Suggested technology stack
+
+| Layer              | Technology                                |
+| ------------------ | ----------------------------------------- |
+| Frontend           | React + TypeScript + Next.js              |
+| Backend            | Node.js + NestJS/Express                  |
+| Database           | PostgreSQL                                |
+| Cache              | Redis                                     |
+| Authentication     | JWT + refresh tokens                      |
+| Payments           | Razorpay                                  |
+| File/Image storage | AWS S3 / Cloudinary                       |
+| Search             | PostgreSQL initially, Elasticsearch later |
+| Deployment         | AWS / Azure / Vercel                      |
+| CI/CD              | GitHub Actions                            |
+| Testing            | Playwright + TypeScript                   |
+| API Testing        | Playwright API / Postman                  |
+| Monitoring         | Grafana + Prometheus                      |
+
+### MVP I recommend building first
+
+**Phase 1 — Store foundation**
+
+`Login → Home → Categories → Product Search → Product Details → Cart → Address → Checkout → Payment → Order Confirmation`
+
+Then add:
+
+`Orders → Tracking → Returns → Reviews → Wishlist → Coupons`
+
+Finally:
+
+`Admin → Inventory → Analytics → Promotions → Automation`
+
+### Example application structure
+
+```text
+MyStore
+│
+├── Customer Web App
+│   ├── Home
+│   ├── Categories
+│   ├── Search
+│   ├── Product Details
+│   ├── Cart
+│   ├── Wishlist
+│   ├── Checkout
+│   ├── Orders
+│   └── Profile
+│
+├── Admin Portal
+│   ├── Dashboard
+│   ├── Products
+│   ├── Categories
+│   ├── Inventory
+│   ├── Orders
+│   ├── Customers
+│   ├── Coupons
+│   └── Reports
+│
+└── Backend APIs
+    ├── Auth
+    ├── Products
+    ├── Cart
+    ├── Orders
+    ├── Payments
+    ├── Inventory
+    └── Notifications
+```
+
+### One important design decision
+
+There are two very different products you could build:
+
+**A. Single-store e-commerce:** only your store sells products.
+
+**B. Marketplace:** multiple sellers can register and sell products, similar to Flipkart.
+
+For your own store, I recommend **A first**. It is significantly simpler, cheaper to operate, and easier to test and maintain. The architecture can still be designed so marketplace functionality can be added later.
+
+I can also turn this into a **complete software requirements specification + database schema + API design + screen list + development roadmap** for your store.
+
+you response in Gen ai applications mention about only how to develop this website . 
+a. plan of  development 
+b. different tools selection 
+c. MVP architecture 
+d. DB 
+
+https://drugs.com/ai/search  => capstone#1
+==============================================================================
+Agent applications : here not only generating the response but also performing the task. 
+
+Same prompt but different application 
+bolt.new : lovable.dev : emergent : => agent based tools 
+
+I want to develop a flipkart like website for my store
+in aged based application we can see the outcome of the task . 
+
+in this example : preview of your website you can see as outcome 
+
+travel agent : 
+where you can plan a trip to goa for 3 days with in 1lakh budget 
+
+
+=> here we are having AI brain + hands  => LLM + tools 
+3. Agent based applications :
+4. Multi agent applications :
+5. MCP based multi agents:
+6. Agentic ai applications : 
+
+one ecommerce application with agents as well as MCP + agentic AI implementation 
+
+
+Two of the application / use cases you can develop with the help of my development team 
+Python + RAG development sessions 
+python + Agent development sessions 
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
