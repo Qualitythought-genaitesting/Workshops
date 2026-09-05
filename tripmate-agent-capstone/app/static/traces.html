@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripMate — Trace Viewer</title>
+<style>
+  :root { --navy:#1F3864; --orange:#EE4C12; --amber:#F79420; --mint:#0EAD69; --ink:#1E293B; --muted:#64748B; --light:#F3F5F9; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: Calibri, "Segoe UI", Arial, sans-serif; color:var(--ink); background:#fff; }
+  header { background:var(--navy); color:#fff; padding:14px 24px; display:flex; align-items:center; gap:16px; }
+  header h1 { font-size:20px; margin:0; } header a { color:#CADCFC; margin-left:16px; text-decoration:none; font-size:14px; }
+  main { display:grid; grid-template-columns: 420px 1fr; gap:20px; padding:20px 24px; height: calc(100vh - 52px); }
+  .list { overflow:auto; border:1px solid #D5DBE5; border-radius:12px; }
+  .row { padding:10px 12px; border-bottom:1px solid #EEF1F6; cursor:pointer; font-size:13px; }
+  .row:hover, .row.sel { background:var(--light); }
+  .row .id { font-family:Consolas, monospace; color:var(--orange); }
+  .row .in { color:var(--ink); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .row .kpi { color:var(--muted); font-size:11px; margin-top:2px; }
+  .detail { overflow:auto; }
+  .hdr { background:var(--light); border-radius:12px; padding:14px; font-size:13px; display:grid; grid-template-columns: repeat(4, 1fr); gap:8px 16px; }
+  .hdr b { color:var(--navy); }
+  .span { border:1px solid #D5DBE5; border-radius:10px; margin-top:10px; overflow:hidden; }
+  .span .head { padding:8px 12px; display:flex; gap:10px; align-items:center; font-size:13px; cursor:pointer; }
+  .type { border-radius:8px; padding:1px 8px; font-size:11px; font-weight:bold; color:#fff; }
+  .type.plan { background:var(--navy);} .type.llm { background:#2E75B6;} .type.tool { background:var(--amber);} .type.guardrail { background:#7B2CBF;}
+  .status { font-size:11px; font-weight:bold; margin-left:auto; }
+  .status.ok { color:var(--mint);} .status.error { color:#C0392B;} .status.blocked { color:#9C4A00;} .status.flagged { color:#9C4A00;} .status.warning { color:#9C4A00;}
+  pre { margin:0; padding:10px 12px; background:#0F1F3D; color:#E2E8F0; font-size:11.5px; overflow:auto; max-height:260px; white-space:pre-wrap; }
+  .lbl { font-size:11px; color:var(--muted); padding:6px 12px 0; }
+  .alerts { margin-top:14px; font-size:13px; }
+  .alert { background:#FDEBD0; border-radius:8px; padding:6px 10px; margin-top:6px; }
+  .fb button { margin-right:6px; }
+</style>
+</head>
+<body>
+<header><h1>🔍 Trace viewer</h1><span id="count" style="font-size:13px;color:#CADCFC"></span><a href="/" style="margin-left:auto">← Chat</a><a href="/api/alerts" target="_blank">Alerts JSON</a></header>
+<main>
+  <div class="list" id="list"></div>
+  <div class="detail" id="detail"><p style="color:var(--muted)">Select a trace on the left. Each trace = one user request; spans show plan → LLM thoughts → tool calls → guardrail decisions.</p></div>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+async function load() {
+  const traces = await (await fetch('/api/traces?limit=200')).json();
+  $('#count').textContent = traces.length + ' traces';
+  $('#list').innerHTML = traces.map(t => `<div class="row" data-id="${t.id}"><span class="id">${t.id}</span> <span style="color:#64748B;font-size:11px">${new Date(t.ts*1000).toLocaleTimeString()}</span>
+    <div class="in">${esc(t.input)}</div><div class="kpi">${t.status} · ${t.iterations} iters · ${t.latency_ms} ms · ${t.tokens_in + t.tokens_out} tok · ₹${t.cost_inr} · ${t.user_id}</div></div>`).join('');
+  document.querySelectorAll('.row').forEach(r => r.onclick = () => show(r.dataset.id));
+  const want = new URLSearchParams(location.search).get('id');
+  if (want) show(want);
+}
+function esc(s) { return String(s ?? '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function pretty(s) { try { return JSON.stringify(JSON.parse(s), null, 2); } catch { return s; } }
+async function show(id) {
+  document.querySelectorAll('.row').forEach(r => r.classList.toggle('sel', r.dataset.id === id));
+  const t = await (await fetch('/api/traces/' + id)).json();
+  const alerts = (await (await fetch('/api/alerts')).json()).filter(a => a.trace_id === id);
+  $('#detail').innerHTML = `
+    <div class="hdr">
+      <div><b>Trace</b><br>${t.id}</div><div><b>Session / user</b><br>${t.session_id} / ${t.user_id}</div>
+      <div><b>Status</b><br>${t.status}${t.error ? ' — ' + esc(t.error) : ''}</div><div><b>Iterations</b><br>${t.iterations}</div>
+      <div><b>Model</b><br>${t.model}</div><div><b>Prompt / app version</b><br>${t.prompt_version} / ${t.app_version}</div>
+      <div><b>Tokens in/out</b><br>${t.tokens_in} / ${t.tokens_out}</div><div><b>Cost / latency</b><br>₹${t.cost_inr} / ${t.latency_ms} ms</div>
+      <div style="grid-column:1/-1"><b>Input</b><br>${esc(t.input)}</div>
+      <div style="grid-column:1/-1"><b>Output</b><br>${esc(t.output)}</div>
+      <div style="grid-column:1/-1" class="fb"><b>Feedback</b> ${t.feedback.map(f => (f.score > 0 ? '👍' : '👎') + ' ' + esc(f.comment)).join(' ')}
+        <button onclick="fb('${t.id}',1)">👍</button><button onclick="fb('${t.id}',-1)">👎</button></div>
+    </div>
+    ${alerts.length ? '<div class="alerts"><b>Alerts</b>' + alerts.map(a => `<div class="alert">${a.kind}: ${esc(a.message)}</div>`).join('') + '</div>' : ''}
+    ${t.spans.map(s => `<div class="span"><div class="head" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">
+        <span style="color:#64748B">#${s.seq}</span><span class="type ${s.type}">${s.type}</span><b>${esc(s.name)}</b>
+        <span style="color:#64748B;font-size:12px">${s.latency_ms} ms${s.tokens ? ' · ' + s.tokens + ' tok' : ''}</span><span class="status ${s.status}">${s.status}</span></div>
+        <div ${s.type === 'llm' || s.type === 'tool' || s.status !== 'ok' ? '' : 'hidden'}><div class="lbl">input</div><pre>${esc(pretty(s.input))}</pre><div class="lbl">output</div><pre>${esc(pretty(s.output))}</pre>${s.metadata && s.metadata !== '{}' ? '<div class="lbl">metadata</div><pre>' + esc(pretty(s.metadata)) + '</pre>' : ''}</div></div>`).join('')}`;
+}
+async function fb(id, score) { await fetch('/api/feedback', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ trace_id: id, score, comment: score > 0 ? 'helpful' : 'not helpful' }) }); show(id); }
+load();
+</script>
+</body>
+</html>
