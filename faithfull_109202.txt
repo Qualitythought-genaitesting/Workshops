@@ -1,0 +1,30 @@
+Good Evening !!!!!
+==================
+Recap: 
+We understand what is agent /multi agent / MCP and Agentic AI 
+
+Faithfulness: is it referenced 
+relevancy : is it with respect to the question 
+context recall : 
+all data chunks are useful to generate the response 
+
+6/10
+=> suppose you have a answer.
+
+which is having 4 sentences => claims or facts 
+a. test the 1 sentence or fact or claim => is it grounded or reference or citation . yes  => 1 / no => 0  => 1
+b. 2 claim => 1/0  => 0
+c. 3 claim => 1 /0  =>1
+d. 4 claim => 1/0 => 0
+2/4= 0.5  => relevancy score  
+
+=> 3/4 => 0.75 this faithfulness score for this response 
+
+can we test only time ? No  3 /5 times 
+
+0.75+0.8+0.75/3 => 
+0.79 
+
+2. 
+
+

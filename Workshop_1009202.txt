@@ -1,0 +1,171 @@
+Good Evening !!!!!
+============================================================================
+Thanks for joining with us ! => 
+Ram Prasad => 20 + years experience 
+=> 1. How to use AI in your testing life cycle  =>Harish => 
+=> 2. how to test AI based application . Agenda of the day. 
+============================================================================
+
+Manual testers  = 15
+Automation tester = 9
+Managers => 3
+=============================================================================
+
+Ai based application . 
+
+1. GenAI  => Generative AI => it is generating the content based on query you submitted to the AI brain. 
+
+does not guarantee that again if I or you or any one try the same query we can not guaranteed that same output. 
+
+probabilistic in nature . For same input we are getting different outputs with same meaning and but different text. 
+
+how to define your test strategy => what we need to learn in gen AI testing specially. 
+
+a. Gen AI fine tuning  application => 2023/24 => chatgpt /gemini 
+
+already your AI brain [ LLM Large language model ]trained on public data .
+
+we will train this LLM with specialization => 
+Ecommerce 
+health care domain 
+banking domain 
+insurance domain etc.... 
+
+LLM/ AI brain is trained on latest data which we have in our company . that means your private data also trained by LLM and it can use to answer the queries. 
+
+what ever the content you supplied in training that content only i can serve not beyond that . 
+
+That is the reason we move forward to the next level application. 
+
+drawbacks: 
+1. Latest content we can not get automatically .
+2. Training process consumed more resources / more time / more costlier 
+
+b. Gen AI - RAG  => Retrieve Augment Generation  => 75% of your JDS contains RAG . 
+we need to be master in testing the RAG system 
+=> Token/tokenizer 
+=> embeddings
+=> vectors 
+=> vector DB 
+=> Retrieval
+=> augmentation 
+=> Generation 
+=> guardrails => safety filter . 
+ 
+it is retrieving the company proprietary information when is required. and it should not train the LLM on your data. 
+a. Latest content is delivering  
+b. no need of personal information need to be supplied for training to the LLM
+
+Gen AI and Agent  => 
+
+Gen AI : 
+Static answer => only answer => for the query => only brain is used to answer the question.  Viva in your Lab test . 
+
+Agent : 
+not only Brain + Hands  => 
+sequence of steps to develop and execute the program . 
+Brain is not sufficient to complete the task . it requires hands => tools 
+
+tool perform an action.  => APIs comes to the picture  => API testing knowledge 
+
+LLM => tools  => act => response => observe => React => generate answer . 
+
+suppose in Gen AI applications => if you want to build a website you can ask a question to the AI brain 
+" Create a website similar to flipkart"
+Generate the answer => does not mean that it created application for you? 
+
+Agent : it should develop the application. 
+
+a. Single agent application => only one agent exist to perform the task => IC
+b. Multi agent application => Orchestrator is a lead agent  => team 
+1. split the task in to small sub tasks  => Plan => Orchestrator 
+2. Flight booking agent /specialist agent assigned to sub task 
+3. hotel booking agent / sub task 
+4. budget planning / sub task 
+
+=> MCP model context protocol  => USB C  => al phones are => USB c 
+
+tools calling  => will have their own style  => Datadog  => api services 
+=> weather api => 
+MCP => every one follow same strategy to get connected 
+
+Note: connect the external tools 
+
+c. Agentic AI => autonomous =>  Driverless car 
+
+
+
+
+ 
+
+
+
+
+both RAG and Agent capstones we need to perform before attending the interviews.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Agent based applications 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b. Gen AI RAG application 
+
+
+
+=> chatgpt/ claude/ perplexity/Grok/Gemini etc.....
+
+that does not matches to your regular application which you are testing . 
+=> traditional testing => deterministic in nature 
+=> for same input we are producing the same output .  
+Expected Result == Actual result 
+if a little deviation also we do not accept and raise a defect. 
+
+Exact match  => == 
+retrieve the information from the data base / CRUD operations on data . 
+
+
+
+
+
+
+
+
+
+
+

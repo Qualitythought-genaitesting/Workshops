@@ -1,0 +1,143 @@
+Good Evening !!!!!
+=====================
+How to get more practical awareness towards Gen AI , agents and agentic AI. 
+
+=> What is gen AI and what gen AI applications will do => brain => answer for your query
+1. finetune applications =>
+2. Rag applications 
+ 
+=> what is agent and what agent application will do => Brain+ hands  => it perform a task on behalf of you . 
+3. Single agent  => yes
+4. Multi agent 
+5. Multi agent + MCP  => yes
+6. Agentic AI 
+
+=> All application types required one thing in common  => asking a question. 
+
+prompt => designing this prompt is nothing but test case 
+
+positive prompt  
+negative prompt 
+happy path prompt 
+non happy path prompt 
+
+prompt engineering this is the very imp and starting the step to the gen AI testing journey.
+
+as a tester you need to understand how many possible ways we can ask a question to the AI ? 
+
+
+response validation => evaluating the responses 
+
+a. RAG application  => we can verify 
+1. Answer relevancy  => is it relevant answer to the question 
+2. accuracy /correctness => is the correct response 
+3. faithfulness  => is it safe answer 
+4. factuality  => is it really true ? 
+
+b. agent application => we can verify 
+1. Planning verification ? how the planning is going ?
+2. Based on the planning right tools are selected or not ? 
+3. Tool responses evaluation 
+4. observe the outcome => observability 
+5. latency in the calling and responses  => delay 
+6. React  => to get the correct outcome 
+7. agent to tool commpunication 
+orchestrator to agent communication 
+
+8. Agent to agent communication 
+
+Pre requisites : 
+=> STLC or manual testing concepts 
+=> API testing  => we schedule the special sessions 
+
+What we teach in the Gen AI lecturers: 
+
+Week#1 => LLM basics => vocabulary 
+       => How AI will useful in testing  => 
+       => Exploratory testing 
+Week#2 => prompt engineering 
+       => Blue +red team testing with different prompts 
+
+Blue team => we need to check whether the response as per your requirement or not 
+Red team => we try to check can we fabricate AI brain to generate wrong response. 
+
+Week#3 : 
+Capstone : One simple RAG based project => a simple UI to understand the End to end flow of RAG 
+
+Week#4 : Agents testing :
+one simple Agent testing /loops we can perform 
+
+Week#5 : promptfoo => prompt evaluation /LLM evaluation => red team testing 
+Week#6 : promptfoo => week# you can start writing you resume with confidence 
+Nunjucks => 2 projects 
+1 one to 1 meeting every student based on selected slot. 
+
+Week#7/8/9 => Python+ pytest 
+1 to 1 meeting  => 
+Week#10/11 => RAG + agent development 
+Week#12/13 => RAGAS + DEEPEVAL
+1to 1 meeting  => Mock interview => suggestions. 
+=> Internship => 1month => 1 more hour of time minimum for at least Mon to Thursday or 2to 3 hours in Friday and Saturday . 
+Development team will help you test end to end ai applications with confidence . 
+
+2 workshops on the latest concepts in the AI or latest challenges we experienced in our projects . 
+
+=> special workshops on 
+1. different domain projects 
+2. Observability with phenix tool 
+3. LLM security testing basics to robust your redteam testing .
+
+=> GitHub repo => to experience the same content same tools same code as your instructor. 
+=> All capstone projects are playful project  => 
+=> local LLMS and free APIS /LLM tokens we can use . 
+end to end we will teach / assign lab tasks / internship => you can experience real flavor of dev communication => bugs/ retesting /regression [ golden set]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

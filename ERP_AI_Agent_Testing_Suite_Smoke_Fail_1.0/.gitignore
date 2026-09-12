@@ -1,0 +1,8 @@
+venv/
+config/.env
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+data/
+.streamlit/

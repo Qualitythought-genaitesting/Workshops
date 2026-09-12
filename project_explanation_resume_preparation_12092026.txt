@@ -1,0 +1,70 @@
+Good Evening !!!!!
+=======================================================
+1. Recap agents testing step by step 
+2. convert the learning into resume hook points 
+=======================================================
+
+we understand important steps involved in agent testing .
+
+a. Task planning  => split your task into small sub tasks 
+b. assign the subtask to an agent 
+c. agent will call tools based on the task assigned to it 
+d. Agent will received the response from the tool 
+e. that response agent can evaluate /observe and if it is acceptable move to next step 
+if not Re act  => again select the tool and get the response 
+LOOP => Selection of tool =>  ACT => response  => observe 
+=> infinite loop is the  major problem  => where to stop . /when to stop 
+guardrail or filter => 
+f. Integrate or club all the agent or tools responses and submit this to the customer 
+
+Tool is nothing but flight search , hotel search , day planner 
+database 
+gmail  
+anything we can connect for the transactions
+
+Tripmate : 
+we understand this step by step process for travel agent to book a trip 
+
+1. Download the repo
+2. extract the folder if needed
+3. navigate to the project folder and double click on Rub_all bat file 
+============================================================================
+
+but the visibility of all these components are not in UI 
+we do have separate process defined by your PO. 
+
+=> how to mention all these points in the resume:
+
+a. professional summary: 
+   2+ years of experience in testing single and multi agent system for their  Planning , tools selection , Re act and observability . 
+   Domain experience - 
+  Expertise in verifying the rubrics, threshold and metrics 
+  Analysing the trace_ids to trouble shoot and find the rootcause for the tool call failure or agent failure.
+   Identifying the infinite loops with in the tool calls with complex prompts
+explain => negative , confusion, conflict kind of prompts. 
+   
+
+roles& responsibilities: 
+=> 
+  Understand the rubrics and theresholds mention in the PRD document and define or authored the testcases for agents 
+=> Executed smoke , sanity ,retesting and Regression testing 
+=> Executed golden data set [ frequently used prompts list]
+=> Execute blue and redteam tests 
+or => correctness/ faithfulness/factuality/relevancy 
+ => hallucination, bias, jailbreaking , context manipulations 
+ => Generate the metrics and shared with the stakeholder. 
+
+
+
+
+
+ 
+
+
+  
+
+
+
+
+
+

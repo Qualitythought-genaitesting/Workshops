@@ -1,0 +1,70 @@
+Good Evening !!!!!
+=====================
+Today We are here to discuss 
+
+1. what is AI agent ?
+2. how to test AI agents manually? 
+3. Steps involved in AI agent testing ? 
+4. How to do Blue teaming for AI agents ?
+5. how to do Red teaming for AI agents? 
+Rag testing to agent testing 
+==============================================
+
+What is AI ?  A machine is able to think like a human and able to process the task 
+Gen AI => Task is answering for the question => answering engine . 
+=> AI brain /LLM => is generate the response in the different output formats
+=> prompt engineering how to ask a question to the AI brain .
+AI brain => able to answer /generate the answer 
+
+RAG application we can answer the question from the repository. 
+
+I can ask a prompt => how to Reply the appreciation email? 
+it generate lots of information about appreciation email reply. but it could not reply to the appreciation emails. 
+
+Agent  => Answering + doing the task 
+=> prompt engineering  => Prompt only referred as test case 
+AI brain + hands too => brain with think and hands can perform the task 
+
+Agent able to read the appreciation email and reply like you to that email. 
+
+performing the task => hands 
+
+hands => Tools => it can call the gmail / outlook  
+for every task respective tool will be called and perform the task. 
+
+
+Agent  =>  book a trip to goa with 4 pax, 1 week , family trip with in 200000 budget. 
+Step#1 
+Planning => 
+
+Task will be split into small sub tasks or actionable items 
+there are 5 tasks 
+a. Dates we need to consider => calendar tool 
+b. flights /busses /trains to travel from your place to destination => flights api 
+c. hotels based on the flights booking status we need to book hotels => hotel apis 
+d. Day wise trip plan - 7 days trip plan => scheduler 
+e. we need to follow budget constrains - 200000 => budget api 
+
+step#2 
+Tools selection based on the task 
+
+step#3 
+
+execution of tool and task 
+
+step#4  Observe whether the task is completed fully or not  => 
+if yes - publish the booking 
+if no - re think => tools selection => execution  => LOOP 
+yes , I am done . 
+
+step#5  publish the output  => Guardrails / safe filters / constrains => 
+
+persona => what kind of reply you are expecting 
+polite 
+harsh 
+
+
+
+
+
+
