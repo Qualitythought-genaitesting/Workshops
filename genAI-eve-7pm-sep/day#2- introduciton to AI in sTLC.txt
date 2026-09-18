@@ -1,0 +1,136 @@
+Good Evening !!!!!
+=================
+Recap !
+
+Types of evaluations :
+=========================================================
+human evaluation 
+automatic evaluation with deterministic assertions 
+LLM as a judge to verify the responses 
+==========================================================
+
+Temperature: not a parameter which customer set- it is by default we can setup temperature to the application. 
+=> which can decide the creativity we are expecting from the AI brain? 
+high creativity => more non deterministic results => 0.7 or greater 
+medium creativity => non deterministic in nature => 0.5 to 0.7 
+low creativity => deterministic  => 0 => always you will get the same response for the prompt 
+
+0 to 0.7 moderate creativity 
+0.7 to 2 highest creativity 
+
+prompt => your question /task / ask 
+
+==============================================================================
+Today topics : 
+==============================================================================
+1. AS a tester how do we use AI or gen AI for your day to day asks 
+   STLC
+ a. Requirement analysis 
+ b. Test planning 
+ c. Test design
+ d. Test execution 
+ e. Test summary 
+
+less time more productivity . 
+
+a. Today we can see all human evaluation => manual testing 
+============================================================
+=> what kind of prompts we can use to develop test plans , test cases and execute them with the help of AI 
+
+Suppose I am a software tester , I want to create a test plan for myntra type of ecommerce application. 
+
+This prompt => test case in your gen AI application. 
+
+https://fashion-ecommerce-we-lunb.bolt.host this is my ecommerce application to perform end to end testing . before sharign this URL to tester can you provide me detailed ecomemrce user stories to conduct indpeth testing . 50 minimum user stories required .
+
+this is one test case to test the PRD creating with userstories 
+
+Metrics : 
+=> correctness => answer is right or wrong 
+is this PRD is giving the right information about the project to conduct end to end testing or not ?
+measure the correctness in 0 to 1 ? 
+rate the PRD ? 1 => 0 
+
+=> relevancy => how much matching with the question 
+split the document  into multiple pieces and check all pieces are belongs to the asked question or nay extras or any missing points 
+
+myntra but i provided about 1mg application. 
+
+=> faithfulness => safety ?
+all mentioned points in the PRD are safe to use /to test ? Any harmful information 
+any illegal content 
+
+=> factuality => truth ? all the mentioned information or points are truth or is there any imagination of the AI / there is no feature called saved search in the application but generated PRD is having this saved search with in the PRD.   false statement or imaginated statements / never exist statements present in the PRD. 
+
+Project requirement document => 
+
+
+
+2. Create Test plan 
+a. Correctness of Test plan => is the document is correct or not?
+b. relevancy of the test plan =>is the document is matches with your question?
+c. faithfulness of the test plan=> is the document is safe to use? 
+d. Factuality of the test plan=> is the documented content is really true ? any false test plan items  or impossible items / hallucinated test plan / imagianted test plan ? 
+
+
+
+
+
+automation testing with deterministic assertion : 
+============================================================
+b. We have to see Agents helping the automation testing  => playwright + agents 
+by using simple prompt => you can build Test plan , automation test cases , execute them and if any failures  agent debug and fix 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tasks for the day : 
+1. verify the shared PRD: 
+ 
+a. correctness 
+b. relevancy 
+c. factuality 
+d. faithfulness 
+
+
+2. Verify the shared test plan : 
+
+a. correctness 
+b. relevancy 
+c. factuality 
+d. Faithfulness 
+
+3. Verify the shared test cases : 
+
+
+
+
+with your testing experience you can verify is AI generate response [ document] are correct/relevant /facts/faithful
+
+=> Testing  => you all are experts in software testing . 
+strong domain knowledge to test these produced document ? 
+a. PRD? 
+b. Test plan ?
+c. Test cases ? 
+
+if you satisfy with the above examples - we can strongly use this service or prompt for our future testing engagements as well. 
+
+
+
+ChatGPT can make mistakes. Check important info.
+
+Claude is AI and can make mistakes.
+
+that is the reason Gen AI testing or agent testing comes to the picture.
+
+
