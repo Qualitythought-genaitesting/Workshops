@@ -166,7 +166,7 @@ Module #3  RAG application architecture and components -
 Module #4  Blue team and redteam tests for RAG application 
 one to one meeting  => 
 module #5  Capstone project 
-module #6  Agent application 
+module #6  Agent application  - single /multiple agent - mcp 
 module #7  Agent capstone project 
 module #8  python and pytest 
 module #9  Agent development /RAG development 
@@ -178,7 +178,7 @@ module #13 Resume preparation
 module #14 interview question and answers 
 => work shops => observability 
 
-
+============================================================================
 
 
 

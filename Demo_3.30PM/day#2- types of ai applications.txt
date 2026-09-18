@@ -1,0 +1,112 @@
+Good afternoon !!!!!
+====================
+1. Traditional testing to Gen AI testing 
+
+=> deterministic to non deterministic 
+=> you test the test case one time /2 times /100 times result must be same 
+now your genAI application is not going to product the same result for 
+attempt#1
+attempt#2 /....etc => 
+different result / different keywords or text  but meaning should be similar 
+
+chatgpt #1  what is gen Ai testing ?  => response 1
+chatgpt #2  what is gen AI testing ?  => response 2
+response1 != response 2  => this is not considered as a defect 
+instead of text , as a gen AI tester we need to consider the meaning or summary of the response. 
+
+Exact match is not workout for us ! => we do test 3 times to 5 times every test cases and evaluate metrics : 
+1. Relevancy 
+2. correctness 
+3. factuality 
+4. faithfulness  => accuracy of the response 
+==============================================================================
+LLM => AI brain 
+Temperature => 0 to 2 
+0 => more deterministic => less probabilistic => less creative 
+2=> less deterministic  => more probabilistic => more creative 
+0.7 kind of temperature we setting to the AI application. 
+==============================================================================
+GenAI application types : 
+
+1. Fine tune application => we have to train the model [ LLM] with huge amount of data to generate the response. if there is no training no response.
+Training is also a costlier solution -> oldest way of LLM or application development 
+2023;24
+LLM => doctor => 5 years degree holder
+LLM => PG /specialization => ENT => 
+
+Domain related trainings we need to apply for LLM and use it for generate the responses.
+
+2. RAG application => Retrieval Augmented Generation 
+LLM => doctor => 5 years degree holder 
+Knowledge base - preoperatory to your hospital => 
+RAG => not providing the trainings on propitiatory data instead we retrieve the required document at the time generating the response. and that data we should not use to train the LLM.
+
+answer would be generated from your data and it should not be leaked to outside.
+
+how many casual leave i can apply as a intern? 
+=> 0 leaves for intern?  => zero 
+
+=> 5 leaves per 6 months internship  => 
+paternity leaves:
+maternity leaves
+
+
+fine tune application and RAG application generate the response based on the question you asked or task you ask => 
+
+Prompt => customer ask 
+
+Generate the response for your question . 
+=> image 
+=> lyrics / music 
+=> videos
+=> animations 
+=> Text
+=> code .... etc
+
+Asking is an art  => if you ask AI with full details then the response should be more accurate [ correct/relevant/fact/faithful]
+
+=> prompting or prompt engineering => how to write prompt to get the refined answers or accurate answers 
+
+=> how to trouble the AI with ask or prompt ? 
+
+
+1. Positively generated the response => able to get the response 
+2. rejected the prompt => not able to get the response 
+3. I do not know => where AI is not able to generate the response for not happened activities
+==============================================================================3. Agent  => Agent is a machine or AI brain can able to perform task 
+
+advancement to the generation of answer , agent will do perform task 
+
+able to reply back based on your previous conversations 
+
+agent is able to do task => sending a reply email 
+
+not only generation of response but also would like to perform the task like human 
+
+IC => he is doing everything one after another 
+
+4. Multi agent system: Team work to complete the assigned task 
+
+crew or team => perform task 
+
+Lead agent => orchestrator  => understand prompt and plan the task
+Agent#1 => flight booking  => Orchestrator will assign to this agent#1
+Agent#2 => hotel booking  => Orchestrator will not assign this to agent#1 
+ => agent# 1  is not capable or not intended to book the flights 
+instead assign it to the hotel agent 
+agent #3 => budget  => orchestrator communicate the budgeting task to this agent
+ 
+
+5. MCP => model context protocol : different tools and technologies 
+
+whenever your trip provider/ application is not serving one location but customer asked that location. 
+connect with external tools which not defined with in the agent scope and generate the response. 
+MCP => 
+
+
+6. Agentic AI => autonomous application => driver less cars => human in loop it can take actions based on the previous history and trainings provided.
+
+
+
+
+
