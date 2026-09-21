@@ -1,0 +1,117 @@
+Good Evening !!!!!
+==================
+Recap! 
+
+how to use AI to generate the PRD file and test plan . 
+
+to create test cases as well 
+
+=> we do have a text box, in that text box you are asking what to do with AI.
+
+write the PRD document for our ecommerce website
+write the Test plan for our ecommerce website 
+write test cases for our ecommerce website 
+
+Like this you are asking AI for the required task. 
+
+Ask => prompt 
+who is answering this prompt  => LLM /AI brain => Generate the response 
+
+=> writing the prompt to give the best result => task#1  => Input
+=> Response is as per our expectations or not => task#2  => output 
+a. Correctness of the response  => is the Test plan is really correct? 
+how much % it is correct
+
+b. relevancy of the response => is this test plan is suitable for your website or ecommerce website 
+
+c. Factuality of the response => points or information mentioned in the Test plan are true? facts
+Any assumptions ? 
+
+d. Faithfulness of the response => Entire test plan is safe to consider for testing . Any harmful information or insecure information present in the document? 
+
+
+subject matter expect => SME so if you write couple of prompt on STLC that refine your skills in writing Good prompts . 
+
+Human evaluation : Manual evaluation , A tester grade the answer and provide his rating => 0 to 1 
+or Excellent/ Good/Avg/Bad 
+==============================================================================
+Today we would like to invite AI into the automation : 
+
+we will write same prompts in the publicly available LLMs . 
+
+As a tester how to use this AI to generate the automation code . 
+
+
+similarly : we you use MakeMyTrip agent application myra , then check that agent is correctly booking the vacation or flight or hotel 
+
+previous history also we consider to generate response => 
+
+[context ] => previous prompts information we are considering for current prompt 
+
+"Drugs.com AI is powered by artificial intelligence. It may NOT be accurate, complete, or appropriate for all situations. It is highly experimental and NOT intended as medical advice, diagnosis, or treatment. For any medical issues, you should ALWAYS consult with your healthcare provider."
+this statement explains you that We are not accurate or 100% correct in all situation so do no take it as a primary information to act on it . Instead take it as a reference and consult a doctor . 
+
+=> Prompt is very imp in generating the responses. 
+
+as a tester what is first challenge to test AI applications or LLMs or Gen AI application or agents ? 
+
+how to ask ai ?  prompt => prompt engineering 
+
+if you effectively ask the prompt with all the information AI brain also generate the answer with more 
+correctness 
+relevancy 
+factuality 
+faithfulness 
+=> together call it as answer accuracy . 
+
+positive prompt => usually what customer asks / frequently asked prompts 
+
+negative prompt => missing some information / provide some conflicts or issues with in the prompt / rejecting questions / out of syllabus questions or not able to answer question. 
+
+empty prompt  => this is just to crash the application or identify the coding issues we try with empty prompt 
+
+=> prompt engineering is the only way to get interact with this AI brain as a tester. try to generate more test cases /prompt to generate verities of responses. 
+=============================================================================
+Install playwright in your local computer and experience playwright agents 
+=============================================================================
+
+1. playwright => https://playwright.dev/
+a. JavaScript run time is required  -> nodejs 
+   => download and install nodejs in your local computer. 
+   => https://nodejs.org/en/download link to download 
+   => install the downloaded node js file 
+
+b. Check the nodejs version installed in your computer. Verifying the installation of nodejs 
+   => cmd  =>node -v
+
+C:\Users\PC>node -v
+v24.21.0
+
+C:\Users\PC>
+
+c. IDE => VSCODE
+https://code.visualstudio.com/download?_exp_download=fb315fc982
+Download and install 
+
+
+4. Create a new folder and supply this folder to the VSCODE / open this folder in the VSCODE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
