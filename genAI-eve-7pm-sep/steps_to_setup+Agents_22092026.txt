@@ -1,0 +1,13 @@
+1. install nodejs 
+2. install VSCODE
+3. Install playwright 
+4. Create GitHub account 
+5. In the VSCODE login to the GitHub account 
+6. Open the GitHub chat by using toggle button 
+7. paste the command in the terminal 
+npx playwright init-agents --loop=vscode
+8. Click on toggle icon for chat - click on agent => 
+a.planning  - test plan will be provided 
+b. generation - scripts will be generated
+c. healing - debug the script for failure and fix automatically 
+ 
