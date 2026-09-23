@@ -1,0 +1,86 @@
+Good Evening !!!!!
+======================
+how to setup playwright agents in our computer
+
+=> how to use agents like a user. 
+
+=> software tester to use these AI agent from playwright 
+
+a. Planner  => which is used to create the test plan for the given website or web page 
+b. generator => which is used to create the test script  => for manual scenario or test case we need to generate automation script 
+
+c. Healer => Debugging agent when a test script is failed , this agent will understand why is it failed and how to fix it .
+          able to make changes to the code and try to fix the scripting issues from testing side. 
+
+
+write a prompt to generate the test plan 
+
+
+npx playwright test e2e/seed.spec.ts --project=chromium
+
+
+Whenever there are approval pending for the agent - we need to supply those permission by accept the popups or notifications to support the agent . This  process is known as human - in - loop. 
+
+
+We understand how tester utilize AI for their day to day activities :
+
+1. we are using chatgpt/claude/perplexity/copilot kind of plublicly available LLMS or chatbots to create 
+Requirements
+Test plans 
+test cases 
+etc..
+
+2. We are using playwright agents to build test plan / test scripts and debug them as well.
+
+module#1 => how to use AI for your testing . 
+==============================================================================
+Asking a question is an art here to get the fine tuned response for your question.
+
+We do start learning how to write this question ! this is art of your testing / test cases in both human evaluation or automatic evaluation 
+
+module #2 => prompt engineering 
+
+prompt is nothing but asking a question to the AI [ Gen AI or agent application]
+
+prompt is nothing but a question or ask to the AI => 
+AI can able to understand natural language like a human and revert back the response in natural language. 
+
+It is like another human => ask a question or chitchat with AI . 
+
+User  => ask a question  =>[ tokens/tokenization/ embeddings /vectors /vector dbs =>] LLM [AI brain] => think about the prompt and generate the response  => filters a. system prompts  and guardrails ( safety filter) => response 
+
+ollama - llama3/3.1/3.2  is on of the LLM 
+open ai gpt4/5/6 are llms 
+sonnet/optus kind of llms 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
