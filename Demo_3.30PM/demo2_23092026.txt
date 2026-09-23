@@ -1,0 +1,98 @@
+Good Evening !!!!!
+==================
+1. What is AI ? 
+2. Evaluation types :
+a. human evaluation 
+b. automatic evaluation with the help of deterministic assertions => 
+c. LLM as a judge  => one LLM evaluate another LLM generated response 
+
+=> Gen AI testing or AI testing or LLM evaluation or Red teaming or blue teaming  these are simple keywords or Job responsibilities 
+
+=> AI => artificial intelligence 
+it is a machine which can think like a human and able to respond back with their generated response. 
+
+a. Gen AI applications => These applications will generate the response with the AI brain.
+customer will ask a question  and AI brain / LLM will generate the response 
+
+Like how you ask me a question and with my experience - how can I able to revert back to you with answer. 
+
+=> chatgpt /claude/ perplexity / gemini  => AI chatbots comes under Gen AI apps.
+=> text /code/image/music/video /html/pdf/ ... etc 
+
+As a tester your responsibility to test is : 
+
+1. is your question  correct? =>  Test case  => prompt  => User prompt 
+   a. ai can able to response for valid question 
+       Answer 
+   => Metrics to evaluate the response  => Accuracy of the response 
+      1. Correct ness 
+      2. Relevancy  => all the information mentioned by Myra is relevant to the question you asked. 
+my question is about hyd to ooty. 
+  If all points or all paragraphs mentioned in the response are dealing with the hyd to ooty then this response is more relevant 
+
+=>suppose , If mentioned about goa instead of ooty ? can it be relevant 
+
+  we split the entire response into claims  => claims => one valid information from response . 
+
+Total claims - 15 
+split the response in multiple valid points  - each point is a claim 
+
+Now as a tester you need to check 
+a. how many claims are correct ?  15
+   how many claims are not correct? 0
+
+b. how many claims are relevant ? 15
+   how many claims are not relevant ? 0
+
+c. how many claims are facts? 15
+   how many claims are not facts or Imaginate claims ? 0
+
+d. how many claims are faithful ? safe ? 15
+   how many claims are not safe? 0
+
+
+0 to 1  => 
+     correctness score = [correct claims/ total no of claims] = 15/15 =1
+     relevancy = [ relevant claims/ total no of claims ] = 15/15 =1
+     factuality =[ claims fact/total claims ] 15/15 =1
+     faithfulness = [ safe claims/total claims ] 15/15 = 1   
+
+
+
+      3. factuality 
+      4. Faithfulness 
+
+Human evaluation => 
+
+   b. ai can reject the question => based on the hidden rules mentioned in the application [ system prompt]
+     EULA => end user license agreement 
+      Reject 
+   c. out of scope Question to AI => AI can not able to generate the response 
+       Abstain
+
+
+
+
+
+
+
+
+
+
+
+
+b. Agent based application 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
