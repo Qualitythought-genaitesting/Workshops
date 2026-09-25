@@ -1,0 +1,261 @@
+Good Evening !!!!!
+===========================================================================
+Today we would like to discuss on 
+1. How AI is helping software tester to improve their productivity. 
+2. We need to understand how to test AI applications. 
+3. Different types of AI application exist in the industry. 
+============================================================================
+1. How many of you are belongs to only manual testing ? 30% of the audience 
+2. How many of you working on selenium automation ? 
+===============================================================================
+
+Traditional testing in our workshop : Deterministic 
+
+Your response is same for all attempts. 
+a test case for Login  => username and password 
+Always if you use same username and password => you can get the same result ? 
+
+so that we can use Exact match  == 
+Expected result == Actual result => PASS 
+Expected result != Actual result => FAIL 
+abc =! ABC 
+
+
+Now for a change AI is not deterministic , it is probabilistic. 
+
+a. in chatgpt = Ai chatbot to provide the response => LLM large language model or AI brain => this will generate the response. 
+Human brain => AI brain also think about the problem and generate the response 
+
+if you ask the question again !  => you were not guarantee the same exact answer. 
+
+attempt#1: 
+what is ai ?
+
+AI (Artificial Intelligence) is the technology that allows computers and machines to perform tasks that normally require human intelligence.
+
+Simple example
+
+Think about a human learning to identify a cat:
+
+Human:
+Sees many cats → learns patterns → sees a new animal → says “cat.”
+
+AI:
+Gets many examples of cat images → learns patterns from the data → sees a new image → predicts “cat.”
+
+What can AI do?
+
+AI can perform tasks such as:
+
+Human-like ability	AI example
+👀 See	Face recognition, object detection
+👂 Hear	Speech recognition
+🧠 Learn	Machine learning
+💬 Understand language	ChatGPT, chatbots
+✍️ Create content	Text, images, code, music
+🎯 Make predictions	Fraud detection, recommendations
+🤖 Take actions	Robots, AI agents, autonomous systems
+The basic AI flow
+
+Data → Learning/Model → Prediction or Action
+
+For example:
+
+Amazon shopping data → AI model → “You may also like this product”
+
+AI vs Traditional Software
+
+Traditional software generally follows explicitly programmed rules:
+
+Input → Programmed Rules → Output
+
+AI systems can learn patterns from examples:
+
+Data → AI Model → Prediction/Output
+
+Major areas of AI
+
+1. Machine Learning (ML)
+Machines learn patterns from data.
+
+2. Deep Learning
+Uses neural networks with many layers to learn complex patterns.
+
+3. Natural Language Processing (NLP)
+Helps computers understand and generate human language.
+
+4. Computer Vision
+Allows machines to analyze images and videos.
+
+5. Generative AI (GenAI)
+Creates new content such as text, images, audio, video, and code.
+
+6. AI Agents
+AI systems that can reason about a goal, use tools, and perform multiple steps to complete a task.
+
+One easy way to remember it
+
+AI = Making machines perform tasks that require intelligence.
+
+And ChatGPT is an example of Generative AI, because it can generate new text based on your instructions.
+
+attempt#2: 
+What is AI?
+
+AI (Artificial Intelligence) is a technology that enables computers to learn, understand, reason, make decisions, and perform tasks that normally require human intelligence.
+
+🧒 Simple example
+
+Imagine you show a child 1,000 pictures of cats and dogs.
+
+After learning the differences, you show a new picture and ask:
+
+🖼️ “Is this a cat or a dog?”
+
+The child looks at the features and answers.
+
+AI works in a similar way:
+
+Data → Learning → Pattern recognition → Decision/Prediction
+
+🌍 Real-world examples
+AI Application	What AI does
+📱 Face Unlock	Recognizes your face
+🗣️ Siri / Alexa	Understands speech
+🎬 Netflix/YouTube	Recommends content
+🛒 Amazon/Flipkart	Recommends products
+🚗 Self-driving cars	Understands surroundings and makes driving decisions
+💬 ChatGPT	Understands questions and generates responses
+🏥 Medical AI	Helps analyze medical information/images
+💳 Banking AI	Detects unusual transactions
+🧠 Main areas of AI
+                    ARTIFICIAL INTELLIGENCE
+                             │
+        ┌────────────────────┼────────────────────┐
+        ↓                    ↓                    ↓
+   Machine Learning      Deep Learning       Generative AI
+        │                    │                    │
+   Learn from data      Neural networks     Create new content
+        │                    │                    │
+   Predictions          Images/Speech       Text
+   Classification       Recognition         Images
+   Recommendations      Language            Code
+                                            Audio/Video
+⭐ AI vs Generative AI
+
+AI:
+
+“Is this transaction fraudulent?”
+
+Generative AI:
+
+“Write an email explaining why this transaction was blocked.”
+
+So, Generative AI is a branch of AI that can create new content.
+
+One-line definition
+
+AI is the ability of machines to perform tasks that typically require human intelligence, such as learning, understanding, recognizing patterns, reasoning, and making decisions.
+
+If you're learning AI from a software-testing perspective, the next useful step is: AI → Machine Learning → Deep Learning → Generative AI → LLM → AI Agents, with simple real-world testing examples.
+
+Observations:
+1. both responses are not exactly match
+attempt#1 != attempt#2   => Fail this testcase? 
+instead of text we are comparing the meaning of the response. 
+
+Accuracy: 
+is it really correct ?
+is it really relevant? 
+is it really Fact? truth?
+is it really faithful? safe?
+
+instead of exact text match we do test the accuracy of the response. why because AI is not retrieving the answer like your traditional applications.
+
+here AI is generating instead of retrieving the existing information.
+
+As it is generating the response these AI apps are known as Gen AI application. 
+
+1. How to use AI in STLC to improve the productivity? 
+
+example: suppose your client provided the PRD [ project Requirement documentation] as a tester tell me 
+
+how many days are required to generate the Test plan ? 1 week 
+how many days are required to generate the test cases? 4 weeks 
+
+=> We will write test plan in 10 mins 
+=> we will write test cases in 15 mins but here we need to review of the AI response . 
+is it really correct ?Test plan / Each test case /AI generated Response
+is it really relevant? Test plan/each test case
+is it really Fact? truth? Test plan /each test case
+is it really faithful? safe? test plan/Each test case 
+
+Accuracy of the AI generated Response.
+
+Test this response before you use them. you are a testing expert so you easily understand whether generated test plan is correct or not 
+relevant to the document you produced?
+all the information mentioned in the test plan are facts ? truths 
+all the information mentioned in the test plan is safe to use ? or unwanted or unsafe links or information provided in the test plan? 
+ 
+
+we need to execute every test not one time => at least 3 to 5 times we need to execute and calculate the average accuracy of the responses generated for all attempts . 
+
+
+we are using AI for your productivity improvement . we can do tasks very quickly by taking the AI help. 
+============================================================================
+to ask a question => prompt => prompt engineering 
+=============================================================================
+
+prompt is the only way to get connect with AI brain? 
+input is prompt 
+output is response [correctness/relevancy/factuality/ faithfulness ] accuracy
+
+0 to 1  => 
+0.7 is base score to consider pass  => 0.7 then only pass 
+less than 0.7 then it is fail 
+
+as a tester you can have a complete control on inputs and outputs
+
+Gen AI testing => 
+a. human evaluation => Manual testing 
+b. Deterministic automation => contains/ equals => 
+c. LLM as a judge 
+example: if you using ollama as a brain to answer to the customer .
+now I am asking you to test the response is accurate or not . 
+we can use chatgpt- gpt5.6 llm as a judge , we can use tools like 
+promptfoo 
+deepeval
+RAGAS => we can take the help of another LLM and evaluate the response
+=> for this LLM we can supply criteria's to test 
+===========================================================================
+Gen AI application testing :
+1. Finetune application 
+2. RAG application => 60% our testing on this RAG 
+3. Single agent application 
+4. multi agent 
+5. Multi agent with MCP  => 30% our testing is on MCP
+6. Agentic AI => 10% on agentic AI 
+============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
