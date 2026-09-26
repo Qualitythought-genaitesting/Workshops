@@ -1,0 +1,171 @@
+Good Evening !!!!!
+====================
+
+Traditional testing to Gen AI testing 
+
+We would like to understand different types of applications and their testing possibilities. 
+===================================
+Gen AI applications : Generate the response with the help AI brain => LLM 
+
+1. Finetune applications => 2023 chatgpt .
+it can answer from previous data / history not on the live data 
+
+Fine tune applications are domain specific applications with huge training on that domain.
+
+LLM is 5 years Medico 
+Finetune application is heart specialist / ortho specialist / 
+Banking domain specialist
+insurance specialist 
+healthcare specialist  => 
+
+problems : 
+
+1. Latest data :
+every information we need to supply to the LLM and it get trained on that data. 
+if it is proprietary data then we do not share this for training 
+
+and we can generate the response only from the trained data - not from the latest data . 
+
+
+2. provide training to the LLM is costlier solution 
+
+your prompt  => LLM [ trained on spl domain] => generate the response 
+
+
+==================================
+2. RAG applications => 60% => 
+
+we need to work on the latest data without training 
+and you personal data or proprietary data should not be supplied to LLM 
+
+=> we are supplying the necessary information to the LLM at the runtime to generate the response from that retrieved information from your Documents data.
+
+supply the documents or data => document split into chunks => vectors => Vector DB 
+
+user ask => retrieved the chunks => LLM [ AI brain] => Generate the response => guard rails [safety filter] => response to customer
+
+1. tokens /tokenizer
+2. embeddings 
+3. vectors 
+4. vector db
+5. retriever
+6. augmentation
+7. generation 
+8. context 
+
+above 2 types are responsible for either generate response from the LLM brain [ directly from training data] or generate the response from data you supplied. 
+only we are generating the response. 
+a. prompt writing is one step to test 
+b. retrieval process/ Generation process /embeddings/ vectors/ etc... 
+c. Response validation 
+
+RAG : fine tune application=>
+
+you can ask => how to write resignation email 
+
+response : 
+
+==================================
+Agent based applications : 
+Generate the response with AI brain in gen ai application 
+we need to add hands to the brain => action to be performed by the agent 
+
+Ai brain + hands  => LLM + tools together perform an action and test the action whether it is performed correctly or not as per the instruction . 
+
+
+An agent automatically based on your instruction , it can generate the email and send also. 
+Action to be performed . 
+we need to call email tools or apis  => tools or hands 
+
+Gen AI application like chatgpt: 
+I want build an application which is similar to swiggy? 
+
+output : AI brain/LLM provided the response as a answer to the question and you need to develop. 
+
+is the explanation about how to develop this software step by step . 
+
+
+Agent : 
+I want build an application which is similar to swiggy? 
+
+output : action to be performed by agent
+a website URL to use as a platform.
+
+LLM will understand task clearly 
+and split this task into small achievable sub tasks 
+and these tasks need to be assigned to the respective agent 
+agent => call the respective tool and perform the action => output we are verifying and if it is ok we can send that response to the agent 
+and finally build total response and submit to the customer 
+
+
+3. single agent applications  => IC / one tester in the team 
+
+one agent performing the tasks sequentially one after another in a row 
+
+4. multi agent applications => testing team -one lead  4 testers 
+split the work btw resources and complete it in a bit faster way.
+
+we need to split the task into small pieces ,each piece assigned to a specialist agent 
+all agent work parallelly to complete the task in less time .
+
+Orchestrator - lead agent 
+Planning the task 
+assign the task to the agent
+collect the feedback and initiate the LOOP  =>[ think => act => observe ]
+finally submit the response to the customer 
+
+Orchestrator : plan the task / split the task / assign the task to each agent / collect the response 
+agent#1 perform their task 
+agent#2 perform their task 
+agent #3 perform their task 
+agent #4 perform their task 
+Orchestrator : collect the responses and generate the outcome and share this outcome to customer 
+
+
+5. MCP - multi agent -> 40% 
+
+Model context protocol : common process to connect with different outside tools to generate the required responses . 
+
+MCP connectivity between your agent application and external tools 
+
+Postgres mcp servers
+MySQL  mcp server  => mcp client you agent get connected 
+
+6. agentic ai applications => Autonomous agents 
+
+it is not required human in loop. it can take decision based on the input conditions 
+
+1. prompt engineering + LLM basics 
+2. Blue team + red team => in testing with respect to capstone project 
+Drugs.com AI chatbot to test 
+3. RAG application and capstone => travel application 
+4. LLMS in local => ollama / cloud based LLM groq free apis 
+5. Red team testing  => one RAG application 
+one to one 
+6. Python + pytest 
+7. RAG development 
+8. Agent development - single agent and MCP multi agent 
+one to one 
+
+9. Automation for LLM evaluation 
+   promtpfoo => Mainly Red team => plugins and strategies 
+   NUNjucks here to automate simple yaml file 
+   RAGAS => RAG  => python unit testing 
+   DEEPEVAL => agents  => unit testing 
+10. 2 one to one meetings with me  => to refine your resume and plan your journey as a gen AI tester 
+
+11. mock interview => to give you best feedback => 
+
+12. every month special workshops on latest trends in the market as a tester 
+    => next week we do have work shop on how to attack the LLMS => 5 hours 
+============================================================================
+
+
+
+
+
+
+
+
+
+ 
