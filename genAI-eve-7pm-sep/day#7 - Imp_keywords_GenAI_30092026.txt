@@ -1,0 +1,89 @@
+Good Evening !!!!!
+==================
+Recap! 
+
+different keywords which are very important in gen AI tester journey
+
+a. LLM => AI brain that think like a human and able to answer for the customer
+b. Tokens/Tokenizer => text / Natural language prompt => token / number 
+3/4 of keyword = 1 token 
+c. Embeddings  => tokens need to be identified or saved  with respect to Location coordinates [ Vector databases] 
+d. Vector => storing the meaning of the token in the provided coordinates 
+e. vector database : place holder to  store all these vectors 
+f. temperature => creativity of the LLM[Ai brain]
+0 to 2 
+0 => less creativity => more deterministic[ every attempt same answer] 
+more temperature => more creativity => less deterministic or more probabilistic [every attempt generate a new response with similar meaning ]
+as a tester we can change the temperature to see the more deterministic results for the same project 
+and get the more creative or less deterministic or more probabilistic results 
+dev/test team can able to change the temperature .
+
+Note: customer could not have a provision to see or set the temperature .
+
+only tester/dev/with in the team only we can assign the temperature through APIS 
+==============================================================================
+Grounding : reference => citation =>  whether it is truth or not 
+exist or not 
+
+on which document basis you generate this response 
+
+=> perplexity : 
+
+Reference link/ image/ website/ => reference is available we call it as a true answer 
+==============================================================================
+
+Hallucination :  no reference - a confident Lier => 
+
+you are a  lawyer :  you need help to investigate a case , as part this case you took the help from AI brain or LLM or Ai chatbot => file numbers 
+file num 123/ file no 234 => these 2 files are references to move this case to the next level . Judgment is favor to you client in thise 2 cases. so based in these cases you need to fight 
+
+Lawyer = share the same files to the judge as a reference . 
+Judge go through these case files and found that these cases never exist in the court database . 
+=> Judge do not accept these case files as those are does not exist - 
+
+it is created by AI - Imaginate case files by AI 
+==============================================================================
+Ai is not retrieving simply , it is generating response on the fly for your prompt so while generating it may be a real/truth content delivered to you. some times it may be generated or lie or Imaginate content also delivered to you.  
+==============================================================================
+Guardrails : Safety filter 
+
+how filter => do filter extra content /waste content in the  Tea same way while transpiring the generated response to the customer we do have a filter . 
+AI generated response is safe or obeying the system rules or hidden rule => 
+
+=> is there any excessive information 
+=> is there any un safe content 
+=> is there any harmful content 
+
+
+Prompts : 
+
+1. user prompt  => question you are asking ! 
+2. system prompt => customer do not see this prompt => it is hidden 
+all rules which needs to be followed by LLM brain => what to do / what not to do ?
+what we can deliver/ what we can not? 
+=============================================================================
+Rules that application need to follow . 
+example I asked you to test an application => Requirements ? yes 
+now I ask you to test the AI application => Requirements ? yes 
+a. What kind of questions it can answer and what can not ? 
+b. what kind if responses it can deliver  and what can not ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
