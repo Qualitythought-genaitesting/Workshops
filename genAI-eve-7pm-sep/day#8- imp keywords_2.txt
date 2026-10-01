@@ -1,0 +1,63 @@
+Good Evening !!!!!
+======================
+recap !!!!!
+
+LLM and their related keywords 
+
+=> context : 
+
+temp memory of the AI brain. 
+if you ask a question to AI => 1/2/3/4/5/6
+
+=> it is keep on progressing => AI may not able to remember all the question and responses 
+Previous prompts and their references will be replaced by new prompts and responses 
+
+temp memory 
+context windows : size of the temp memory => at a time how many tokens we can process. 
+
+[request tokens + response tokens ]= context windows 
+10000 tokens at a time : 
+
+1 question req = 100 tokens  => what is AI and explain ai in simple English ..........  75 keywords 
+response = 250 tokens  => 350 => explain the answer  => 350*3/4 words 
+
+question #2 req = 100 tokens 
+response = 350 tokens 
+
+25 questions  => 25* 350 => 8500 tokens 
+10000 => 
+9800
+1500 tokens
+
+question with 300 words =>  300*3/4
+1 token = 3/4 word
+
+
+with in the context we are saving the necessary information to answer the prompt 
+=> if you are developing the automation code for MakeMyTrip . 
+=> 
+=> 
+=>
+at a specific time , it can not move further with all existing data - as it is having the limits. 
+
+at this point of time  => previous context will be replaced by current question context 
+context window => how many tokens we can process at a time => capacity
+it exceeds then previous context need to replaced with current content 
+
+list of tokenizers to test:
+
+https://platform.openai.com/tokenizer?view
+https://www.claudetokenizer.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
