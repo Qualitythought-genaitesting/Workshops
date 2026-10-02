@@ -1,0 +1,112 @@
+Good Evening !!!!!
+======================
+
+Traditional testing to  Gen aI testing : 
+============================================================================
+
+1. We need to validate response w.r.t mandatory keyword.
+2. We need to validate the meaning instead of exact text.
+3. We need to validate the output format 
+4. We need to be safe - 
+   a. you do not leak sensitive data 
+   b. you do not allow un safe content 
+5. Rubrics - metrics 
+   => Factuality score = 0 to 1  => 0  there is no match case between expected criteria and actual criteria 
+6. no of time we execute the test - consider average score is a score we need to check for the test cases pass or fail. 
+
+how much percentage this is safe /accurate/correct/fact
+LLM as a judge 
+===========================================================================
+percentages  => 1 to 0 => 
+0 least possibility of the metrics 
+1 best match case 
+
+every metrics we do have a base value  => accepted value 
+
+=> expected pattern 
+   => Relevancy score => 0.75 >= Pass  => average of all attempts score is the final verdict 
+
+   => correctness score => 0.9 >=Pass
+   => faithfulness score => 0.7 >= Pass 
+
+JSON : a key value fair.  API testing 
+
+req: {
+
+name: "ram",
+age: "39",
+location:"hyd"
+}
+
+Res: {
+statuscode: 200 
+}
+
+expected result == actual result  => traditional testing 
+if any deviation then we log a defect . 
+
+this is not going to be a valid pattern of executing the test cases now , we are not guarantee that first attempt response is same as second attempt response 
+
+we should not fail as the meaning is almost same. 
+
+so we do need to define new strategy / new pattern of execution 
+
+
+=> LLM is a judge =>  Instead of human we are hiring a AI brain to evaluate your response 
+
+=> your LLM we are already using - and checking 
+
+open source LLMS as part of testing - ollama - we can install this in local server and use it to test the criteria mentions in the expected results . 
+
+again we can hire or invite paid LLMS [ claud apis. open ai apis , etc..]
+
+
+I want to test translation => 
+hello world need to translated into the fresh => 
+
+1. any translator  => type hello world  => copy the repsonse 
+
+Bonjour le monde = Bonjour le monde   you make your test pass 
+
+2. automation tester  => 
+
+any tool => contains or exactMatch => 
+expected result = Bonjour le monde
+
+if your application produces the same then test is pass  => 
+
+assertion to test the translation => 
+
+now What I am asking if ask the same thing in chatgpt ? what will be response 
+if response matches to the Bonjour le monde this one or contains Bonjour le monde this keyword then your test pass. 
+
+if something is extra apart this keyword i do not care if i able to find Bonjour le monde
+
+chatgpt and ask a question my promptfoo automation tool do it in the backend with the help apis => 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
