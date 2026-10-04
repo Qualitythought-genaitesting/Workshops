@@ -1,0 +1,123 @@
+Good Evening !!!!!
+====================
+
+Recap !
+
+we understand how we can transform from traditional testing to gen AI testing 
+understand blue and red team testing .
+
+types of gen AI applications 
+
+A. fine tune application => training on the specified domain 
+=> user  => prompt  => LLM  => Generate => filter  => publish the response 
+
+B. RAG application  => proprietary data not supplied for training instead only required document retrieved and based on that retrieved document we will generate the Response. 
+
+only able to generate the responses based on the questions you asked to AI 
+
+User => Prompt => retrieve the right data chunk => Add it to the prompt and supplies to the LLM => LLM will generate the response => filtered for safety and then it is published to the customer 
+
+c. Single Agent based application: bolt.new /lovable.dev/emergent.app 
+single agent applications to develop the webapplications with single prompt 
+
+Planning 
+tool selection 
+execution of task 
+observe the outcome 
+Send the response to the customer 
+
+A complete task to be completed by agent with the help of customer or user 
+
+brain will think 
+hands or tools will act on it according the plan LLM or brain suggested 
+
+=> individual contributor or free lancer 
+
+
+d. Multi agent application: 
+As a single agent doing all the tasks one after one so it is time consuming 
+
+as part of this multi agent system we are distributing the work between different specialized agents 
+
+we need to hire a team . Team with specialists 
+
+Orchestrator agent  => 
+Lead in the team => will distribute the work 
+monitor the employee work ! => if looks good => we back to the leader to submit the work . if he accepts that employee job is done . 
+
+employee => will perform the task based on work assigned . 
+
+A trip to goa from hyd for 2 adults - 4days with in the budget 200000
+=> myra is an ai application for make my trip 
+
+it will receive the prompt and split the prompt into multiple tasks 
+orchestrator => analyze the prompt and split into small pieces of tasks or user stories 
+
+Plan the trip and split the entire task into small pieces 
+a. look for flights between hyd to goa & goa to hyd => Flight agent 
+flight agent is a specialist agent to book the flights for the selected dates 
+b. look for hotels in goa => hotel agent 
+c. Day planner agent => plan the entire day beautifully without deviations from the expectations 
+d. budget agent => is the entire tasks planned comes under provided budget or not 
+
+all agent must received request/Task from prompt or agent planning 
+all are process the requests assigned to you then now book the flights , hotels , trip plan or day plan schedule and that should be aligned with the budget also. 
+
+e. Agents with MCP => model context protocol : 
+
+this protocol similar to FTP /Http. 
+MCP we do have a common pattern or rules to connect  with any other application 
+
+MCP => establish the connection between LLM and required tool 
+
+f. agentic AI => autonomous => on their own based on the instruction you provided I can complete the task without human in loop. 
+ ==========================================================================
+
+From Quality Thought we are providing daily lecturers to transform your current skill to new gen AI testing . 
+
+a. LLM basics 
+b. prompt engineering 
+c. Blue and red teaming 
+d. A capstone project - drugs.com 
+e. RAG application in depth  and test it with various prompt for blue and red teams 
+f. Agent based application + MCP => travel domain / capital market application / health care 
+g. python session - to understand future automation 
+h. pytest  => unit testing tool we can use in the automation 
+i. rag and agent development sessions 
+j. Promptfoo -  LLM eval + red teaming => no code or less code automation 
+k. RAGAS - RAG automation with python => unit testing tool. on your application code only it will be executed. 
+l. DEEPEVAL - agent automation => pytest 
+m. this entire course required  75 days 
+after every month -  one to one with master faculty to understand your profile and suggest the right changes in your resume to get the success 
+n. One mock interview - to understand your issues - suggest the fixes. 
+o. interview question and anwers -=> resume preparation 
+p. openings also we will share 
+q. Recordings will be shared with your through our LMS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
