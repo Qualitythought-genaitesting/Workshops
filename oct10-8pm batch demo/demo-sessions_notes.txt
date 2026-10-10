@@ -1,0 +1,225 @@
+Good morning Guys !!!!!
+========================
+Thanks for joining with us ! 
+
+Ram prasad 
+18+ years of experience in different roles 
+
+We are going to discuss : 
+
+1. What is current testing strategy which we are implementing in the current project ? - Traditional testing [web application , api , ETL, etc...]
+
+If we have a requirement then we need to analyse the requirement and write test cases , execute the test cases 
+
+Expected result == Actual result => if any deviation that leads to a defect
+
+supose in your requirement it is mentioned , Logged in successfuly and able to see Customer Dashboard with the customer name . 
+if use => User => same meaning but your testing strategy define it as a defect. 
+developer must change to customer in the build or AUT. 
+that mean the only concept here is exact match . 
+=> contains != icontains => 
+
+blindly tester can compare expected result with actual result .
+
+Actual Result == Expected Result  => PASS
+Actual Result != Expected result => Fail 
+[Exact match case with expected result ] 
+
+chagpt ? 
+Chatgpt 
+
+2. How Gen AI testing is different than this Traditional testing ? 
+
+We asked 2 times chat gpt , what is gen AI testing ?
+
+attempt #1 answer is different 
+attempt #2 answer is different  => now question is 
+
+can we use same exact match strategy for gen AI testing also ? 
+
+We do not suppose to use exact match , that means existing testing strategy may not be fully suitable for these kind of applications. 
+
+why because the answer is not same for all attempts , that it is varying from attempt to attempt 
+
+but remember the meaning is similar . 
+
+asking same question to your 2 of friends - they can help you with similar meaning answers but different text. 
+
+=> non deterministic output is delivered by AI applications [ AI brain] /LLM [ large language model ] probabilistic nature 
+
+  user  => asks a question  => AI brain /LLM  => Generate the response 
+As it is generating the new response for every customer question , it is call as Gen AI . or generative AI . 
+
+as it is not generating the same response the existing exact match testing strategy is obsolete . then how do we define the new strategy? 
+
+probabilistic or non deterministic response validation : 
+
+we do execute all the gen AI testing test cases min 3 to 5 attempts 
+
+We can grade the answer like => is it Good answer / excellent answer / bad answer / ok ok answer 
+
+excellent answer  => 1 => 4
+good answer  => 0.7 => 3
+ok ok => 0.5 => 2
+bad => 0 =>1 /0
+
+Test case status : [0.7 + 1 +0.7 + o.7+0.7]/5 => average score is used to make the test pass or fail. 
+only good or Excellent answers considered for your application as acceptable answers =>  PASS 
+
+attempt#1  -> answer 1  => accuracy of the answer  => Good
+-> is it correct answer? Does the AI provide medically accurate information?
+-> is it relevant answer? Does the answer match the user's question?
+-> is it factual answer?  is the answer is truth or is it made-up answer by AI
+-> is it faithful answer ? is the answer  safe to use ? 
+
+
+attempt#2  -> answer 2  => excellent 
+
+-> is it correct answer? Does the AI provide medically accurate information?
+-> is it relevant answer? Does the answer match the user's question?
+-> is it factual answer?  is the answer is truth or is it made-up answer by AI
+-> is it faithful answer ? is the answer  safe to use ? 
+
+attempt#3  -> answer 3  => Good 
+-> is it correct answer? Does the AI provide medically accurate information?
+-> is it relevant answer? Does the answer match the user's question?
+-> is it factual answer?  is the answer is truth or is it made-up answer by AI
+-> is it faithful answer ? is the answer  safe to use ? 
+
+attempt#4 -> answer 4  => Good 
+
+-> is it correct answer? Does the AI provide medically accurate information?
+-> is it relevant answer? Does the answer match the user's question?
+-> is it factual answer?  is the answer is truth or is it made-up answer by AI
+-> is it faithful answer ? is the answer  safe to use ? 
+
+attempt#5 -> answer 5  => Good 
+
+-> is it correct answer? Does the AI provide medically accurate information?
+-> is it relevant answer? Does the answer match the user's question?
+-> is it factual answer?  is the answer is truth or is it made-up answer by AI
+-> is it faithful answer ? is the answer  safe to use ? 
+
+
+=> We need to deploy a new strategy called as non deterministic testing strategy . 
+a. multi attempts we need to execute each test case 
+b. instead of exact match we can consider contains these keywords / these sentences are available - important parameter we need to define and test 
+c. grading techniques used to validate the test cases -  average of all test attempts 
+d. instead of exact match we need to follow meaning / correctness / relevancy/ faithfulness / factuality metrics we consider to evaluate the test 
+
+a. what are the changes we may experience 
+b. why our traditional testing or strategy fail ? every attempt answer is changing that is new difficulty we need to solve in the Gen aI testing 
+
+
+3. What is the new strategy we will adopt to test the Gen ai application?
+
+probabilistic or non deterministic strategy with multiple [3 to 5] attempts 
+
+a. correctness checking instead of exact match 
+b. relevancy 
+c. faithfulness 
+d. factuality 
+
+Strong domain expert to these response , why because the expected response is only a partial reference not for exact validation. 
+
+4. How to transform your experience / expertise knowledge into new AI era testing 
+=> Your domain knowledge and project knowledge are much needed to judge the AI generated answer. 
+
+=> Testing life cycle  => STLC is as it is , only execution style and marking the tests as pass or fail is varying
+
+a. requirement analysis 
+b. test planning 
+c. test design 
+d. Test execution 
+e. defect life cycle 
+f. test summary 
+
+-> How do we test these gen AI applications. 
+
+1. Human evaluation of AI responses  => A human test the responses [correctness , relevancy, factuality , faithfulness]generated by AI brain or LLM . 
+
+2. Automation testing with deterministic nature => traditional testing checkpoint also we need to use to verify AI generated response 
+
+ Regular assertions to validate the response 
+   => contains 
+   => not contains 
+   => contains all 
+   => contains any 
+   => contains  html / sql
+   => is sql 
+   => is html 
+
+3. LLM as judge :
+one AI brain is generating the response for you with in the application. now i will hire another AI brain to test the generated responses. 
+
+=> you need to tell to the AI , AI AI please test these criteria's .
+
+is this story is adventures.
+is this story is having offensive experiments 
+
+one LLM testing another LLM generated response based on the grading criteria you provided. 
+
+
+expected criteria: 
+
+Check the below criteria: 
+1. is the answer contains side effects clearly ?
+2. is the answer contains the dosage of the medicine?
+3. is the answer explains clearly how to use this  medicine? 
+
+reasoning to give the grading :
+1) Side effects: The output clearly lists safety/adverse concerns (liver toxicity/overdose risk, interaction with alcohol, caution in pre‑existing liver disease, possible allergic reactions, and notes about GI/bleeding differences vs NSAIDs). 
+2) Dosage: The output gives explicit dosing for adults (500 mg–1 g every 4–6 hours; max 3–4 g/24 h) and children (10–15 mg/kg every 4–6 hours; max ~40 mg/kg/day), so dosage is provided. 
+
+3) How to use: The output explains practical use (use lowest effective dose, timing/frequency, use measuring device for children, avoid concurrent acetaminophen-containing products, and when to seek medical care), which constitutes a clear explanation of how to use the medicine. All three criteria are satisfied.
+
+advanced assertions to test the ai generated response with AI .
+
+5. what is current job market ? what kind of jobs we may apply after this session. - 
+
+https://learn.qualitythought.in/blog/post/genai-testing-consultant-architect
+
+=> packages : you are open to discussion -  30 to 50% hikes
+
+
+=> Explain course content / structure => 
+a. Introduction to Gen AI => 
+   types of gen ai applications 
+   vocabulary 
+   
+b. Prompt engineering -
+   how to ask a question to AI 
+   different prompt types 
+   how to write good prompt 
+c. Blue team vs redteam 
+   A capstone project with testcases provided to you - to understand what kind of information we need to use while testing - 100 
+
+d. RAG - application - 60% of your resume or JDS require 
+   a capstone is provided to you to understand all components in RAG and test it 
+e. Agent - application - 40 % of your resume or JD 
+   a capstone 
+f. automation - 
+1. less code or no code automation  => promptfoo => end points are sufficient 
+RED teaming 
+
+2. Python based automation / pytest based automation => RAGAS/ DEEPEVAL 
+a. python classes - 3 weeks 
+b. pytest 
+c. RAGAS unit testing tools 
+d. DEEPEVAL  unit testing tools 
+code is required to conduct the testing 
+
+special attention : 
+a. api testing 
+b. 2 weeks development lectures  - RAG and Agent 
+
+a. from manual testing to Gen AI testing  => 45 days are imp 
+b. From automation testing to Gen AI testing  => RAGAS + DEEPEVAL + development 
+
+
+RAG: is used to generate the response  => it is providing you the plan
+
+RAG - RAGAS 
+
+Agent : it is capable to do the transaction => itis developing the application and handover the hosted URL 
+Agent automation DEEPEVAL 
