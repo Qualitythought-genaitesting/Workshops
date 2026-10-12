@@ -1,0 +1,188 @@
+Good Evening !!!!!
+====================
+
+Thanks for joining with us ,  we will start the session in couple of minutes.
+
+As part of Gen AI testing , today we would like to understand different types of Gen AI applications. 
+
+a. what is gen AI , how to test these gen AI applications? 
+
+=> differences between traditional testing and gen AI testing 
+
+Now , we need to understand different types of gen ai application and again reiterate the same differences once again with respect to types of applications. 
+
+Types of applications are not new for gen AI . 
+a. Desktop applications => which we need to install in local computer 
+b. web applications => we need to browse the URL and access the content from webserver. 
+c. Mobile apps => we need to install the application in the mobile devices through distribution channels or google play store or Appstore . 
+
+Types of Gen AI applications: 
+
+Gen AI application : a AI brain or LLM =>  which is generating the response based on the question customer asked. 
+
+User prompt / ask   => LLM/ AI brain => Response 
+
+Generated response may be in => 
+text 
+image
+code
+voice 
+music etc...
+
+you ask a question my AI brain will answer .
+
+1. Fine tune applications 
+2. RAG based application 
+
+example: 
+chatgpt : 
+
+drugs.com/search/ai 
+
+Generating the answer with AI brain [ LLM] is known as Generative AI or gen AI.
+
+
+Agent applications : 
+not only generate the answer but also it can perform the task like a human. 
+
+AI brain + hands to do the task . 
+
+brain + hands together will help customer to perform the task . 
+
+Question : I want to build a ecommerce website similar to the flipkart.
+
+Gen AI application : expected outcome is create a project plan to develop this application . [ flipkart kind of ecommerce application] 
+
+AI brain think like a project manager and derived the answer for your question 
+
+Agent :  AI brain + hands 
+AI brain => LLM [ Large Langauge Model ] => think like a human brain 
+hands => tools => 
+a. DB tools to connect and do the DB related actions 
+b. Design tool connect and do the design based actions  => figma file => your agent connect with that tool and design the UI/UX 
+c. back end development => like back end developer 
+
+AI brain + hands  => LLM + tools together will create entire web application. 
+
+example agents to develop applications . 
+a. bolt.new 
+b. emergent.app
+c. lovable.dev 
+
+example travel agent : 
+myra from MakeMyTrip = Agent plan your trip 
+
+3. single agent 
+4. multiple agents 
+5. Agents MCP [ model context protocol ] 
+6. Agentic AI 
+
+
+
+a. bolt.new  => is an agent based website development portal. 
+same prompt as above: I want to build a ecommerce website similar to the flipkart.
+
+this time Agent application will analyse the prompt and plan the web application which is similar to the flipkart .
+step by step execution of the plan to develop and deploy the application and generate the preview URL . 
+
+1. application differences : 
+a. gen aI application => it is providing the repsonse only - answer only . it can not perform any task
+AI brain is involved . 
+
+LLM only avaialble to reasoining / to generate answer for your query. 
+=> it is a friend to answer your question. 
+Generative AI applications we need to test : 
+1. how to write query to the AI to get the right response 
+2. Evaluate the generation process - how is it generating the response 
+3. is response - correct /relevant to the question / fact / faithful 
+4. match your meaning of response with the expected response's meaning 
+
+similar to your traditional testing . 
+
+b. agent based application => it is developing the solution for your problem 
+outcome is developed by AI agent 
+
+ai brain + hands  => LLM + tools involved here to perform the task on behalf of you . 
+
+ it is a friend to do your work. 
+
+1. how to write query to the AI to get the right response 
+2. Planning - AI brain will plan how to solve this task 
+3. based on the planning which tool we need to select - tool selection need to be tested. 
+4. tool response we need to verify - is the response = if response is not as per your expectation then 
+repeat the same => select tool => perform action => observe the response 
+Agent Looping we need to test . 
+
+5. goal is achieved . 
+
+Gen AI application testing and agent based application testing 
+RAG 1 capstone - Tripsage - drugs.com/search/ai 
+and MCP agents - 1 capstone - capital market / travel agent 
+same projects we can use for automation 
+
+a. promptfoo : is a black box testing tool like selenium / playwright 
+no need to actual code , instead endpoint of this application is sufficient 
+URL based testing => no need of actual code 
+
+Purple team : finally adter completion of this course you can test the Gen AI or agent based applications through red team + blue team . 
+
+=> Red team testing  => LLM security / evaluation will  be covered by promptfoo  => try to hijack the AI brain and provide unsafe and illegal content 
+
+=> blue team testing => try to prove it as generating wrong response 
+
+
+Developer needs to provide code based for testing  =>  unit testing tools /whitebox testing 
+b. Deepeval => Agent automation  
+c. RAGAS  => RAG automation  => chatbot 
+=> try to retrieve the answer from the your knowledge base. 
+
+suppose if you are supplying 20 documents to AI brain  and ask any question from those 20 documents . AI will generate the response or answer from those document . to do so behind the seens there are several stpes involved. 
+a. retrieve the right document from the list of document  => retrieval 
+b. augmentation is nothing adding these retrieved documents to the question you asked and supply both of them to the AI brain . 
+c. Generation : AI brain will understand the question and generate response from the retrieved document only 
+
+RAG => one of the type of application => chatbots. 
+
+know type of application and how to test them on high level 
+
+Job openings :
+1. https://learn.qualitythought.in/blog 
+
+Automation tools :
+
+https://deepeval.com/
+https://www.ragas.io/
+https://www.promptfoo.dev/
+
+Agent based tools : 
+https://lovable.dev/projects/80aaaab1-db2b-4a40-a4f3-1b698023416a
+https://www.drugs.com/search/ai/
+
+
+
+
+
+
+
+
+ragas.io
+d. Langchain family tool / phenix open source observability tool 
+
+
+this course mainly focus on how do we test different LLMS or different llm based application for blue team and red team .
+through human evaluation / LLM as a judge . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
