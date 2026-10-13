@@ -1,0 +1,203 @@
+Good Evening !!!!!
+=====================
+
+As per the yesterday discussion we understand 
+
+the main difference between gen AI application and Agent applications . 
+
+Gen AI applications generate the response based on the Question we ask to the AI brain / LLM . 
+
+=> ask => LLM => generate the answer 
+
+Agent application generate the entire outcome by performing the task/ tasks involved in that question. 
+
+=>ask  => LLM + Tools  => complete the goal or perform the task 
+
+=> Generate the website with a prompt => through gen ai application and Agent based application 
+
+Gen AI based application provided me a beautiful project plan how to develop this application module by module 
+
+in this gen AI application we do care about 
+
+a. correct of the generated response ? 
+b. relevancy of the generated response with respect to the question?
+c. factuality of the generated response => grounded response on what basis AI generated this response . 
+d. Faithfulness of the generated response  => is the answer safe / secure 
+
+=> accuracy of the generated response . => response based testing 
+
+agent based application provided me a fully developed URL as a outcome 
+=> agent took care about DB 
+=> agent took care about UI/UX
+=> agent took care about backend 
+=> agent tool care about data seeding 
+finally fully developed application URL for you as a goal of the prompt you supplied to the agent application . 
+
+=> we do not fully dependent the response only ? => in addition to this 
+we need to understand 
+=> is this agent :
+a. planned the task correctly ? 
+b.  assigned the task to the right tool ? Trajectory 
+c.  provide the right information to the tool? 
+d. response from the tool is satisfactory => observability 
+e. Agent loop => [select the tool => perform action => observe ]=> no of loops
+f. Goal of the prompt  => Response checks 
+=============================================================================
+Types of Gen AI : 
+
+a. fine tune application => 
+LLM are trained with publicly available  large data set . we consider these LLMS and train them on domain specific tools , knowledge and technical materials . 
+1. banking fine application used LLM brain with financial expect ai brain 
+  => feed all latest possible data to the ai brain then only AI brain understand the domain and answer to the customer question. 
+
+2. healthcare application used LLM brain with health care expert AI brain 
+  => feed only health care related latest possible data to the AI brain . 
+
+=>Banking AI agent having general knowledge + latest specific financial knowledge 
+
+=> healthcare AI agent having general knowledge + latest specific health care knowledge 
+
+
+a simple easy way of answering the question from knowledge base you supplied . 
+
+example: general MBBS student => 5 years degree  => basic knowledge as a doctor . 
+=> PG student => doing specialization on dermatology  => MBBS knowledge + dermatology
+=> heart specialist => MBBS knowledge + heart knowledge 
+
+finetuned LLM => specialist on the trained domain. 
+
+so we can get accurate information about that domain and 
+
+training cost is more and time taking is also more .
+
+drawbacks or issues: 
+1. We are not able to get the latest information in the response . 
+Every new information we need to provide through training only - it is costly 
+2. company proprietary information => to the publicly available LLM or ai brain 
+=> confidentiality issue. 
+
+b. RAG application  => 60% of the testing in our course => RAG
+
+1. no training to the public LLM => your data is safe. 
+2. capture the information from latest documents you supplied to the LLM
+
+R => Retrieval process  => as per the prompt or question which document is relevant in the document repository . 
+A => Augmentation process  => add these retrieved documents and supply to the AI brain along with the prompts 
+G => Generation => now AI brain understand the question and generate the answer based on the retrieved document 
+
+here if there is change the old document you can directly add that document to the knowledge base. 
+then Retrieval it self we pick the latest document and generate the response based on the retrieved document . so you answer is from the latest document 
+
+whenever you ask that moment [ run time only] we are using your retrieved document 
+
+=> a. no need to training 
+=> b. document are not supplied for LLM training 
+
+you generate the answer through RAG from latest changes happened in the application.
+
+1 week RAG project understanding as a manual tester 
+1 week development to develop a simple use case with RAG 
+1 automation tool on RAG - blue team testing => RAGAS 
+metrics 
+
+generation of response is done. 
+
+c. single agent => bolt.new / lovable.dev/ emergent => created a website by AI agent 
+one agent is responsible for end to end task completion . step by step 
+planning 
+tool selection 
+tool observation 
+end goal 
+
+=> 1. time taking to do everything step by step 
+=> one agent is responsible for every thing 
+
+example : a simple freelancer to develop a project - SDLC 
+IC => individual contributor 
+
+d. multi agent : 
+A team of agents work together to complete complex work in a very simple and easy way. 
+
+Orchestrator : he is planning the work and delivery end goal 
+
+Lead agent : it is plan the task and assign the small small tasks to the expert team member => sub agent 
+
+every specialist agent take that specialist task and complete it 
+
+task => sub task 
+task => orchestrator => distribute the work between the sub agents /team members
+sub agents => do the job and handover outcome to the orchestrator 
+Orchestrator => distribute the work between 5 specialist agents 
+agent 1 => task 1 => once done => handover to orchestrator 
+agent 2 => task 2 => once done => handover to orchestrator
+agent 3 => task 3 => once done => handover to orchestrator
+agent 4 => task 4 => once done => handover to orchestrator
+agent 5  => task 5 => once done => handover to orchestrator
+End goal will be delivered by Orchestrator => coordinate with all sub agents and club the outcomes to form a user understandable outcome or goal . 
+
+=> Ask => orchestrator  => assign the tasks to agents  => get the responses from the agents  => deliver the outcome to the customer 
+
+e. MCP based agents  => 40% of the course belongs to => Agents with MCP 
+
+MCP : model context protocol => 2024 anthropic company /claude produced the protocol . 
+
+all tools or applications follow these instructions to get connect with the LLM 
+
+MCP server and client 
+external tools get connected with your application with the help of MCP servers and protocol. 
+
+=> 1  week basic agent testing , tools calling , MCP basic architecture and what we need to test 
+=> 1 week we do agent automation testing - Deepeval = python and pytest 
+=> 1 week red team testing  -> promptfoo 
+
+f. Agentic AI => 
+driverless car  => agentic AI => it can sense the objects by provided the sensor and based on the previously learned patterns AI detect whether it need to move forward or stop or take right /take left / take to back 
+
+=> it can take an action based on the provided conditions . 
+=============================================================================
+through 
+1. human evaluation => A tester will test whether the gen AI or agent based application doing the needful for customer with his testing knowledge , domain knowledge and AI testing knowledge 
+Test design 
+test execution 
+bug 
+
+=> instead of one time executing the test case  => 3/5 times every test 
+
+2. tool automation => 
+we do have standard / deterministic assertion to verify condition based response validation . 
+
+contains this keyword 
+not contains this keyword 
+is the output is json format 
+is the output is html 
+do not create html 
+tokens count 
+latency 
+
+3. LLM as a judge :  we can hire a LLM to judge or test the generated outcome by AI application. 
+
+=> AI generated output verified by another AI based on the supplied criteria. 
+to do so :  
+
+we can use promptfoo - assertions like  => 
+LLM rubric 
+similar 
+context-recall 
+etc.. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
