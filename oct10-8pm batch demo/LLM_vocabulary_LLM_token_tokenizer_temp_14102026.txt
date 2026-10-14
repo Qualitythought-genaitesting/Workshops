@@ -1,0 +1,222 @@
+Good Evening !!!!!
+==================
+recap! 
+
+we understand different types of AI applications .
+
+a. finetune applications 
+b. RAG applications 
+c. single agent applications 
+d. multi agent application 
+e. MCP based applications 
+f. agentic AI application 
+demo application for all these types . 
+
+now we understand the basic difference between 
+Traditional testing and AI apps testing 
+gen AI testing and agent testing 
+
+RAG application testing and MCP based agent testing 
+==============================================================================
+Day #1 => 
+we need to understand vocabulary => 
+
+LLM => AI brain => Large Language Model : 
+
+Artificial intelligence : AI 
+
+how human brain will think and respond to a question in the same way a machine will also think and respond the question or do action like a machine. 
+
+a machine can capable enough to think like a human and able to respond in response or goal oriented outcome 
+
+to answer or to perform action from machine side we need to similar kind of human brain . which can understand human language or natural language and respond back in the same natural language 
+
+to do so we are arranging the AI brain to understand customer question in his own language and reply back to him in his own language 
+=> LLM => large language model 
+
+examples : 
+https://console.groq.com/docs/models
+https://ollama.com/search
+
+model mean a brain to do reasoning , speech to text , text to speech and visualization, image genrations , video generation 
+
+it is specialized in that areas . 
+
+developer or tester find a right model for their task. 
+
+=> Developer  => try to generate the response by using LLM 1
+=> tester  => try to test the generated response by using LLM 2
+A model test the another model generated response  => LLM as a judge => advanced automation we are using the Gen-ai and agent application testing 
+ 
+=> Evaluation methods we are using in Gen AI testing or agents testing : 
+
+a. Human evaluation => Manual testing X => human brain is evaluating the AI brain generated response. 
+b. Deterministic automation => automation => check whether this is exist in the response or not 
+check this is not exist in the response 
+=> this prompt should be rejected by AI brain => 
+promptfoo => deterministic assertions 
+contains  => 
+icontains => 
+exact => 
+is html
+is json
+contains json 
+kind of validation check point if you are using in your testing then it is called as deterministic automation .
+
+c. LLM as a judge :  hire an LLM to do the job then it is probabilistic automation 
+select the right LLM or AI brain for our testing too. 
+
+based on the provided criteria / expected criteria => exact answer match is not possible in the gen ai application testing why because attempt #1 answer is not same as attempt#2 answer that is the reason we are upskilling ourselves to the new strategy . probabilistic testing => execute thetest case 3/4 times and validated the 
+correctness 
+relevancy 
+factuality 
+faithfulness 
+
+2. LLM will understand natural language question and revert back in the natural language
+
+chatgpt /claude /perplexity etc... 
+
+LLM should not understand the Text , it can understand only numbers or mathematics
+
+you question => What is gen AI testing ?  => this is not directly understandable to the AI brain or LLM 
+for that we need to understand 
+
+your prompt or question is translated into the tokens as below :
+[13347, 382, 11820, 8440, 11493, 1423]
+[13347, 382, 11820, 8440, 11493, 30]
+
+[13347, 382, 11820, 8440, 11493, 3901, 13347, 382, 11793, 11493, 30]
+
+
+tokens  => if you are using AI , AI is running on no of tokens you are consuming 
+
+no of tokens exchanged between user and LLM 
+input question and output response => 
+token => 
+token = 3/4 of a word  => it is converted into a number 
+
+those numbers only we are saving the using to answer for your question but is behind the story. 
+
+=> computer is understanding only 1/0 => 
+
+tokens  => we need to convert your natural language words into number based tokens 
+
+this conversion is known as tokenization 
+
+tokenizer => https://platform.openai.com/tokenizer
+https://www.claudetokenizer.com/
+
+tokenizer is a tool to convert the text into different tokens ids. where we can save these token ids for future. 
+
+these tokens we are storing or processing . 
+
+
+temperature: creativity you supplying to the AI brain? 
+
+0 to 2 
+
+0 almost equal to determinism => traditional system 
+99% similar answers replied by AI brain 
+exact answer. 
+
+0.7 temperature for regular reasoning application 
+
+1/1.5  => highly creative works - design the creatives or videos =>
+
+
+more temperature => more creative  and less deterministic 
+less temperature  => less creative and more deterministic 
+
+
+this temperature we can not see or set as a customer . Application default setting . 
+if you are a developer or tester insider of the application then only you can set and do your work. 
+
+LLM
+token
+tokenizer
+tokenization 
+temperature 
+
+RAG: 
+
+embeddings 
+data chunks 
+vectors 
+vector store / vector DB 
+
+agents : 
+planner 
+tool calling 
+observability 
+blue teaming 
+red teaming 
+etc... 
+
+
+
+
+
+probabilistic nature of AI => every attempt it is generating the new response
+non deterministic . 
+
+
+
+
+
+
+embeddings =>  
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
