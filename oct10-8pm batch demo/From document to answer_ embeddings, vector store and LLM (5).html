@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From document to answer: embeddings, vector store and LLM</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#0b0b4f;--mute:#4a4d6a;--line:#dfe1ee;--or:#ec3a07;--orbg:#fff1ec;--gray:#eef0f6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0e24;--card:#171936;--ink:#f1f2ff;--mute:#b4b7d6;--line:#2b2e55;--orbg:#3a1a12;--gray:#22254a}}
+:root[data-theme="dark"]{--bg:#0d0e24;--card:#171936;--ink:#f1f2ff;--mute:#b4b7d6;--line:#2b2e55;--orbg:#3a1a12;--gray:#22254a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:clamp(25px,6.5vw,36px);line-height:1.15;margin:6px 0 8px}
+h2{font-size:18px;margin:0 0 4px}
+p{margin:0 0 10px;color:var(--mute);font-size:14.5px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:14px}
+.step.h{display:none}.step.on{display:block;animation:pop .5s both}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--gray);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px}
+textarea{min-height:130px;resize:vertical;font-size:14px}
+input[type=file],input[type=range]{width:100%;margin:4px 0 8px;color:var(--ink)}
+label{font-size:13px;color:var(--mute);display:block}
+button{font:inherit;font-weight:600;background:var(--or);color:#fff;border:0;border-radius:10px;padding:11px 16px;cursor:pointer}
+.nav{position:sticky;bottom:0;margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;align-items:center;gap:10px}
+.nav button{flex:1}
+.dots{display:flex;gap:4px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .4s}.dots i.on{background:var(--or)}
+.pop{animation:pop .45s both;animation-delay:calc(var(--i,0)*70ms)}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(5px)}}
+.arrow{text-align:center;color:var(--or);font-weight:700;margin:6px 0;animation:bob 1.2s infinite}
+.chunk{border-left:6px solid var(--c);background:var(--gray);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:14px;cursor:pointer}
+.chunk.sel{outline:2px solid var(--or)}.chunk small{display:block;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{background:var(--gray);border-radius:7px;padding:2px 7px;font-size:13px;text-align:center;transition:background .8s}
+.chip small{display:block;font-size:10px;color:var(--mute)}
+mark{background:var(--orbg);color:var(--ink);border-bottom:2px solid var(--or);border-radius:3px;padding:0 2px}
+.bar{display:flex;align-items:center;gap:8px;font-size:13px;margin:4px 0}
+.bar span:first-child{width:62px;color:var(--mute)}.bar span:last-child{width:34px;text-align:right}
+.track{flex:1;height:14px;background:var(--gray);border-radius:7px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--or);transition:width .9s ease}
+code{display:block;background:var(--gray);padding:8px;border-radius:8px;overflow-x:auto;white-space:nowrap;margin-top:8px;font-size:12.5px}
+.row{display:flex;align-items:center;gap:8px;padding:6px 4px;border-bottom:1px solid var(--line);font-size:14px}
+.row .t{flex:1;min-width:0}.row .sub{font-size:12.5px;color:var(--mute);padding:0 4px 6px}
+.mini{display:flex;align-items:flex-end;gap:1px;height:26px}
+.mini i{display:block;width:3px;background:var(--or);border-radius:1px}.mini i.z{background:var(--line);height:2px!important}
+.top{background:var(--orbg);border-radius:8px}
+.score{width:130px;display:flex;align-items:center;gap:6px}
+pre{background:var(--gray);padding:12px;border-radius:10px;white-space:pre-wrap;margin:0;font:13px ui-monospace,Menlo,monospace;color:var(--ink)}
+pre .cx{background:var(--orbg);border-radius:4px}
+svg{width:100%;height:auto;display:block;margin-top:8px}
+svg text{fill:var(--ink);font-size:12px}
+.mv{transition:transform 1s ease}.mv circle{fill:var(--mute)}.mv.t circle{fill:var(--or)}.mv.q circle{fill:var(--ink)}
+.ln{stroke:var(--or);stroke-width:2;stroke-dasharray:400;animation:dr 1s 1s both}
+@keyframes dr{from{stroke-dashoffset:400;opacity:0}to{stroke-dashoffset:0;opacity:1}}
+.note{font-size:13px;color:var(--mute);margin-top:8px;border-left:3px solid var(--or);padding-left:10px}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.pill{border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:13px;color:var(--mute);transition:all .5s}
+.pill.lit{background:var(--or);color:#fff;border-color:var(--or)}
+.ans{min-height:56px;background:var(--orbg);border-radius:10px;padding:10px;font-size:15px;margin-bottom:8px}
+.cur{display:inline-block;width:8px;height:16px;background:var(--or);vertical-align:middle;animation:bob .8s infinite}
+.heat{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}.heat i{height:16px;background:var(--mute);border-radius:3px}
+.alt{background:var(--gray);color:var(--ink);border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div class="wrap">
+<h1>From document to answer</h1>
+<p>Pick a sample document, then press the button at the bottom to move one step at a time, or run all steps automatically. Each step is animated and runs in your browser.</p>
+<div class="step on">
+<h2>Your document and question</h2>
+<label>Pick a sample document. You can also edit the text.</label>
+<div style="display:flex;gap:8px;margin:4px 0 8px"><button id="s1b" type="button" class="alt" style="flex:1">Sample 1: Pets and life</button><button id="s2b" type="button" class="alt" style="flex:1">Sample 2: Travel help</button></div>
+<div class="note" id="pst" style="margin:0 0 10px">Sample 1 is loaded. Press Run all steps, or step through with the bottom button.</div>
+<button id="ex" type="button" style="width:100%;margin-bottom:10px">Run all steps automatically</button>
+<textarea id="docs">Dogs and puppies need protein rich food and plenty of exercise. Puppies should eat small meals three times a day. Never feed a dog chocolate or onions. A vet can recommend the right diet for your pet. Pasta is easy to cook with cheese and bread for dinner. Laptops run AI models and code faster with more memory. Football teams train daily and the coach plans every match. Save money each month by setting a budget for your salary. Doctors say sleep and water keep you healthy. Book a cheap flight and hotel for a beach holiday. Heavy rain and storms are expected this weekend.</textarea>
+<label>Chunk size: <b id="sv">14</b> words</label><input type="range" id="size" min="6" max="40" value="14">
+<label>Your question</label><input type="text" id="q" value="What should I feed my puppy?">
+<div class="note"><b>Embedding model used:</b> QT-mini-32, a tiny model that runs in this page. It makes 32 numbers per chunk: 8 labeled topics (Animals, Food, Tech and more) plus 24 hashed word slots, so any text works. It is a teaching model. Real models like all-MiniLM-L6-v2 (384 numbers) learn meaning from billions of sentences, but their files are too big to load on this page.</div>
+</div>
+<noscript><div class="step on"><b>JavaScript is turned off here.</b> Open the page link in Chrome or another full browser so the demo can run.</div></noscript><div id="steps"></div>
+<div class="nav"><div class="dots" id="dots"></div><button id="next">Start: split into chunks</button></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const D=["Animals","Food","Tech","Sports","Money","Health","Travel","Weather"];
+const L=["dog cat puppy puppie kitten bird fish horse pet animal lion tiger cow wild fur vet bark","pizza pasta cook recipe eat food dinner lunch bake fruit apple meal hungry restaurant cheese bread soup coffee feed protein","code software computer ai model laptop program app data server internet phone api algorithm bug cloud memory","football soccer cricket match game player team goal win running tennis gym score coach league train","money refund cancel insurance bank price cost loan invest stock pay cash budget tax salary save market rupee dollar","doctor health healthy sick medicine hospital fever sleep diet exercise pain heal vitamin disease yoga water","travel flight hotel trip beach train tour visa city airport hike journey holiday ticket book","rain sun storm snow weather cold hot wind cloudy forecast temperature humid weekend"].map(s=>s.split(" "));
+const SAMPLE=$("docs").value="Dogs and puppies need protein rich food and plenty of exercise. Puppies should eat small meals three times a day. Never feed a dog chocolate or onions. A vet can recommend the right diet for your pet. Pasta is easy to cook with cheese and bread for dinner. Laptops run AI models and code faster with more memory. Football teams train daily and the coach plans every match. Save money each month by setting a budget for your salary. Doctors say sleep and water keep you healthy. Book a cheap flight and hotel for a beach holiday. Heavy rain and storms are expected this weekend.";
+const T=[["Split into chunks","A model cannot search a whole book at once, so we cut the text into small pieces at sentence boundaries. Tap a chunk to inspect it in the next step."],["Embed a chunk: text becomes a vector","The embedding model reads the chunk and outputs a list of numbers. Each slot in that list is one dimension, one axis of meaning."],["Store the vectors","Every chunk is saved next to its vector. Here the vector store is a simple list in this page's memory: id, text, vector. Production tools: Chroma, Pinecone, pgvector."],["Ask a question and retrieve by meaning","Your question goes through the same model. We then find the vectors pointing in the most similar direction."],["Build the prompt","The best chunks are pasted above your question. This is RAG: retrieval augmented generation."],["LLM step 1: read the prompt","The LLM cannot read letters. It converts text into numbers and decides which words matter."],["LLM step 2: write the answer","The LLM predicts one word at a time, each time picking the most likely next word."]];
+$("steps").innerHTML=T.map((t,i)=>`<div class="step h" id="s${i+1}"><h2>${i+1}. ${t[0]}</h2><p>${t[1]}</p><div id="c${i+1}"></div></div>`).join("");
+const labels=["Start: split into chunks","Next: embed a chunk","Next: store the vectors","Next: ask and retrieve","Next: build the prompt","Next: LLM reads it","Next: LLM writes the answer","Restart"];
+$("dots").innerHTML="<i></i>".repeat(7);
+let step=0,sel=0,chunks=[],vecs=[],qv,best=[],prompt="",tm=[],timer;
+const later=(f,ms)=>tm.push(setTimeout(f,ms));
+const tok=t=>t.toLowerCase().match(/[a-z]+/g)||[];
+const stem=w=>w.replace(/s$/,"");
+const dimOf=w=>{w=stem(w);return L.findIndex(a=>a.some(k=>w===k||(k.length>=4&&w.startsWith(k))))};
+const NH=24,SW=new Set("the and for with that this are was were you your from have has had not but can will its into than then them they their there what when which who how why all any one our out use used using may per via also been being more most such only over some other".split(" "));
+const hash=w=>{let h=5381;for(const c of w)h=(h*33+c.charCodeAt(0))>>>0;return h};
+const embed=t=>{const v=Array(8+NH).fill(0);tok(t).forEach(w=>{const i=dimOf(w);if(i>=0)v[i]+=2;w=stem(w);if(w.length>2&&!SW.has(w))v[8+hash(w)%NH]++});const n=Math.hypot(...v);return n?v.map(x=>x/n):v};
+const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const mini=v=>'<div class="mini">'+v.map((x,i)=>x?`<i style="height:${4+Math.min(1,x*1.6)*22}px;${i>=8?"background:var(--mute)":""}"></i>`:'<i class="z"></i>').join("")+"</div>";
+const pop=el=>[...el.children].forEach((c,i)=>{c.style.setProperty("--i",Math.min(i,18));c.classList.add("pop")});
+const grow=el=>later(()=>el.querySelectorAll("[data-w]").forEach(e=>e.style.width=e.dataset.w),80);
+const bars=v=>v.slice(0,8).map((x,i)=>`<div class="bar"><span>${D[i]}</span><div class="track"><div class="fill" data-w="${x*100}%"></div></div><span>${x.toFixed(2)}</span></div>`).join("")+`<p style="margin:10px 0 4px">Dimensions 9 to ${v.length}: hashed word slots. Each word lands in one slot, so any document gets a fingerprint. Darker means a stronger value.</p><div class="heat">${v.slice(8).map(x=>`<i style="opacity:${.12+Math.min(1,x*1.6)*.88}"></i>`).join("")}</div>`;
+const dnames=(a,b)=>D.filter((_,i)=>a[i]>0&&(!b||b[i]>0));
+function chunk(text,n){const s=text.replace(/\s+/g," ").match(/[^.!?]+[.!?]*/g)||[];const out=[];let cur="";s.forEach(x=>{x=x.trim();if(!x)return;if(cur&&(cur+" "+x).split(" ").length>n){out.push(cur);cur=x}else cur=cur?cur+" "+x:x});if(cur)out.push(cur);return out.slice(0,40)}
+function pca(P){const n=P.length,m=P[0].length,mu=P[0].map((_,j)=>P.reduce((s,p)=>s+p[j],0)/n),X=P.map(p=>p.map((x,j)=>x-mu[j]));const C=Array.from({length:m},(_,a)=>Array.from({length:m},(_,b)=>X.reduce((s,r)=>s+r[a]*r[b],0)));const cs=[];for(let c=0;c<2;c++){let v=Array.from({length:m},(_,i)=>1+i*.37+c);for(let k=0;k<60;k++){const w=C.map(r=>dot(r,v)),nn=Math.hypot(...w)||1;v=w.map(x=>x/nn)}cs.push(v);const lam=dot(C.map(r=>dot(r,v)),v);for(let a=0;a<m;a++)for(let b=0;b<m;b++)C[a][b]-=lam*v[a]*v[b]}return X.map(r=>cs.map(c=>dot(r,c)))}
+const R=[null,
+()=>{const c=$("c1");c.innerHTML=`<div class="note" style="margin:0 0 6px">${chunks.length} chunks created from ${$("docs").value.length} characters.</div>`+chunks.map((t,i)=>`<div class="chunk ${i==sel?"sel":""}" data-i="${i}" style="--c:hsl(${i*47%360},70%,55%)">${esc(t)}<small>Chunk ${i+1}, ${t.split(" ").length} words</small></div>`).join("");pop(c)},
+()=>{const t=chunks[sel],v=vecs[sel],c=$("c2");c.innerHTML=`<div class="chunk" style="--c:hsl(${sel*47%360},70%,55%)">${tok(t).map(w=>dimOf(w)>=0?`<mark>${w}</mark>`:w).join(" ")}</div><div class="arrow">embedding model</div><div id="b2">${bars(v)}</div><code>[${v.map(x=>x.toFixed(2)).join(", ")}]</code><div class="note">Highlighted words switched on a topic dimension. This vector has <b>${v.length} dimensions</b>, meaning ${v.length} numbers: 8 labeled topics plus ${v.length-8} hashed word slots. Real models (all-MiniLM-L6-v2 has 384, OpenAI text-embedding-3-small has 1536) learn every dimension themselves, with no labels.</div>`;pop(c);grow(c)},
+()=>{const c=$("c3");c.innerHTML=chunks.map((t,i)=>`<div class="row"><b>${i+1}</b><span class="t">${esc(t.slice(0,48))}${t.length>48?"...":""}</span>${mini(vecs[i])}</div>`).join("")+`<div class="note">${chunks.length} records stored. Each record is an id, the original text and a ${vecs[0].length}-number vector. Searching means comparing the question vector with every stored vector.</div>`;pop(c)},
+()=>{const sc=vecs.map((v,i)=>({i,s:dot(qv,v)})).sort((a,b)=>b.s-a.s);best=sc.filter((r,k)=>k<2&&r.s>0).map(r=>r.i);const qw=tok($("q").value).map(stem),c=$("c4");
+let h=`<div class="row"><span class="t"><b>Question:</b> ${esc($("q").value)}<br><small>Meaning found: ${dnames(qv).join(", ")||"none"}</small></span>${mini(qv)}</div>`;
+h+=sc.map((r,k)=>{const sh=[...new Set(tok(chunks[r.i]).map(stem).filter(w=>qw.includes(w)))],on=best.includes(r.i);return `<div class="row ${on?"top":""}"><b>${r.i+1}</b><span class="t">${esc(chunks[r.i].slice(0,44))}...</span><span class="score"><div class="track"><div class="fill" data-w="${r.s*100}%"></div></div>${Math.round(r.s*100)}%</span></div>`+(on?`<div class="sub">Shared words: ${sh.join(", ")||"none"}<br>Shared meaning: ${dnames(qv,vecs[r.i]).join(", ")||"none"}</div>`:"")}).join("");
+const P=pca([...vecs,qv]),f=(a,lo,hi)=>{const mn=Math.min(...a),sp=(Math.max(...a)-mn)||1;return a.map(x=>lo+(x-mn)/sp*(hi-lo))},X=f(P.map(p=>p[0]),25,285),Y=f(P.map(p=>p[1]),25,195),qi=vecs.length;
+h+=`<svg viewBox="0 0 320 220"><title>Map of chunks and question</title>${best.map(i=>`<line class="ln" x1="${X[qi]}" y1="${Y[qi]}" x2="${X[i]}" y2="${Y[i]}"/>`).join("")}${P.map((_,i)=>`<g class="mv ${i==qi?"q":best.includes(i)?"t":""}" style="transform:translate(160px,110px)" data-x="${X[i]}" data-y="${Y[i]}"><circle r="${i==qi?9:7}"/><text x="10" y="4">${i==qi?"question":i+1}</text></g>`).join("")}</svg><div class="note">Search by meaning: the question shares no exact words with the best chunk, yet they land close together because both switch on the same dimensions. The map squashes 8 dimensions into 2 so you can see them.</div>`;
+c.innerHTML=h;pop(c);grow(c);later(()=>c.querySelectorAll(".mv").forEach(g=>g.style.transform=`translate(${g.dataset.x}px,${g.dataset.y}px)`),150)},
+()=>{prompt="Answer using only this context:\n";const ctx=best.map((i,n)=>`[${n+1}] ${chunks[i]}`).join("\n")||"(nothing relevant found)";$("c5").innerHTML=`<pre class="pop">${esc(prompt)}<span class="cx">${esc(ctx)}</span>\n\nQuestion: <b>${esc($("q").value)}</b></pre><div class="note">Gray text is the instruction, orange is the retrieved context, bold is your question. This whole block is what the LLM receives.</div>`;prompt+=ctx+"\n\nQuestion: "+$("q").value},
+()=>{const w=tok(prompt).slice(0,60),qs=tok($("q").value).map(stem),qd=qv,c=$("c6"),id=x=>{let h=7;for(const ch of x)h=(h*31+ch.charCodeAt(0))%50000;return h};
+c.innerHTML=`<div class="pills">${["Words to tokens","Tokens to IDs","IDs to vectors","Attention"].map(x=>`<span class="pill">${x}</span>`).join("")}</div><div class="chips">${w.map(x=>`<span class="chip">${x}<small>${id(x)}</small></span>`).join("")}</div><div class="note">Small numbers are token IDs. The model turns each ID into an embedding vector, like the ones you just saw. Then attention weighs every word against every other. Brighter means more influence on the answer (illustrative).</div>`;
+const pl=c.querySelectorAll(".pill");pl.forEach((p,i)=>later(()=>p.classList.add("lit"),500+i*900));
+later(()=>c.querySelectorAll(".chip").forEach((el,i)=>{const x=w[i],a=qs.includes(stem(x))?1:(dimOf(x)>=0&&qd[dimOf(x)]>0)?.65:.06;el.style.background=`rgba(236,58,7,${a})`;if(a>.5)el.style.color="#fff"}),3000)},
+()=>{const base=("Based on your documents: "+(chunks[best[0]]||"I could not find anything relevant.")).split(/\s+/).slice(0,24),pool=[...new Set(tok(prompt))],c=$("c7");let k=0;
+c.innerHTML=`<div class="ans" id="ans"><span class="cur"></span></div><div id="cand"></div>`;
+timer=setInterval(()=>{if(k>=base.length){clearInterval(timer);$("cand").innerHTML='<div class="note">Done. The model emits a special end token when the answer is complete. In a real LLM the probabilities come from billions of learned weights, and these bars are illustrative.</div>';$("ans").querySelector(".cur").remove();return}
+const w=base[k],p=.55+((k*37)%35)/100,a1=pool[(k*7+3)%pool.length],a2=pool[(k*11+5)%pool.length],pr=[[w,p],[a1,(1-p)*.65],[a2,(1-p)*.35]];
+$("cand").innerHTML=`<p>Predicting word ${k+1}. Candidates and their probability:</p>`+pr.map(([x,v],j)=>`<div class="bar"><span style="width:90px;${j?"":"color:var(--or);font-weight:700"}">${esc(x)}</span><div class="track"><div class="fill" data-w="${v*100}%"></div></div><span>${Math.round(v*100)}%</span></div>`).join("");grow($("cand"));
+$("ans").querySelector(".cur").insertAdjacentText("beforebegin",w+" ");k++},750)}];
+function reset(){clearInterval(timer);tm.forEach(clearTimeout);tm=[];step=0;sel=0;document.querySelectorAll("#steps .step").forEach(s=>s.classList.replace("on","h"));upd()}
+function upd(){$("next").textContent=labels[step];document.querySelectorAll(".dots i").forEach((d,i)=>d.classList.toggle("on",i<step))}
+$("next").onclick=()=>{if(step==7)return reset();if(step==0){chunks=chunk($("docs").value,+$("size").value);if(!chunks.length)return;vecs=chunks.map(embed);qv=embed($("q").value)}
+step++;const s=$("s"+step);s.classList.replace("h","on");R[step]();upd();s.scrollIntoView({behavior:"smooth",block:"start"})};
+$("c1").onclick=e=>{const el=e.target.closest(".chunk");if(!el)return;sel=+el.dataset.i;$("c1").querySelectorAll(".chunk").forEach(x=>x.classList.toggle("sel",x==el));if(step>=2){R[2]()}};
+["docs","size","q"].forEach(id=>$(id).addEventListener("input",()=>{$("sv").textContent=$("size").value;reset()}));
+const st=m=>$("pst").textContent=m;
+const auto=(n=3)=>{let t=400;for(let i=0;i<n;i++){later(()=>{if(step<7)$("next").click()},t);t+=[2400,2400,2400,2800,2800,4200,0][i]}};
+const SAMPLES=[{t:SAMPLE,q:"What should I feed my puppy?"},{t:"You can cancel a flight booking within 24 hours for a full refund. Hotel check in time is 2 pm and check out is 11 am. A tourist visa is needed for most international trips. Airport check in closes 60 minutes before the flight. Train tickets can be booked 60 days before the journey. Travel insurance covers lost bags and medical costs. Beach resorts are busiest during the summer holiday. Heavy rain can delay flights and train services.",q:"Can I get my money back if I cancel my flight?"}];
+function load(n){const x=SAMPLES[n];$("docs").value=x.t;$("q").value=x.q;$("size").value=14;$("sv").textContent=14;reset();st("Sample "+(n+1)+" loaded. Press Run all steps, or step through with the bottom button.")}
+$("s1b").onclick=()=>load(0);$("s2b").onclick=()=>load(1);
+$("ex").onclick=()=>{reset();st("Running every step automatically. Watch them appear below.");auto(7)};
+upd();
+</script></body></html>

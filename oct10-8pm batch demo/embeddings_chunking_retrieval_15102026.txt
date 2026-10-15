@@ -1,0 +1,53 @@
+Good Evening !!!!!
+==================
+
+We are trying to understand different imp keywords 
+
+a. LLM [ Large Language Model ] AI brain 
+b. tokens => converting the word into LLM understandable number => 1 token=3/4 word
+c. tokenization => converting natural language into LLM understandable language 
+d. tokenizer to convert NL to tokens 
+e. temperature: 0 to 2 
+0 => more deterministic   2 => more creativity or less deterministic 
+0.7 => 
+
+f. embeddings : 
+
+convert  data chunks [ a small paragraph] into a mathematical vector 
+
+here we can use a specific embedding model to convert the data chunks into vectors 
+
+as a customer I do have a document where it contains 7/8 small paragraphs , i feed this document to LLM to process my questions with in it. => RAG 
+
+step#1: chunking  => splitting the document into small pieces of chunk => 8
+step#2: embedding => chunk splits into vector  => 
+chunk is converting the  chunk into numbers => and these numbers are dimensions => Vector 
+step#3 : numeric representation of the chunk . similar meaning vectors sit in a similar place 
+step#4 : vector store  => chroma , 
+all 8 chunks store under vector DB with ID , vector dimensions, actual sentence 
+
+if you search => a question => question vector should compare all existing vectors . to do so we are depending similarity score 
+
+step#5 : search 
+step#6 : retrieve the right chunk to generate right answer 
+stpe#7 : submit all matching chunks 
+step#8 : process the respone 
+
+
+
+
+
+
+
+
+step#5 : we can retrieve based on search criteria  
+
+
+
+
+
+
+ 
+
+
+
