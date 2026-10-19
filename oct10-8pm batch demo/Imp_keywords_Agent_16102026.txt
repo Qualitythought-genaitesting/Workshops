@@ -106,6 +106,8 @@ we are try to break the AI brain or LLM based application. make it fail to do it
 
 20. purple team = Blue + Red  => combination is known as purple team => we are suppose to purple teaming  
 
+please write your own 2 lines summary about all these 20 keywords. 
+
 
 
 
