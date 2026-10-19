@@ -1,0 +1,182 @@
+Good Evening !!!!!
+===================
+1. We are done with LLM basics . 
+
+we need to use a real agent to perform a task. => 
+
+how a tester can use AI into their STLC .  
+
+STLC : 
+1. Requirement analysis 
+2. Test planning 
+3. Test design 
+4. Test execution 
+   a. environmental setup
+   b. smoke test 
+   c. sanity 
+   d. regression 
+   e. Retesting 
+   f. end to end testing 
+   g. Bug identification and Bug life cycle 
+5. Test closure 
+
+AI we can use two possible ways as a tester .
+
+1. AI testing : implement AI in your STLC => AI is helping to fasten your work
+
+ use AI for your current testing activities - STLC 
+   a. for manual testing 
+   b. automation testing 
+
+example : develop an agent or use an agent to automate couple of work flows
+
+tester is a customer for the agents which are developer testing: 
+
+Generate an agent to design the test plan 
+Generate an agent to write automation tests 
+Generate an agent to debug and fix the failed tests 
+
+
+2. Gen AI applications testing/ Gen AI testing : Agent testing or RAG testing :
+
+we are trying to test the applications which are developed with LLM or AI brain. 
+
+you are suppose to test the generated agent : generated RAG application 
+
+My developer build an agent to automate manual test cases automatically . now I am a tester for this project. 
+am not a simple end user, I am super user to test all possible scenarios before we publish into the live. 
+
+you are a MakeMyTrip user : MakeMyTrip provided you an agent for your assistance . 
+
+1. MakemyTrip: AI into customer workflow : this agent will book the tickets for your with a simple question 
+
+Myra is an agent to assist the customer. 
+
+you ca write a question => book a flight from hyd to goa on 20th oct 2026, preferably morning flight - book the ticket only when the price is below 6000. 
+
+
+2. As a tester how to test this agent end to end with all possible scenarios. 
+
+we can test all bits and pieces included in the entire work 
+
+from starting of writing a question to generate the customer outcome 
+behind the seen what you can observe that is what you can call it as testing the aI applications 
+
+through human evaluation 
+LLM as a judge 
+
+
+simple example for your understanding : 
+
+playwright : is a automation tool like selenium 
+
+a. AI in your testing : Agents in your testing 
+
+if you are a automation tester you can use playwright - playwright agents also to do your automation. 
+Playwright Test Agents
+
+as a tester you are utilizing the facilities provided by playwright . 
+
+
+Gen AI testing : 
+
+b. you are working as a tester at playwright or Microsoft . your project is playwright with agents . 
+
+that difference we need to learn from today. 
+
+todo so we will build playwright agents into your local computer to start working as a customer and then upskill your self as agent tester. 
+==============================================================================
+we will try to use AI into your daily tasks and then start testing AI based application. 
+a. playwright agents 
+b. chatgpt to write test plans and test cases with simple prompt 
+==============================================================================
+step#1 :  Download and install nodejs
+
+https://nodejs.org/en/download
+double click on the installer  and next => next until you finish the installation 
+
+step# 2: Download and install VSCODE  => IDE => where we can setup playwright in future 
+promptfoo /deepeval/RAGAS => 
+
+step#3 : Create a Folder for playwright agents 
+
+step#4 : open a terminal in the VSCODE 
+
+step#5 : install the playwright 
+we need to check nodejs is installed in your computer. 
+
+a. node -v 
+b. npm init playwright@latest
+c. select either javascript /type script 
+d. placeholder for end to end test  => tests 
+e. GitHub action => CI/CD pipeline for your automation => parallel testing 
+f. browser installation => yes 
+
+you click on enter to go for defaults => this is how you can setup playwright in your local computer. 
+
+outcome: 
+we installed node js , vscode 
+with in your folder / setup the playwright 
+
+npm  => node package manager => this playwright tool is available nodejs server 
+
+https://www.npmjs.com/
+
+if you application is uploaded to npm server then we can download that uploaded application by using npm 
+
+
+your system is ready with playwright but it is difficult learn as a manual testing. 
+so i am helping you to setup playwright with agents . 
+
+a. we need to have a GitHub account => select gmail to create an account 
+b. we need to setup GitHub copilot => supply that GitHub account to the VSCODE
+
+https://code.visualstudio.com/docs/setup/copilot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
