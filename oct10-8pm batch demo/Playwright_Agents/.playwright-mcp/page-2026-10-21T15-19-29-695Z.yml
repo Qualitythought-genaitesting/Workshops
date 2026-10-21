@@ -1,0 +1,69 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: A little more joy. A lot more savings.
+      - generic [ref=e5]: Discover your next favourite
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link "Cartly home" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - text: cartly.
+          - generic [ref=e11]: little things. big happiness.
+        - textbox "Search products" [ref=e16]:
+          - /placeholder: Search for products, brands and more
+        - generic [ref=e17]:
+          - button "Wishlist 1" [active] [pressed] [ref=e266] [cursor=pointer]:
+            - generic [ref=e19]: Wishlist
+            - generic [ref=e267]: "1"
+          - generic [ref=e25]:
+            - text: Shop with
+            - strong [ref=e26]: confidence
+    - main [ref=e27]:
+      - navigation "Product categories" [ref=e28]:
+        - button "All categories" [ref=e29] [cursor=pointer]
+        - button "Electronics" [ref=e32] [cursor=pointer]
+        - button "Mobiles" [ref=e35] [cursor=pointer]
+        - button "Fashion" [ref=e38] [cursor=pointer]
+        - button "Home & Living" [ref=e41] [cursor=pointer]
+        - button "Appliances" [ref=e44] [cursor=pointer]
+        - button "Beauty & More" [ref=e47] [cursor=pointer]
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: YOUR FAVOURITES
+            - heading "Your wishlist1 products" [level=2] [ref=e270]:
+              - text: Your wishlist
+              - generic [ref=e92]: 1 products
+          - generic [ref=e93]:
+            - generic [ref=e94]: "Sort by:"
+            - combobox "Sort products" [ref=e95] [cursor=pointer]:
+              - option "Featured" [selected]
+              - 'option "Price: low to high"'
+              - 'option "Price: high to low"'
+              - option "Top rated"
+        - article [ref=e99]:
+          - generic [ref=e100]:
+            - generic [ref=e101]: Bestseller
+            - button "Unsave SoundWave Pro Wireless Headphones" [pressed] [ref=e268] [cursor=pointer]
+            - button "View SoundWave Pro Wireless Headphones" [ref=e103] [cursor=pointer]:
+              - img "SoundWave Pro Wireless Headphones" [ref=e104]
+          - generic [ref=e105]:
+            - text: SOUNDWAVE
+            - button "SoundWave Pro Wireless Headphones" [ref=e106] [cursor=pointer]
+            - generic [ref=e107]:
+              - generic [ref=e108]: "4.5"
+              - generic [ref=e111]: (2,184)
+            - generic [ref=e115]:
+              - strong [ref=e116]: ₹2,499
+              - deletion [ref=e117]: ₹5,999
+            - generic [ref=e118]: 58% off
+      - generic [ref=e232]:
+        - link "cartly." [ref=e233] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e234]: A little something for everyone.
+        - generic [ref=e235]: Sample collection · Shopping preview
+  - complementary "Edit with Lovable" [ref=e236]:
+    - link "Edit with Lovable" [ref=e237] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_4p4y7e5e7895qrjzymykv82g0g?utm_source=lovable-badge
+      - generic [ref=e238]: Edit with
+    - button "Dismiss" [ref=e245] [cursor=pointer]

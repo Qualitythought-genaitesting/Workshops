@@ -1,0 +1,82 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: A little more joy. A lot more savings.
+      - generic [ref=e5]: Discover your next favourite
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link "Cartly home" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - text: cartly.
+          - generic [ref=e11]: little things. big happiness.
+        - textbox "Search products" [ref=e16]:
+          - /placeholder: Search for products, brands and more
+        - generic [ref=e17]:
+          - button "Wishlist" [ref=e18] [cursor=pointer]
+          - generic [ref=e25]:
+            - text: Shop with
+            - strong [ref=e26]: confidence
+    - main [ref=e27]:
+      - navigation "Product categories" [ref=e28]:
+        - button "All categories" [ref=e29] [cursor=pointer]
+        - button "Electronics" [ref=e32] [cursor=pointer]
+        - button "Mobiles" [ref=e35] [cursor=pointer]
+        - button "Fashion" [active] [pressed] [ref=e38] [cursor=pointer]
+        - button "Home & Living" [ref=e41] [cursor=pointer]
+        - button "Appliances" [ref=e44] [cursor=pointer]
+        - button "Beauty & More" [ref=e47] [cursor=pointer]
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: HANDPICKED FOR YOU
+            - heading "Fashion2 products" [level=2] [ref=e248]:
+              - text: Fashion
+              - generic [ref=e92]: 2 products
+          - generic [ref=e93]:
+            - generic [ref=e94]: "Sort by:"
+            - combobox "Sort products" [ref=e95] [cursor=pointer]:
+              - option "Featured" [selected]
+              - 'option "Price: low to high"'
+              - 'option "Price: high to low"'
+              - option "Top rated"
+        - generic [ref=e98]:
+          - article [ref=e139]:
+            - generic [ref=e140]:
+              - button "Save Everyday Comfort Running Shoes" [ref=e141] [cursor=pointer]
+              - button "View Everyday Comfort Running Shoes" [ref=e142] [cursor=pointer]:
+                - img "Everyday Comfort Running Shoes" [ref=e143]
+            - generic [ref=e144]:
+              - text: STRIDE
+              - button "Everyday Comfort Running Shoes" [ref=e145] [cursor=pointer]
+              - generic [ref=e146]:
+                - generic [ref=e147]: "4.4"
+                - generic [ref=e150]: (864)
+              - generic [ref=e154]:
+                - strong [ref=e155]: ₹1,299
+                - deletion [ref=e156]: ₹2,999
+              - generic [ref=e157]: 57% off
+          - article [ref=e158]:
+            - generic [ref=e159]:
+              - button "Save Urban Everyday Backpack · 25L" [ref=e160] [cursor=pointer]
+              - button "View Urban Everyday Backpack · 25L" [ref=e161] [cursor=pointer]:
+                - img "Urban Everyday Backpack · 25L" [ref=e162]
+            - generic [ref=e163]:
+              - text: URBAN TRAIL
+              - button "Urban Everyday Backpack · 25L" [ref=e164] [cursor=pointer]
+              - generic [ref=e165]:
+                - generic [ref=e166]: "4.6"
+                - generic [ref=e169]: (1,328)
+              - generic [ref=e173]:
+                - strong [ref=e174]: ₹899
+                - deletion [ref=e175]: ₹1,999
+              - generic [ref=e176]: 55% off
+      - generic [ref=e232]:
+        - link "cartly." [ref=e233] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e234]: A little something for everyone.
+        - generic [ref=e235]: Sample collection · Shopping preview
+  - complementary "Edit with Lovable" [ref=e236]:
+    - link "Edit with Lovable" [ref=e237] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_4p4y7e5e7895qrjzymykv82g0g?utm_source=lovable-badge
+      - generic [ref=e238]: Edit with
+    - button "Dismiss" [ref=e245] [cursor=pointer]

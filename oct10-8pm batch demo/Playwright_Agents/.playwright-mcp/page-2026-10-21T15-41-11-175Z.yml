@@ -1,0 +1,66 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: A little more joy. A lot more savings.
+      - generic [ref=e5]: Discover your next favourite
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link "Cartly home" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - text: cartly.
+          - generic [ref=e11]: little things. big happiness.
+        - textbox "Search products" [ref=e16]:
+          - /placeholder: Search for products, brands and more
+        - generic [ref=e17]:
+          - button "Wishlist" [ref=e18] [cursor=pointer]
+          - generic [ref=e25]:
+            - text: Shop with
+            - strong [ref=e26]: confidence
+    - main [ref=e27]:
+      - navigation "Product categories" [ref=e28]:
+        - button "All categories" [ref=e29] [cursor=pointer]
+        - button "Electronics" [ref=e32] [cursor=pointer]
+        - button "Mobiles" [ref=e35] [cursor=pointer]
+        - button "Fashion" [ref=e38] [cursor=pointer]
+        - button "Home & Living" [ref=e41] [cursor=pointer]
+        - button "Appliances" [active] [pressed] [ref=e44] [cursor=pointer]
+        - button "Beauty & More" [ref=e47] [cursor=pointer]
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: HANDPICKED FOR YOU
+            - heading "Appliances1 products" [level=2] [ref=e257]:
+              - text: Appliances
+              - generic [ref=e92]: 1 products
+          - generic [ref=e93]:
+            - generic [ref=e94]: "Sort by:"
+            - combobox "Sort products" [ref=e95] [cursor=pointer]:
+              - option "Featured" [selected]
+              - 'option "Price: low to high"'
+              - 'option "Price: high to low"'
+              - option "Top rated"
+        - article [ref=e258]:
+          - generic [ref=e259]:
+            - button "Save Stainless Steel Electric Kettle · 1.7L" [ref=e260] [cursor=pointer]
+            - button "View Stainless Steel Electric Kettle · 1.7L" [ref=e261] [cursor=pointer]:
+              - img "Stainless Steel Electric Kettle · 1.7L" [ref=e262]
+          - generic [ref=e263]:
+            - text: HOMESTEAD
+            - button "Stainless Steel Electric Kettle · 1.7L" [ref=e264] [cursor=pointer]
+            - generic [ref=e265]:
+              - generic [ref=e266]: "4.2"
+              - generic [ref=e269]: (2,416)
+            - generic [ref=e273]:
+              - strong [ref=e274]: ₹699
+              - deletion [ref=e275]: ₹1,499
+            - generic [ref=e276]: 53% off
+      - generic [ref=e232]:
+        - link "cartly." [ref=e233] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e234]: A little something for everyone.
+        - generic [ref=e235]: Sample collection · Shopping preview
+  - complementary "Edit with Lovable" [ref=e236]:
+    - link "Edit with Lovable" [ref=e237] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_4p4y7e5e7895qrjzymykv82g0g?utm_source=lovable-badge
+      - generic [ref=e238]: Edit with
+    - button "Dismiss" [ref=e245] [cursor=pointer]

@@ -1,0 +1,184 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: A little more joy. A lot more savings.
+      - generic [ref=e5]: Discover your next favourite
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link "Cartly home" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - text: cartly.
+          - generic [ref=e11]: little things. big happiness.
+        - textbox "Search products" [ref=e16]:
+          - /placeholder: Search for products, brands and more
+        - generic [ref=e17]:
+          - button "Wishlist" [ref=e18] [cursor=pointer]
+          - generic [ref=e25]:
+            - text: Shop with
+            - strong [ref=e26]: confidence
+    - main [ref=e27]:
+      - navigation "Product categories" [ref=e28]:
+        - button "All categories" [active] [pressed] [ref=e29] [cursor=pointer]
+        - button "Electronics" [ref=e32] [cursor=pointer]
+        - button "Mobiles" [ref=e35] [cursor=pointer]
+        - button "Fashion" [ref=e38] [cursor=pointer]
+        - button "Home & Living" [ref=e41] [cursor=pointer]
+        - button "Appliances" [ref=e44] [cursor=pointer]
+        - button "Beauty & More" [ref=e47] [cursor=pointer]
+      - region "Featured offers" [ref=e249]:
+        - img "Blue wireless headphones, smartphone and earbuds" [ref=e250]
+        - generic [ref=e251]:
+          - generic [ref=e252]: THE BIG TECH UPGRADE
+          - heading "Good tech. Great prices." [level=1] [ref=e255]: Good tech.Great prices.
+          - paragraph [ref=e256]: Your everyday favourites, now within reach.
+          - generic [ref=e257]:
+            - text: Up to
+            - strong [ref=e258]: 70% off
+            - text: on electronics
+          - button "Explore deals" [ref=e259] [cursor=pointer]
+        - generic [ref=e260]:
+          - button "Previous offer" [ref=e261] [cursor=pointer]
+          - button "Next offer" [ref=e262] [cursor=pointer]
+        - generic [ref=e266]: More possibilities. Less spending.
+      - generic [ref=e267]:
+        - generic [ref=e268]: Something for every day
+        - generic [ref=e274]: Quality you'll love
+        - generic [ref=e278]: Discover trusted favourites
+        - generic [ref=e282]: Great finds, better prices
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: HANDPICKED FOR YOU
+            - heading "Deals worth a double take6 products" [level=2] [ref=e286]:
+              - text: Deals worth a double take
+              - generic [ref=e92]: 6 products
+          - generic [ref=e93]:
+            - generic [ref=e94]: "Sort by:"
+            - combobox "Sort products" [ref=e95] [cursor=pointer]:
+              - option "Featured" [selected]
+              - 'option "Price: low to high"'
+              - 'option "Price: high to low"'
+              - option "Top rated"
+        - generic [ref=e98]:
+          - article [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e101]: Bestseller
+              - button "Save SoundWave Pro Wireless Headphones" [ref=e102] [cursor=pointer]
+              - button "View SoundWave Pro Wireless Headphones" [ref=e103] [cursor=pointer]:
+                - img "SoundWave Pro Wireless Headphones" [ref=e104]
+            - generic [ref=e105]:
+              - text: SOUNDWAVE
+              - button "SoundWave Pro Wireless Headphones" [ref=e106] [cursor=pointer]
+              - generic [ref=e107]:
+                - generic [ref=e108]: "4.5"
+                - generic [ref=e111]: (2,184)
+              - generic [ref=e115]:
+                - strong [ref=e116]: ₹2,499
+                - deletion [ref=e117]: ₹5,999
+              - generic [ref=e118]: 58% off
+          - article [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Hot deal
+              - button "Save Pulse Smartwatch · AMOLED Display" [ref=e122] [cursor=pointer]
+              - button "View Pulse Smartwatch · AMOLED Display" [ref=e123] [cursor=pointer]:
+                - img "Pulse Smartwatch · AMOLED Display" [ref=e124]
+            - generic [ref=e125]:
+              - text: PULSE
+              - button "Pulse Smartwatch · AMOLED Display" [ref=e126] [cursor=pointer]
+              - generic [ref=e127]:
+                - generic [ref=e128]: "4.3"
+                - generic [ref=e131]: (1,052)
+              - generic [ref=e135]:
+                - strong [ref=e136]: ₹1,799
+                - deletion [ref=e137]: ₹4,999
+              - generic [ref=e138]: 64% off
+          - article [ref=e287]:
+            - generic [ref=e288]:
+              - button "Save Everyday Comfort Running Shoes" [ref=e289] [cursor=pointer]
+              - button "View Everyday Comfort Running Shoes" [ref=e290] [cursor=pointer]:
+                - img "Everyday Comfort Running Shoes" [ref=e291]
+            - generic [ref=e292]:
+              - text: STRIDE
+              - button "Everyday Comfort Running Shoes" [ref=e293] [cursor=pointer]
+              - generic [ref=e294]:
+                - generic [ref=e295]: "4.4"
+                - generic [ref=e298]: (864)
+              - generic [ref=e302]:
+                - strong [ref=e303]: ₹1,299
+                - deletion [ref=e304]: ₹2,999
+              - generic [ref=e305]: 57% off
+          - article [ref=e306]:
+            - generic [ref=e307]:
+              - button "Save Urban Everyday Backpack · 25L" [ref=e308] [cursor=pointer]
+              - button "View Urban Everyday Backpack · 25L" [ref=e309] [cursor=pointer]:
+                - img "Urban Everyday Backpack · 25L" [ref=e310]
+            - generic [ref=e311]:
+              - text: URBAN TRAIL
+              - button "Urban Everyday Backpack · 25L" [ref=e312] [cursor=pointer]
+              - generic [ref=e313]:
+                - generic [ref=e314]: "4.6"
+                - generic [ref=e317]: (1,328)
+              - generic [ref=e321]:
+                - strong [ref=e322]: ₹899
+                - deletion [ref=e323]: ₹1,999
+              - generic [ref=e324]: 55% off
+          - article [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e179]: Top rated
+              - button "Save Focus Mirrorless Camera with Lens" [ref=e180] [cursor=pointer]
+              - button "View Focus Mirrorless Camera with Lens" [ref=e181] [cursor=pointer]:
+                - img "Focus Mirrorless Camera with Lens" [ref=e182]
+            - generic [ref=e183]:
+              - text: FOCUS
+              - button "Focus Mirrorless Camera with Lens" [ref=e184] [cursor=pointer]
+              - generic [ref=e185]:
+                - generic [ref=e186]: "4.7"
+                - generic [ref=e189]: (326)
+              - generic [ref=e193]:
+                - strong [ref=e194]: ₹42,999
+                - deletion [ref=e195]: ₹54,999
+              - generic [ref=e196]: 22% off
+          - article [ref=e325]:
+            - generic [ref=e326]:
+              - button "Save Stainless Steel Electric Kettle · 1.7L" [ref=e327] [cursor=pointer]
+              - button "View Stainless Steel Electric Kettle · 1.7L" [ref=e328] [cursor=pointer]:
+                - img "Stainless Steel Electric Kettle · 1.7L" [ref=e329]
+            - generic [ref=e330]:
+              - text: HOMESTEAD
+              - button "Stainless Steel Electric Kettle · 1.7L" [ref=e331] [cursor=pointer]
+              - generic [ref=e332]:
+                - generic [ref=e333]: "4.2"
+                - generic [ref=e336]: (2,416)
+              - generic [ref=e340]:
+                - strong [ref=e341]: ₹699
+                - deletion [ref=e342]: ₹1,499
+              - generic [ref=e343]: 53% off
+      - region "Collections" [ref=e344]:
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - text: STEP INTO SOMETHING NEW
+            - heading "Fresh fits. Fresh starts." [level=3] [ref=e347]: Fresh fits.Fresh starts.
+            - button "Shop fashion" [ref=e348] [cursor=pointer]
+          - img "White and green running sneakers" [ref=e349]
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - text: SMALL UPGRADES, BIG JOY
+            - heading "A happier everyday home." [level=3] [ref=e352]: A happiereveryday home.
+            - button "Explore appliances" [ref=e353] [cursor=pointer]
+          - img "Stainless steel kettle" [ref=e354]
+        - generic [ref=e355]:
+          - generic [ref=e356]:
+            - text: MAKE EVERY MOMENT COUNT
+            - heading "Your next great adventure." [level=3] [ref=e357]: Your nextgreat adventure.
+            - button "Discover electronics" [ref=e358] [cursor=pointer]
+          - img "Mirrorless camera" [ref=e359]
+      - generic [ref=e232]:
+        - link "cartly." [ref=e233] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e234]: A little something for everyone.
+        - generic [ref=e235]: Sample collection · Shopping preview
+  - complementary "Edit with Lovable" [ref=e236]:
+    - link "Edit with Lovable" [ref=e237] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_4p4y7e5e7895qrjzymykv82g0g?utm_source=lovable-badge
+      - generic [ref=e238]: Edit with
+    - button "Dismiss" [ref=e245] [cursor=pointer]

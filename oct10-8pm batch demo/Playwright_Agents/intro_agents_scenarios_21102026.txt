@@ -1,0 +1,50 @@
+Good evening !!!!!
+=====================
+We are trying to play with playwright agents as part of learning with AI. 
+
+a. we understand how easily we can work with playwright with agents 
+b. how agents work in real time 
+
+=> based on above 2 points we will plan our ai testing .
+
+We need to be a user and understand user requirements or needs to perform better testing . 
+
+a. We installed all pre requisites 
+b. ran a test and observe the results in UI or without UI 
+for more information  about playwright lets follow the below page 
+https://playwright.dev
+c. create GitHub accounts => [yes]
+d. GitHub copilot need to registered in theVSCODE 
+open the settings icon in the vscode and loginto GitHub copilot 
+e. copy and paste below statement to initiate the agents in VSCODE .
+npx playwright init-agents --loop=vscode
+
+as a outcome : 3 agents we created based on the step we executed. 
+
+1. playwright-test-planner  => test planner agent which is used to create test plans .
+
+Use this agent when you need to create comprehensive test plan for a web application or website
+
+2. Playwright-test-generation => test generation agent is used to generate playwright automation scripts for the manual test cases which we supplied;
+
+Use this agent when you need to create automated browser tests using Playwright Examples: Context: User wants to generate a test for the test plan item.
+3. playwright-test-healer => this agent will help tester to automatically fix the test script errors. if you or your agent wrongly wrote the code or any issues encountered in the test script that will be fixed or debug and fixed automatically.
+
+Use this agent when you need to debug and fix failing Playwright tests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
