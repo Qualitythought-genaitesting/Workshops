@@ -1,0 +1,276 @@
+Good Evening !!!!!
+=======================
+Today we would like to discuss on 
+
+how to test AI agents ? 
+
+Manual testing or automation testing  => traditional testing 
+Traditional testing to agent testing 
+
+Ram prasad => 20 years of experience in different roles 
+
+from software engineer to delivery manager 
+AI strategist 
+
+Quality Thought is a leading EdTech platform => 
+
+1. We need to understand what is Gen AI and different types of genAI applications 
+2. Define Agent application and showing the demo of those applications 
+are useful to understand what is gen AI and how to test them like a customer 
+then in step#3 we will take one agent as an example and explain possible tests . 
+
+3. use playwright agents to define how to test agents 
+   => trajectory => tool selection and calling in a specified order 
+or vibe coding agents also => 
+
+1. how many of you still working on manual testing ? 
+2. how many of you still working on automation testing ? 
+==============================================================================
+Current market is looking towards multiple skills - 
+automation / using AI into the automation or STLC 
+adding prompting skills to  your skills list to speed up your execution 
+
+how to test AI applications => this is new and trendy => 2027 this skill is mandatory for every tester. 
+
+=> a customer satisfaction is very imp => at least couple of tester for every ai project is mandatory. 
+
+then I do 10+ years of experience in testing , am i eligible for gen ai testing ? 
+
+we need to understand why these gen AI applications are different from your web applications ? api testing / db testing 
+
+traditional applications  => these applications are deterministic in nature that means 
+if use particular steps with some sample data the output remain same 
+you do the same testing again and again for 10 times  => output is same 
+all applications behave in similar way so our testing strategy is 
+write one test => execute one time and decide whether it is pass or fail. 
+
+
+gen AI applications : Generative Artificial intelligence => it generates the response not retrieving from the DB. 
+
+chatgpt and ask a question ? who is mahatha Gandhi ? 
+can we get the same answer => may or may not ? 
+i repeat the same question => I do not get the same answer ? 
+
+exact answer ?  No 
+
+but in your traditional application => yes => same Gandhi picture and same information we can retrieve 100 times /1000 times 
+deterministic answer 
+
+not the exact response but similar meaning response . 
+
+so tell me your current testing strategy is still applicable to the genAI application. => No 
+
+we need to define a new AI testing strategy => 
+
+1. as we are not getting same answer or exact answer for every attempt => one time execution of test case is not sufficient .
+=> 3 to 5 times we need to execute every gen AI application test cases before making it as fail or pass .
+Average of these 3/4/5 attempts : 
+0/1 
+a. Good answer  =>1 
+b. average answer => 0.5
+c. good answer  => good answer => 1 
+2.5/3  => 0.8  
+
+2. generated answer matching with expected answer is not right [ exact match]
+   Expected result == Actual result => PASS 
+   Expected result != actual result => FAIL 
+
+   instead of exact math we consider meaning of the expected result and actual result should be similar 
+  similar meaning answer is ok to make the test pass 
+
+3. based on the gen AI application we need to define the final strategy . 
+=============================================================================
+Note: existing testing strategy is ruled out and we need to define new test strategy with above point 
+
+Gen AI application types :  AI brain [ LLM ] 
+
+Generating the response in the form of text /image/code/music/video etc.. 
+Ai brain or LLM think about your question and generate the response . 
+
+1. fine tune applications  => these application get trained on public data or huge data to answer for your questions . 
+if your question is with in the trained content => you will get answer 
+if it is not get trained or after training there are more updates then also latest answer we could not find. 
+earliest version of chat gpt  => 2023  => 
+
+2. RAG applications  => Retrieval augmented generation 
+instead large training data => we do supply our company information [FAQ] supply to AI brain then ask any question AI will generate the answer on behalf of you . 
+
+Agent application: [LLM + Tools ]
+
+3. single agent application => my job is not to generate only response but also perform a specific task . 
+to do that specific task we need hands  => tools 
+
+LLM [ AI brain ] + tools [ hands] 
+
+examples : bolt.new /emergent.app/lovable.dev  these agent based applications for vibe coding 
+
+4. multi agent applications + MCP [ model context protocol] 
+multiple agents works for one task 
+a bigger task splits into small tasks => orchestrator => lead agent 
+lead agent assign sub tasks to agents based on specialties they do have 
+
+5. Agentic AI => autonomous => taking their own actions without human in the loop 
+if you want take an  judgement or change some thing you need an approval from real human . 
+based on the rules we can do task without human in loop 
+=============================================================================
+to define agent testing => we are considering playwright agents to understand more clearly . 
+
+what is playwright ? 
+modern web and api automation tool 
+
+if you want to test playwright agents or bolt.new agents we need to understand how actually human doing this task . 
+
+think like a customer and perform testing => 
+
+I know much testing than development so I choose playwright agents to learn agent testing . 
+
+=> 3 agents  => 
+a. playwright-test-planer agent  => this agent create a test plan for provided website or web application 
+
+purpose of the agent : 
+Use this agent when you need to create automated browser tests using Playwright 
+Examples: Context: User wants to generate a test for the test plan item.
+
+b. playwright-test- generator agent => this agent is used to generate the automated test script for manual test you supplied . 
+ 
+c. playwright-test-healer agent => debugging and fixing the issues in your automation script 
+
+VSCODE : IDE => where you can code as a automation tester 
+
+I realize I need to set up the page before any tools can be used. It seems like the search capabilities are essential first, but the agent suggests using the planner setup page as the first tool. I guess I have to prioritize that setup before doing a search. So, I'll start by searching for information about the planner setup and possibl
+
+LLM + tools  => 
+
+LLM => model: Claude Sonnet 4.6
+Tools : 
+playwright tools to explore the AUT [ browser actions in the playwright]
+  - search
+  - playwright-test/browser_click
+  - playwright-test/browser_close
+  - playwright-test/browser_console_messages
+  - playwright-test/browser_drag
+  - playwright-test/browser_evaluate
+  - playwright-test/browser_file_upload
+  - playwright-test/browser_handle_dialog
+  - playwright-test/browser_hover
+  - playwright-test/browser_navigate
+  - playwright-test/browser_navigate_back
+  - playwright-test/browser_network_request
+  - playwright-test/browser_network_requests
+  - playwright-test/browser_press_key
+  - playwright-test/browser_run_code_unsafe
+  - playwright-test/browser_select_option
+  - playwright-test/browser_snapshot
+  - playwright-test/browser_take_screenshot
+  - playwright-test/browser_type
+  - playwright-test/browser_wait_for
+  - playwright-test/planner_setup_page
+  - playwright-test/planner_save_plan
+
+
+developer educate the agent with below information :
+
+a. agent name : 
+b. description : 
+c. LLM 
+d. tools 
+e. scope definition or tasks definitions 
+
+
+how to understand agent as a step #1 
+
+a. how to call a tool 
+b. in which order 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
