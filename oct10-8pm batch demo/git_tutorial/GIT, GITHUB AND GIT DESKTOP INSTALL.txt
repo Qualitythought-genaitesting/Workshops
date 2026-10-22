@@ -1,0 +1,36 @@
+GIT, GITHUB AND GIT DESKTOP INSTALLATION AND SETUP!!
+
+
+
+--GIT INSTALLATION LINK:
+
+https://git-scm.com/install/
+
+
+
+
+
+--GITHUB ACCOUNT CREATION LINK:
+
+https://github.com/signup
+
+
+
+
+
+--GITHUB DESKTOP INSTALLATION LINK:
+
+https://desktop.github.com/download/
+
+
+
+--GIT INSTALLATION AND SETUP LINK:
+
+
+https://www.youtube.com/watch?v=9EAw16LWgMw
+
+
+
+--GIT DESKTOP INSTALLATION AND SETUP LINK:
+
+https://www.youtube.com/watch?v=G4SIIp14Xx4

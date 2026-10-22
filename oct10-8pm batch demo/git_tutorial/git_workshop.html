@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git & GitHub Workshop — Complete Beginner's Guide</title>
+<style>
+  :root {
+    --bg: #0D1117;
+    --surface: #161B22;
+    --surface2: #1C2128;
+    --border: #30363D;
+    --accent: #58A6FF;
+    --accent-dim: rgba(88,166,255,0.12);
+    --accent-glow: rgba(88,166,255,0.25);
+    --text: #F0F6FC;
+    --text-muted: #C4CDD6;
+    --text-subtle: #A0AEBA;
+    --green: #3FB950;
+    --orange: #F0883E;
+    --red: #F85149;
+    --purple: #D2A8FF;
+    --yellow: #E3B341;
+    --sidebar-w: 260px;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--purple));
+    width: 0%; z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+
+  /* ── TOP NAV ── */
+  #topnav {
+    position: fixed; top: 3px; left: 0; right: 0; height: 60px;
+    background: rgba(13,17,23,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 24px;
+    gap: 16px; z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 1.05rem; color: var(--text);
+    text-decoration: none; flex-shrink: 0;
+  }
+  .nav-logo svg { color: var(--accent); }
+  .nav-badge {
+    background: var(--accent-dim); border: 1px solid var(--accent);
+    color: var(--accent); font-size: 0.7rem; padding: 2px 8px;
+    border-radius: 20px; font-weight: 600; letter-spacing: 0.5px;
+  }
+  #search-box {
+    flex: 1; max-width: 360px; margin-left: auto;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 8px 14px 8px 36px;
+    color: var(--text); font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .search-wrap { position: relative; flex: 1; max-width: 360px; margin-left: auto; }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+  #search-box:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+  #search-results {
+    position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 200;
+    display: none;
+  }
+  .search-item {
+    padding: 10px 16px; cursor: pointer; font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .search-item:last-child { border-bottom: none; }
+  .search-item:hover { background: var(--accent-dim); }
+  .search-item .si-day { font-size: 0.7rem; color: var(--accent); font-weight: 600; margin-bottom: 2px; }
+
+  /* ── LAYOUT ── */
+  .layout { display: flex; padding-top: 63px; min-height: 100vh; }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--sidebar-w); flex-shrink: 0;
+    position: fixed; top: 63px; left: 0; bottom: 0;
+    overflow-y: auto; overflow-x: hidden;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 20px 0 20px;
+    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    transition: width 0.28s cubic-bezier(.4,0,.2,1), transform 0.28s;
+  }
+  #sidebar.collapsed {
+    width: 0; overflow: hidden; border-right: none;
+  }
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* Collapse toggle button — sits on the right edge of sidebar */
+  #sb-toggle {
+    position: fixed; top: 50%; left: var(--sidebar-w);
+    transform: translateY(-50%);
+    width: 20px; height: 48px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer; z-index: 101;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-subtle);
+    transition: left 0.28s cubic-bezier(.4,0,.2,1), background 0.15s, color 0.15s;
+    font-size: 0.65rem;
+  }
+  #sb-toggle:hover { background: var(--surface2); color: var(--accent); }
+  #sb-toggle.collapsed { left: 0; border-left: 1px solid var(--border); border-radius: 0 8px 8px 0; }
+
+  /* ── Sidebar: static top link (Overview/Revision) ── */
+  .sb-static-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-subtle);
+    padding: 14px 20px 6px;
+  }
+
+  /* ── Sidebar: day accordion header ── */
+  .sb-day {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px 10px 20px; cursor: pointer;
+    user-select: none; border-left: 2px solid transparent;
+    transition: background 0.15s;
+  }
+  .sb-day:hover { background: rgba(88,166,255,0.06); }
+  .sb-day-left { display: flex; align-items: center; gap: 8px; }
+  .sb-day-badge {
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 10px; flex-shrink: 0;
+  }
+  .sb-day-badge.d1 { background: rgba(88,166,255,0.15); color: var(--accent); }
+  .sb-day-badge.d2 { background: rgba(240,136,62,0.15); color: var(--orange); }
+  .sb-day-badge.d3 { background: rgba(63,185,80,0.15); color: var(--green); }
+  .sb-day-title { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+  .sb-day-arrow { font-size: 0.6rem; color: var(--text-subtle); transition: transform 0.22s; flex-shrink: 0; }
+  .sb-day.open .sb-day-arrow { transform: rotate(90deg); }
+
+  /* ── Sidebar: collapsible section list ── */
+  .sb-section-list { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .sb-section-list.open { max-height: 500px; }
+
+  /* ── Sidebar: individual links ── */
+  .sb-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 20px 6px 32px; font-size: 0.82rem; color: var(--text-muted);
+    text-decoration: none; border-left: 2px solid transparent;
+    transition: all 0.15s; cursor: pointer;
+  }
+  .sb-link:hover { color: var(--text); background: rgba(88,166,255,0.06); }
+  .sb-link.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-dim); font-weight: 500; }
+  .sb-link.top { padding-left: 20px; }
+  .sb-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; opacity: 0.5; }
+  .sb-link.active .sb-dot { opacity: 1; }
+
+  /* ── MAIN ── */
+  #main {
+    margin-left: var(--sidebar-w);
+    flex: 1; padding: 40px 48px 80px;
+    width: calc(100% - var(--sidebar-w));
+    max-width: none;
+    transition: margin-left 0.28s cubic-bezier(.4,0,.2,1), width 0.28s cubic-bezier(.4,0,.2,1);
+  }
+  #main.full { margin-left: 0; width: 100%; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--surface) 0%, #0D1117 60%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    margin-bottom: 48px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(88,166,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent-dim); border: 1px solid var(--accent);
+    color: var(--accent); font-size: 0.75rem; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { color: var(--text); font-size: 1.05rem; max-width: 540px; margin-bottom: 24px; opacity: 0.85; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero-pill {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 20px; padding: 5px 14px; font-size: 0.8rem;
+    color: var(--text-muted); display: flex; align-items: center; gap: 6px;
+  }
+  .hero-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 64px; scroll-margin-top: 80px; }
+  .day-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-badge {
+    background: linear-gradient(135deg, var(--accent), #1F6FEB);
+    color: white; font-weight: 800; font-size: 0.75rem;
+    padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px;
+    text-transform: uppercase; flex-shrink: 0;
+  }
+  .day-title { font-size: 1.6rem; font-weight: 700; }
+  .day-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 2px; }
+
+  /* ── CONCEPT CARD ── */
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .concept-card:hover { border-color: rgba(88,166,255,0.4); box-shadow: 0 0 0 1px rgba(88,166,255,0.1); }
+
+  .concept-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 20px 24px; cursor: pointer;
+    user-select: none;
+  }
+  .concept-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+    background: var(--accent-dim);
+  }
+  .concept-title-wrap { flex: 1; }
+  .concept-title { font-size: 1.1rem; font-weight: 700; }
+  .concept-subtitle { font-size: 0.8rem; color: var(--text-muted); margin-top: 1px; }
+  .concept-chevron {
+    color: var(--text-subtle); transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .concept-card.open .concept-chevron { transform: rotate(180deg); }
+
+  .concept-body {
+    padding: 0 24px;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .concept-card.open .concept-body { max-height: 3000px; padding: 0 24px 24px; }
+
+  /* ── FOUR-PILLARS GRID ── */
+  .pillars {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin: 16px 0;
+  }
+  .pillar {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px;
+  }
+  .pillar-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+  }
+  .pillar p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── ANALOGY BOX ── */
+  .analogy {
+    background: rgba(210,168,255,0.07); border: 1px solid rgba(210,168,255,0.25);
+    border-radius: var(--radius); padding: 16px 18px; margin: 16px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .analogy-icon { font-size: 1.4rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .analogy-text { font-size: 0.9rem; color: var(--text-muted); }
+  .analogy-text strong { color: var(--purple); }
+
+  /* ── SUMMARY BOX ── */
+  .summary {
+    background: rgba(63,185,80,0.07); border: 1px solid rgba(63,185,80,0.3);
+    border-radius: var(--radius); padding: 16px 18px; margin: 16px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .summary-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .summary-text { font-size: 0.875rem; }
+  .summary-text strong { color: var(--green); display: block; margin-bottom: 4px; }
+
+  /* ── CODE BLOCKS ── */
+  .code-wrap { position: relative; margin: 16px 0; }
+  .code-label {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #21262D; padding: 8px 14px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    border: 1px solid var(--border); border-bottom: none;
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+  .code-label span { display: flex; align-items: center; gap: 6px; }
+  pre {
+    background: #0D1117; border: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 16px 18px; overflow-x: auto;
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 0.85rem; line-height: 1.65;
+  }
+  .code-wrap:not(.has-label) pre { border-radius: var(--radius); }
+  .copy-btn {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 4px 10px; font-size: 0.72rem;
+    color: var(--text-muted); cursor: pointer;
+    transition: all 0.15s; display: flex; align-items: center; gap: 4px;
+  }
+  .copy-btn:hover { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+  .copy-btn.copied { color: var(--green); border-color: var(--green); background: rgba(63,185,80,0.1); }
+
+  .tok-cmd { color: #79C0FF; }
+  .tok-flag { color: var(--purple); }
+  .tok-str { color: #A5D6FF; }
+  .tok-comment { color: var(--text-subtle); font-style: italic; }
+  .tok-success { color: var(--green); }
+
+  /* ── DIAGRAMS ── */
+  .diagram {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+    margin: 16px 0; font-family: 'SF Mono', monospace;
+  }
+  .diagram-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-subtle); margin-bottom: 20px;
+  }
+
+  /* Local vs Remote visual diagram */
+  .lr-diagram { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+  .lr-box {
+    border-radius: var(--radius-lg); padding: 20px 24px; text-align: center; min-width: 160px;
+  }
+  .lr-box.local { background: rgba(88,166,255,0.08); border: 2px solid var(--accent); }
+  .lr-box.remote { background: rgba(63,185,80,0.08); border: 2px solid var(--green); }
+  .lr-box .lb-icon { font-size: 2rem; margin-bottom: 8px; }
+  .lr-box .lb-title { font-weight: 700; font-size: 0.9rem; }
+  .lr-box .lb-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+  .lr-arrow {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; padding: 0 20px;
+  }
+  .lr-arrow-line { height: 2px; width: 80px; background: var(--border); position: relative; }
+  .lr-arrow-label { font-size: 0.72rem; color: var(--accent); font-weight: 600; }
+  .push-arrow::after { content: '→'; position: absolute; right: -6px; top: -8px; color: var(--orange); }
+  .pull-arrow::after { content: '←'; position: absolute; left: -6px; top: -8px; color: var(--purple); }
+
+  /* Workflow diagram */
+  .flow-diagram { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .flow-step {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 10px 24px; font-size: 0.875rem;
+    font-weight: 600; min-width: 180px; text-align: center;
+    position: relative;
+  }
+  .flow-step.highlight { border-color: var(--accent); color: var(--accent); }
+  .flow-arrow {
+    width: 2px; height: 28px; background: var(--border);
+    position: relative;
+  }
+  .flow-arrow::after {
+    content: '▼'; position: absolute; bottom: -6px; left: 50%;
+    transform: translateX(-50%); color: var(--text-subtle); font-size: 0.6rem;
+  }
+
+  /* Branch diagram */
+  .branch-diagram { padding: 10px 0; }
+  .branch-line { display: flex; align-items: center; gap: 0; margin-bottom: 4px; }
+  .br-trunk { width: 3px; background: var(--accent); border-radius: 2px; }
+  .br-main-node {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent); flex-shrink: 0;
+  }
+  .br-feat-node {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--orange); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--orange); flex-shrink: 0;
+  }
+  .br-line { height: 2px; background: var(--orange); flex: 1; max-width: 80px; }
+  .br-label { font-size: 0.8rem; padding-left: 8px; color: var(--text-muted); }
+  .br-label.main { color: var(--accent); font-weight: 600; }
+
+  /* ── COMMAND TABLE ── */
+  .cmd-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.875rem; }
+  .cmd-table th { text-align: left; padding: 10px 14px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-subtle); border-bottom: 1px solid var(--border); }
+  .cmd-table td { padding: 11px 14px; border-bottom: 1px solid rgba(48,54,61,0.5); vertical-align: top; }
+  .cmd-table tr:last-child td { border-bottom: none; }
+  .cmd-table tr:hover td { background: rgba(88,166,255,0.04); }
+  .cmd { font-family: 'SF Mono', monospace; color: var(--accent); font-size: 0.82rem; background: var(--surface2); padding: 2px 7px; border-radius: 4px; }
+
+  /* ── HOMEWORK ── */
+  .hw-card {
+    background: rgba(240,136,62,0.07); border: 1px solid rgba(240,136,62,0.3);
+    border-radius: var(--radius-lg); padding: 24px;
+    margin-top: 24px;
+  }
+  .hw-title { font-weight: 700; color: var(--orange); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .hw-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .hw-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.9rem; color: var(--text-muted);
+  }
+  .hw-list li::before {
+    content: '';
+    width: 20px; height: 20px; border-radius: 4px;
+    border: 1.5px solid rgba(240,136,62,0.5);
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .hw-list li strong { color: var(--text); }
+
+  /* ── FLASH CARDS ── */
+  .flashcards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px; margin-top: 24px;
+  }
+  .flash-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px 20px;
+    cursor: pointer; transition: all 0.25s;
+    min-height: 140px; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .flash-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .flash-front, .flash-back { transition: opacity 0.2s; }
+  .flash-q-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .flash-q { font-size: 1rem; font-weight: 700; }
+  .flash-back { display: none; }
+  .flash-a-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+  .flash-a { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+  .flash-card.flipped .flash-front { display: none; }
+  .flash-card.flipped .flash-back { display: block; }
+  .flash-card.flipped { border-color: var(--green); background: rgba(63,185,80,0.06); }
+  .flash-hint { position: absolute; bottom: 12px; right: 14px; font-size: 0.65rem; color: var(--text-subtle); }
+
+  /* ── DIFF COMPARISON ── */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .compare-col { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+  .compare-col .cc-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+  .compare-col.good .cc-title { color: var(--green); }
+  .compare-col.neutral .cc-title { color: var(--accent); }
+  .compare-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .compare-col li { font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 7px; align-items: flex-start; }
+  .compare-col.good li::before { content: '✓'; color: var(--green); flex-shrink: 0; }
+  .compare-col.neutral li::before { content: '•'; color: var(--accent); flex-shrink: 0; }
+
+  /* ── BACK TO TOP ── */
+  #back-top {
+    position: fixed; bottom: 28px; right: 28px;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); border-radius: 50%;
+    width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3); font-size: 1.1rem;
+    z-index: 50;
+  }
+  #back-top.visible { opacity: 1; }
+  #back-top:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ── HELPERS ── */
+  h2 { font-size: 1.3rem; font-weight: 700; margin: 24px 0 12px; }
+  h3 { font-size: 1rem; font-weight: 700; margin: 18px 0 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; }
+  p { margin-bottom: 10px; font-size: 0.925rem; color: var(--text-muted); }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--text); }
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px; font-size: 0.78rem; color: var(--text-muted); }
+  .tag.accent { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .section-intro { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; max-width: 640px; }
+  .note {
+    background: rgba(88,166,255,0.07); border: 1px solid rgba(88,166,255,0.25);
+    border-radius: var(--radius); padding: 12px 16px; margin: 14px 0;
+    font-size: 0.875rem; color: var(--text-muted); display: flex; gap: 10px;
+  }
+  .note::before { content: 'ℹ'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+    .pillars { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .flashcards-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .hero { padding: 32px 24px; }
+    .hero h1 { font-size: 1.8rem; }
+  }
+
+  /* Sidebar toggle for mobile */
+  #menu-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; font-size: 1.3rem; }
+  @media (max-width: 900px) {
+    #menu-btn { display: block; }
+    #sb-toggle { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- TOP NAV -->
+<nav id="topnav">
+  <button id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <a href="#top" class="nav-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+    Git Tutorial
+  </a>
+  <span class="nav-badge">Beginner</span>
+  <div class="search-wrap">
+    <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-box" placeholder="Search topics… (or press /)" autocomplete="off" oninput="doSearch(this.value)" onfocus="doSearch(this.value)" onblur="closeSearch()">
+    <div id="search-results"></div>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div id="sidebar">
+
+  <!-- Overview -->
+  <div class="sb-static-label">Overview</div>
+  <a class="sb-link top active" onclick="navTo('hero')"><span class="sb-dot"></span>Introduction</a>
+
+  <!-- Day 1 -->
+  <div class="sb-day open" onclick="toggleDay(this)">
+    <div class="sb-day-left">
+      <span class="sb-day-badge d1">Day 1</span>
+      <span class="sb-day-title">Foundations</span>
+    </div>
+    <span class="sb-day-arrow">▶</span>
+  </div>
+  <div class="sb-section-list open">
+    <a class="sb-link" onclick="navTo('version-control')"><span class="sb-dot"></span>Version Control</a>
+    <a class="sb-link" onclick="navTo('git')"><span class="sb-dot"></span>What is Git?</a>
+    <a class="sb-link" onclick="navTo('github')"><span class="sb-dot"></span>What is GitHub?</a>
+    <a class="sb-link" onclick="navTo('github-desktop')"><span class="sb-dot"></span>GitHub Desktop</a>
+    <a class="sb-link" onclick="navTo('repository')"><span class="sb-dot"></span>Repository</a>
+    <a class="sb-link" onclick="navTo('local-remote')"><span class="sb-dot"></span>Local vs Remote</a>
+    <a class="sb-link" onclick="navTo('hw1')"><span class="sb-dot"></span>Homework 1</a>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="sb-day open" onclick="toggleDay(this)">
+    <div class="sb-day-left">
+      <span class="sb-day-badge d2">Day 2</span>
+      <span class="sb-day-title">Workflow</span>
+    </div>
+    <span class="sb-day-arrow">▶</span>
+  </div>
+  <div class="sb-section-list open">
+    <a class="sb-link" onclick="navTo('clone')"><span class="sb-dot"></span>Clone</a>
+    <a class="sb-link" onclick="navTo('commit')"><span class="sb-dot"></span>Commit</a>
+    <a class="sb-link" onclick="navTo('push')"><span class="sb-dot"></span>Push</a>
+    <a class="sb-link" onclick="navTo('pull')"><span class="sb-dot"></span>Pull</a>
+    <a class="sb-link" onclick="navTo('branches')"><span class="sb-dot"></span>Branches</a>
+    <a class="sb-link" onclick="navTo('merge')"><span class="sb-dot"></span>Merge (Intro)</a>
+    <a class="sb-link" onclick="navTo('hw2')"><span class="sb-dot"></span>Homework 2</a>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="sb-day open" onclick="toggleDay(this)">
+    <div class="sb-day-left">
+      <span class="sb-day-badge d3">Day 3</span>
+      <span class="sb-day-title">Git CLI</span>
+    </div>
+    <span class="sb-day-arrow">▶</span>
+  </div>
+  <div class="sb-section-list open">
+    <a class="sb-link" onclick="navTo('vscode-git')"><span class="sb-dot"></span>Git in VS Code</a>
+    <a class="sb-link" onclick="navTo('git-commands')"><span class="sb-dot"></span>Git Commands</a>
+    <a class="sb-link" onclick="navTo('daily-workflow')"><span class="sb-dot"></span>Daily Workflow</a>
+    <a class="sb-link" onclick="navTo('hw3')"><span class="sb-dot"></span>Homework 3</a>
+  </div>
+
+  <!-- Revision -->
+  <div class="sb-static-label" style="margin-top:6px;">Revision</div>
+  <a class="sb-link top" onclick="navTo('flashcards')"><span class="sb-dot"></span>Flash Cards</a>
+
+</div>
+
+<!-- SIDEBAR COLLAPSE TOGGLE -->
+<button id="sb-toggle" onclick="toggleSidebarCollapse()" title="Toggle sidebar" aria-label="Toggle sidebar">◀</button>
+
+<!-- MAIN CONTENT -->
+<div class="layout">
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero" id="hero">
+    <div class="hero-tag">📚 3-Day Workshop</div>
+    <h1>Git, GitHub &<br><span>Version Control</span></h1>
+    <p>A complete beginner's guide — from zero to your first collaborative workflow. Designed for students who have never touched Git.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><span class="dot" style="background:var(--accent)"></span>Day 1: Foundations</div>
+      <div class="hero-pill"><span class="dot" style="background:var(--orange)"></span>Day 2: Workflow</div>
+      <div class="hero-pill"><span class="dot" style="background:var(--green)"></span>Day 3: CLI & VS Code</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ DAY 1 ═══════════ -->
+  <div class="section" id="day1-header">
+    <div class="day-header">
+      <div class="day-badge">Day 1</div>
+      <div>
+        <div class="day-title">Foundations</div>
+        <div class="day-subtitle">Understanding what version control is and why it matters</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERSION CONTROL -->
+  <div class="concept-card open" id="version-control">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">📂</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Version Control</div>
+        <div class="concept-subtitle">The foundation of every modern software project</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>A system that records changes to files over time so you can recall specific versions later.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Mistakes happen. Version control lets you go back to any previous state of your project — like an infinite undo button.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Every single time you work on any project — solo or with a team. Even for your personal portfolio.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Professional developers at Google, Netflix, and Apple all use version control. It's non-negotiable.</p></div>
+      </div>
+
+      <h2>Problems Without Version Control</h2>
+      <div class="note">Think about the last time you worked on an assignment. Did you ever save it as <em>final.html</em>, <em>final2.html</em>, <em>final_ACTUAL.html</em>? That's the problem.</div>
+
+      <div class="compare-grid">
+        <div class="compare-col neutral">
+          <div class="cc-title">😰 Without Version Control</div>
+          <ul>
+            <li>Files named <code>project_v3_FINAL_2.html</code></li>
+            <li>Can't undo a mistake from 2 days ago</li>
+            <li>Sending files via WhatsApp to teammates</li>
+            <li>Two people editing the same file = chaos</li>
+            <li>No idea who changed what and when</li>
+          </ul>
+        </div>
+        <div class="compare-col good">
+          <div class="cc-title">✅ With Version Control</div>
+          <ul>
+            <li>One clean folder, with full history</li>
+            <li>Undo any change from any point in time</li>
+            <li>Everyone works together seamlessly</li>
+            <li>See exactly who changed what and why</li>
+            <li>Roll back a bug instantly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">🎮</div>
+        <div class="analogy-text"><strong>Game Save Points:</strong> Imagine playing a game without being able to save. If you lose, you start from scratch. Version control is like a game that lets you save at any moment — and jump back to any save whenever you want.</div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Version control = a time machine for your code. It tracks every change, lets you go back in time, and helps teams work together without stepping on each other's toes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIT -->
+  <div class="concept-card open" id="git">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">⚙️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">What is Git?</div>
+        <div class="concept-subtitle">The version control software that runs on your computer</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>Git is a free, open-source <strong>version control system</strong> created by Linus Torvalds (creator of Linux) in 2005.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>It tracks every change you make to every file, who made the change, and when — automatically.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Git runs on your computer. You use it whenever you want to save a "version" of your project.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>The Linux kernel, the Android OS, the VS Code editor — all built using Git. 97% of developers use Git.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">🎮</div>
+        <div class="analogy-text"><strong>Git = Save Points in a game.</strong> Every time you "commit" in Git, it's like saving your game. You can always come back to any save point. You can have thousands of saves and switch between them instantly.</div>
+      </div>
+
+      <h2>Key things Git does:</h2>
+      <div class="tag-row">
+        <span class="tag accent">Tracks file changes</span>
+        <span class="tag accent">Saves project history</span>
+        <span class="tag accent">Manages multiple versions</span>
+        <span class="tag accent">Enables teamwork</span>
+        <span class="tag accent">Works offline</span>
+      </div>
+
+      <div class="note">Git is software that lives on <strong>your computer</strong>. It does not require internet to work. GitHub (different thing!) adds the internet part.</div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Git = a tool installed on your computer that saves the history of your code. Think of it as an invisible time-stamping machine that watches your project folder.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GITHUB -->
+  <div class="concept-card open" id="github">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🌐</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">What is GitHub?</div>
+        <div class="concept-subtitle">Where your code lives online — the cloud home for Git projects</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>GitHub is a <strong>website</strong> (github.com) that hosts Git repositories online so you and your team can access them from anywhere.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Your local Git history stays on your computer only. GitHub puts it in the cloud — backed up, shareable, and accessible from any device.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>When you want to back up your project, share with a team, show your work to employers, or deploy a website.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>GitHub has 100+ million developers. Your portfolio on GitHub IS your professional identity in the tech world.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">☁️</div>
+        <div class="analogy-text"><strong>GitHub = Google Drive, but for code.</strong> Just like Google Drive stores your documents in the cloud, GitHub stores your code projects. But unlike Drive, it keeps the full history of every change ever made.</div>
+      </div>
+
+      <h2>Git vs GitHub — Not the Same!</h2>
+      <div class="compare-grid">
+        <div class="compare-col neutral">
+          <div class="cc-title">⚙️ Git</div>
+          <ul>
+            <li>Software on your computer</li>
+            <li>Works offline</li>
+            <li>Tracks changes locally</li>
+            <li>Command-line tool</li>
+            <li>Created by Linus Torvalds</li>
+          </ul>
+        </div>
+        <div class="compare-col neutral">
+          <div class="cc-title">🌐 GitHub</div>
+          <ul>
+            <li>Website on the internet</li>
+            <li>Requires internet connection</li>
+            <li>Stores code in the cloud</li>
+            <li>Has a visual interface</li>
+            <li>Owned by Microsoft</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Git is the tool, GitHub is the platform. You use Git to track changes, then use GitHub to share those changes with the world. You can use Git without GitHub, but most people use both together.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GITHUB DESKTOP -->
+  <div class="concept-card open" id="github-desktop">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🖥️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">GitHub Desktop</div>
+        <div class="concept-subtitle">A visual, beginner-friendly way to use Git</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>GitHub Desktop is a <strong>free app</strong> that gives you a visual interface to use Git — no command line needed.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Git's command line can feel scary for beginners. GitHub Desktop shows everything visually with buttons and clear panels.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Perfect when you're learning. Many professionals also use it for day-to-day work. Download at desktop.github.com.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Designers, junior devs, project managers — anyone who wants to use Git without memorizing commands.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">🚗</div>
+        <div class="analogy-text"><strong>GitHub Desktop = Automatic car. Git CLI = Manual car.</strong> Both get you to the same destination. The automatic car is easier to start with — you focus on driving, not the gear changes. Once you understand how it works, you can learn manual (the command line) for more control.</div>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-col good">
+          <div class="cc-title">🖥️ GitHub Desktop (Automatic)</div>
+          <ul>
+            <li>Visual buttons for every action</li>
+            <li>See your changes highlighted in color</li>
+            <li>Click to commit, push, pull</li>
+            <li>Easy for beginners</li>
+            <li>Great for seeing history visually</li>
+          </ul>
+        </div>
+        <div class="compare-col neutral">
+          <div class="cc-title">⌨️ Git CLI (Manual)</div>
+          <ul>
+            <li>Type commands in Terminal</li>
+            <li>More powerful and flexible</li>
+            <li>Faster once you know the commands</li>
+            <li>Works on any server or environment</li>
+            <li>Industry standard for professionals</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> GitHub Desktop is a friendly app that wraps Git in a nice interface. Perfect for beginners. We'll use it in Day 2, then graduate to the command line in Day 3.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPOSITORY -->
+  <div class="concept-card open" id="repository">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">📁</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Repository</div>
+        <div class="concept-subtitle">The project folder that Git tracks</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>A <strong>repository</strong> (repo) is a folder for your project that Git tracks. It contains all your files AND the complete history of every change.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Instead of multiple "final2" copies, you have one folder with the entire history hidden inside a <code>.git</code> folder.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Every project gets its own repository. Starting a new website? Create a new repo. Starting a new app? Create a new repo.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>The VS Code editor is one giant repository on GitHub with 300,000+ commits (saves) from 1,000+ contributors.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📓</div>
+        <div class="analogy-text"><strong>Repository = A magic project folder.</strong> It looks like a regular folder, but Git is silently watching everything inside it. Every file you add, change, or delete is recorded — automatically, if you tell Git to.</div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Repository = project folder + full history of changes. Often shortened to just "repo". You'll create one for every project you work on.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL vs REMOTE -->
+  <div class="concept-card open" id="local-remote">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🔄</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Local vs Remote Repository</div>
+        <div class="concept-subtitle">Your computer vs GitHub's servers</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">Local Repo</div><p>The copy of your project <strong>on your computer</strong>. You can edit files, commit changes — all without internet.</p></div>
+        <div class="pillar"><div class="pillar-label">Remote Repo</div><p>The copy of your project <strong>on GitHub's servers</strong>. This is your backup and the version your team shares.</p></div>
+      </div>
+
+      <div class="diagram">
+        <div class="diagram-title">📊 Local vs Remote Repository</div>
+        <div class="lr-diagram">
+          <div class="lr-box local">
+            <div class="lb-icon">💻</div>
+            <div class="lb-title">Your Computer</div>
+            <div class="lb-sub">Local Repository</div>
+          </div>
+          <div class="lr-arrow">
+            <span style="font-size:0.72rem;color:var(--orange);font-weight:700;">Push ↑</span>
+            <div style="width:80px;height:2px;background:var(--border);position:relative;">
+              <span style="position:absolute;right:-5px;top:-7px;color:var(--orange);">→</span>
+            </div>
+            <div style="height:10px;"></div>
+            <div style="width:80px;height:2px;background:var(--border);position:relative;">
+              <span style="position:absolute;left:-5px;top:-7px;color:var(--purple);">←</span>
+            </div>
+            <span style="font-size:0.72rem;color:var(--purple);font-weight:700;">Pull ↓</span>
+          </div>
+          <div class="lr-box remote">
+            <div class="lb-icon">☁️</div>
+            <div class="lb-title">GitHub</div>
+            <div class="lb-sub">Remote Repository</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📱</div>
+        <div class="analogy-text"><strong>Like your phone and iCloud.</strong> Photos on your phone = local. Photos backed up to iCloud = remote. You work on your phone (local), then sync to the cloud (remote). If you lose your phone, your photos are still safe in the cloud.</div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Local = on your computer. Remote = on GitHub. You work locally, then <strong>push</strong> to remote to back up and share. You <strong>pull</strong> from remote to get the latest changes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEWORK 1 -->
+  <div class="hw-card" id="hw1">
+    <div class="hw-title">📝 Homework — Day 1</div>
+    <ul class="hw-list">
+      <li><div><strong>Install Git</strong> — Download from git-scm.com and run the installer</div></li>
+      <li><div><strong>Install GitHub Desktop</strong> — Download from desktop.github.com</div></li>
+      <li><div><strong>Create a GitHub Account</strong> — Sign up at github.com (use your email)</div></li>
+      <li><div><strong>Create your first Repository</strong> — Click "New" on GitHub and name it <code>my-first-repo</code></div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ DAY 2 ═══════════ -->
+  <div class="section" id="day2-header" style="margin-top:56px;">
+    <div class="day-header">
+      <div class="day-badge" style="background:linear-gradient(135deg,var(--orange),#C05000)">Day 2</div>
+      <div>
+        <div class="day-title">Workflow — Clone, Commit, Push, Pull</div>
+        <div class="day-subtitle">Learning the core actions that power every Git workflow</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLONE -->
+  <div class="concept-card open" id="clone">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">⬇️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Clone</div>
+        <div class="concept-subtitle">Download a repository from GitHub to your computer</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>Cloning copies a repository from GitHub (remote) to your computer (local) — including <strong>all files and all history</strong>.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Before you can work on a project, you need it on your computer. Clone gets everything you need in one step.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>The very first time you start working on a project. You only clone once — then you pull to get updates.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Joining a new company? The first thing you do on day 1 is clone their repository to your new laptop.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📥</div>
+        <div class="analogy-text"><strong>Clone = Downloading a shared project.</strong> Imagine your teacher puts a shared Google Doc online. Cloning is like downloading that document to your computer so you can edit it locally — but smarter, because it also brings the entire editing history.</div>
+      </div>
+
+      <h2>How to clone with GitHub Desktop:</h2>
+      <div class="note">File → Clone Repository → Enter the GitHub URL → Click Clone. GitHub Desktop creates a local copy automatically.</div>
+
+      <h2>How to clone with Git command line:</h2>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>🖥️ Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git clone</span> <span class="tok-str">https://github.com/username/my-first-repo.git</span>
+<span class="tok-comment"># This downloads the repo into a folder called "my-first-repo"</span></pre>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Clone = copy a repository from GitHub to your computer. You do this once per project. After that, use pull to get updates.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMIT -->
+  <div class="concept-card open" id="commit">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">💾</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Commit</div>
+        <div class="concept-subtitle">Save a snapshot of your work with a meaningful message</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>A commit is a <strong>saved snapshot</strong> of your project at a specific moment in time, with a message describing what changed.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>It creates a point you can go back to. If something breaks, you can revert to the last good commit. Every commit is permanent history.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Whenever you complete a small, meaningful task. "Added navbar", "Fixed login bug", "Updated footer". Think of it as press Save.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>On large projects, hundreds of commits happen every day. Good commit messages are how teams communicate.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">🎮</div>
+        <div class="analogy-text"><strong>Commit = Saving your game.</strong> You wouldn't play a level without saving at the end. Committing is pressing the Save button in Git. Each save has a note: "Defeated the dragon on Level 3". Later, you can jump back to any save.</div>
+      </div>
+
+      <h2>What a commit looks like in GitHub Desktop:</h2>
+      <div class="note">In GitHub Desktop, you'll see your changed files highlighted in green (added) and red (removed). Write a summary at the bottom and click <strong>"Commit to main"</strong>.</div>
+
+      <h2>How to commit with command line:</h2>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>🖥️ Terminal — Making a commit</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git add</span> <span class="tok-flag">.</span>          <span class="tok-comment"># Stage all changed files</span>
+<span class="tok-cmd">git commit</span> <span class="tok-flag">-m</span> <span class="tok-str">"Added navigation bar to homepage"</span></pre>
+      </div>
+
+      <h2>Good commit messages:</h2>
+      <div class="compare-grid">
+        <div class="compare-col good">
+          <div class="cc-title">✅ Good Messages</div>
+          <ul>
+            <li>Added responsive navbar</li>
+            <li>Fixed broken contact form button</li>
+            <li>Updated hero section colors</li>
+            <li>Removed unused CSS classes</li>
+          </ul>
+        </div>
+        <div class="compare-col neutral">
+          <div class="cc-title">❌ Bad Messages</div>
+          <ul>
+            <li>stuff</li>
+            <li>changes</li>
+            <li>asdfasdf</li>
+            <li>fixed it</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Commit = save a snapshot with a message. Do it often. Write clear messages. Each commit is permanent and can be revisited anytime. Small commits = better history.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUSH -->
+  <div class="concept-card open" id="push">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">⬆️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Push</div>
+        <div class="concept-subtitle">Upload your commits from local to GitHub</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>Push uploads your local commits to the remote repository on GitHub. It syncs your work to the cloud.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Commits live only on your computer until you push. Push = backup + sharing. Your team can't see your work until you push.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>After you make commits and are ready to share. In a team, push at the end of every work session at minimum.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Developers push their work before leaving office every day. It's the equivalent of "saving to the cloud".</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📤</div>
+        <div class="analogy-text"><strong>Push = Uploading to Google Drive.</strong> You can edit a document on your phone all day, but until you sync it to Google Drive, others can't see it and it's not backed up. Push is that sync button.</div>
+      </div>
+
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>🖥️ Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git push</span>
+<span class="tok-comment"># Uploads your commits to GitHub</span>
+<span class="tok-success"># ✓ Branch 'main' set up to track remote branch 'main'.</span></pre>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Push = upload your saved commits to GitHub. Nothing is on GitHub until you push. Always push before you close your laptop for the day — your code will be safe in the cloud.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULL -->
+  <div class="concept-card open" id="pull">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">⬇️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Pull</div>
+        <div class="concept-subtitle">Download the latest changes from GitHub to your computer</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>Pull downloads the latest commits from GitHub (remote) to your computer (local). It updates your local copy.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>When teammates push their work, your local copy gets out of date. Pull brings you up to speed with everyone's latest changes.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Every time you sit down to work — before you start coding. Also when a teammate tells you they pushed changes.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>A team of 5 developers — when one pushes a fix, the others pull to get it before continuing their work.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📥</div>
+        <div class="analogy-text"><strong>Pull = Downloading the latest version.</strong> Imagine a shared Google Doc that your whole team edits. Pull is like clicking "refresh" to see everyone's latest edits before you start writing.</div>
+      </div>
+
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>🖥️ Terminal</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git pull</span>
+<span class="tok-comment"># Downloads and merges latest changes from GitHub</span>
+<span class="tok-success"># ✓ Already up to date. (if nothing new)</span></pre>
+      </div>
+
+      <div class="note">💡 <strong>Golden rule:</strong> Always pull before you push, especially in a team. It prevents conflicts.</div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Pull = download latest changes from GitHub. Start every coding session with <code>git pull</code>. It's like checking for updates before you start work.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANCHES -->
+  <div class="concept-card open" id="branches">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🌿</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Branches</div>
+        <div class="concept-subtitle">Work on new features without breaking the main project</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>A branch is a <strong>parallel version</strong> of your project. You can add new features on a branch without affecting the main working version.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>Imagine building a new feature that takes a week. If you break it, your main project is broken too. Branches prevent this.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>Whenever you start a new feature, fix a bug, or experiment. Don't work directly on main for anything beyond small edits.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Netflix engineers have hundreds of branches active at any moment — each team working on their own feature without disrupting others.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📓</div>
+        <div class="analogy-text"><strong>Branch = Photocopying your notebook before an experiment.</strong> You make a copy of your notes, try a new approach in the copy. If it works, you replace your original. If it doesn't, you throw the copy away. Your original is always safe.</div>
+      </div>
+
+      <h2>Branch Diagram</h2>
+      <div class="diagram">
+        <div class="diagram-title">🌿 Branch Structure</div>
+        <div style="padding:10px 20px;display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--accent);"></div>
+            <span style="font-size:0.85rem;color:var(--accent);font-weight:600;">main</span>
+            <span style="font-size:0.75rem;color:var(--text-subtle);">← the stable, live version</span>
+          </div>
+          <div style="width:3px;height:24px;background:var(--accent);margin-left:5px;"></div>
+          <div style="display:flex;align-items:center;gap:0;">
+            <div style="width:5px;height:2px;background:var(--border);"></div>
+            <div style="width:3px;height:40px;background:var(--accent);"></div>
+            <div style="width:40px;height:2px;background:var(--orange);margin-top:0;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--orange);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--orange);"></div>
+            <span style="font-size:0.82rem;color:var(--orange);padding-left:10px;">feature/login</span>
+            <span style="font-size:0.72rem;color:var(--text-subtle);padding-left:6px;">← you build the login here safely</span>
+          </div>
+          <div style="width:3px;height:24px;background:var(--accent);margin-left:5px;"></div>
+          <div style="display:flex;align-items:center;gap:0;">
+            <div style="width:5px;height:2px;background:var(--border);"></div>
+            <div style="width:3px;height:40px;background:var(--accent);"></div>
+            <div style="width:40px;height:2px;background:var(--green);margin-top:0;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--green);"></div>
+            <span style="font-size:0.82rem;color:var(--green);padding-left:10px;">feature/navbar</span>
+            <span style="font-size:0.72rem;color:var(--text-subtle);padding-left:6px;">← teammate builds navbar here</span>
+          </div>
+          <div style="width:3px;height:20px;background:var(--accent);margin-left:5px;"></div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--accent);"></div>
+            <span style="font-size:0.78rem;color:var(--text-subtle);">← when done, both merge back into main</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>Types of Branches:</h2>
+      <table class="cmd-table">
+        <thead><tr><th>Branch Type</th><th>Purpose</th><th>Example Name</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cmd">main</span></td><td>The stable, production-ready version. Always working.</td><td><code>main</code></td></tr>
+          <tr><td><span class="cmd">feature/</span></td><td>Building a new feature safely</td><td><code>feature/login-page</code></td></tr>
+          <tr><td><span class="cmd">fix/</span></td><td>Fixing a specific bug</td><td><code>fix/navbar-mobile</code></td></tr>
+          <tr><td><span class="cmd">experiment/</span></td><td>Trying something new — might delete</td><td><code>experiment/new-design</code></td></tr>
+        </tbody>
+      </table>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Branches let you work in parallel. Main is always stable. You build features on separate branches, then merge them in when they're ready. This is how real teams work.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERGE -->
+  <div class="concept-card open" id="merge">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🔀</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Merge (Introduction)</div>
+        <div class="concept-subtitle">Bringing a branch's changes back into main</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>Merge combines the changes from one branch into another — usually from a feature branch back into <code>main</code>.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>When your feature is done and tested, you merge it into main so everyone gets the new feature.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>After you've finished working on a feature branch and tested it thoroughly. Never merge broken code into main!</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>On GitHub, teams use "Pull Requests" to review code before merging. Someone else checks your work first.</p></div>
+      </div>
+
+      <div class="analogy">
+        <div class="analogy-icon">📓</div>
+        <div class="analogy-text"><strong>Merge = Copying your experiment notes back into your original notebook.</strong> You photocopied your notebook (branch), made changes, verified they work, then wrote those changes back into the original (merged into main).</div>
+      </div>
+
+      <div class="note">We'll explore merges in more depth as you get comfortable with branches. For now, understand that merge = combine branches together.</div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Merge = take changes from one branch and apply them to another. Feature branch → merge into main → everyone gets the feature. This is the core loop of professional development.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEWORK 2 -->
+  <div class="hw-card" id="hw2">
+    <div class="hw-title">📝 Homework — Day 2</div>
+    <ul class="hw-list">
+      <li><div><strong>Clone your repository</strong> — Use GitHub Desktop: File → Clone Repository</div></li>
+      <li><div><strong>Make 2 commits</strong> — Edit your files, write clear commit messages for each</div></li>
+      <li><div><strong>Push your commits</strong> — Click "Push origin" in GitHub Desktop and verify on GitHub.com</div></li>
+      <li><div><strong>Create a Feature Branch</strong> — Name it <code>feature/add-about-section</code></div></li>
+      <li><div><strong>Make changes on the branch</strong> — Add an About section to your HTML</div></li>
+      <li><div><strong>Merge back into main</strong> — Switch to main branch, then merge your feature branch</div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ DAY 3 ═══════════ -->
+  <div class="section" id="day3-header" style="margin-top:56px;">
+    <div class="day-header">
+      <div class="day-badge" style="background:linear-gradient(135deg,var(--green),#1A6B2A)">Day 3</div>
+      <div>
+        <div class="day-title">Git CLI & VS Code</div>
+        <div class="day-subtitle">Learning the terminal commands that professionals use every day</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VS CODE GIT -->
+  <div class="concept-card open" id="vscode-git">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🔵</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Git in VS Code</div>
+        <div class="concept-subtitle">Built-in version control panel inside your code editor</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-label">What?</div><p>VS Code has Git built in. Click the branch icon (third icon in the left sidebar) to see all your changed files, stage them, and commit — without leaving your editor.</p></div>
+        <div class="pillar"><div class="pillar-label">Why?</div><p>It's faster than switching apps. You can see your code changes and commit them in the same window, side by side.</p></div>
+        <div class="pillar"><div class="pillar-label">When?</div><p>When you're coding in VS Code and want to commit without opening a separate app or terminal.</p></div>
+        <div class="pillar"><div class="pillar-label">Real World</div><p>Most professional developers use VS Code's built-in Git or use the terminal. GitHub Desktop is great for beginners but professionals prefer staying in the editor.</p></div>
+      </div>
+
+      <h2>VS Code vs GitHub Desktop</h2>
+      <div class="compare-grid">
+        <div class="compare-col good">
+          <div class="cc-title">🖥️ GitHub Desktop</div>
+          <ul>
+            <li>Separate, dedicated app</li>
+            <li>Cleaner, more visual interface</li>
+            <li>Best for beginners</li>
+            <li>Easy to see file history</li>
+            <li>Great for managing multiple repos</li>
+          </ul>
+        </div>
+        <div class="compare-col good">
+          <div class="cc-title">🔵 VS Code Git</div>
+          <ul>
+            <li>Built into your code editor</li>
+            <li>Never leave VS Code</li>
+            <li>See code changes and commit together</li>
+            <li>Faster workflow once you know it</li>
+            <li>Most popular professional choice</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary</strong> Both tools do the same Git actions. GitHub Desktop is visual and great for starting out. VS Code's built-in Git is faster for daily use. Learn both and choose what works for you.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIT COMMANDS -->
+  <div class="concept-card open" id="git-commands">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">⌨️</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">Git Commands — The Essential Six</div>
+        <div class="concept-subtitle">Every command you need for daily development work</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+      <p class="section-intro">These 6 commands cover 90% of everything you'll do with Git every day. Master these first.</p>
+
+      <h2>1. git clone</h2>
+      <p>Download a repository from GitHub to your computer. Use this once per project.</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git clone</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git clone</span> <span class="tok-str">https://github.com/username/project-name.git</span>
+<span class="tok-comment"># Creates a folder called "project-name" with all files + history</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>2. git status</h2>
+      <p>Check what files have changed since your last commit. Your most-used command!</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git status</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git status</span>
+<span class="tok-comment"># Shows you which files are changed, staged, or untracked</span>
+<span class="tok-comment"># Run this before every commit to see what you're about to save</span>
+
+<span class="tok-success">On branch main</span>
+<span class="tok-success">Changes not staged for commit:</span>
+        <span class="tok-flag">modified:   index.html</span>
+        <span class="tok-flag">modified:   style.css</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>3. git add .</h2>
+      <p>Stage all changed files, preparing them to be committed. The dot <code>.</code> means "everything".</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git add</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git add</span> <span class="tok-flag">.</span>           <span class="tok-comment"># Stage ALL changed files</span>
+<span class="tok-cmd">git add</span> <span class="tok-str">index.html</span>  <span class="tok-comment"># Stage one specific file only</span>
+<span class="tok-comment"># "Staging" = marking files as "ready to be saved"</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>4. git commit -m ""</h2>
+      <p>Save a snapshot of your staged files with a message describing the change.</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git commit</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git commit</span> <span class="tok-flag">-m</span> <span class="tok-str">"Added login page with email and password fields"</span>
+<span class="tok-comment"># -m means "message" — write what you changed</span>
+<span class="tok-success"># [main a3c5d18] Added login page with email and password fields</span>
+<span class="tok-success"># 2 files changed, 47 insertions(+)</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>5. git push</h2>
+      <p>Upload your commits from your computer to GitHub. Share your work with the world.</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git push</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git push</span>
+<span class="tok-comment"># Uploads commits to GitHub</span>
+<span class="tok-cmd">git push origin</span> <span class="tok-str">feature/login</span>  <span class="tok-comment"># Push a specific branch</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>6. git pull</h2>
+      <p>Download the latest changes from GitHub to your computer. Always do this before starting work.</p>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>git pull</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-cmd">git pull</span>
+<span class="tok-comment"># Downloads and applies latest changes from GitHub</span>
+<span class="tok-success"># Fast-forward → your files are now up to date</span></pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Quick Reference — All 6 Commands</h2>
+      <table class="cmd-table">
+        <thead><tr><th>Command</th><th>What it does</th><th>Analogy</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cmd">git clone &lt;url&gt;</span></td><td>Download a repo from GitHub</td><td>Download a project for the first time</td></tr>
+          <tr><td><span class="cmd">git status</span></td><td>See what files changed</td><td>Check what you've edited</td></tr>
+          <tr><td><span class="cmd">git add .</span></td><td>Stage all changes</td><td>Pack your files for shipping</td></tr>
+          <tr><td><span class="cmd">git commit -m ""</span></td><td>Save a snapshot with message</td><td>Press Save + write a caption</td></tr>
+          <tr><td><span class="cmd">git push</span></td><td>Upload commits to GitHub</td><td>Upload to Google Drive</td></tr>
+          <tr><td><span class="cmd">git pull</span></td><td>Download latest from GitHub</td><td>Download the latest version</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DAILY WORKFLOW -->
+  <div class="concept-card open" id="daily-workflow">
+    <div class="concept-header" onclick="toggleCard(this)">
+      <div class="concept-icon">🔁</div>
+      <div class="concept-title-wrap">
+        <div class="concept-title">The Daily Git Workflow</div>
+        <div class="concept-subtitle">The exact sequence you'll follow every single day</div>
+      </div>
+      <svg class="concept-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="concept-body">
+
+      <div class="diagram">
+        <div class="diagram-title">🔁 Complete Git Workflow</div>
+        <div class="flow-diagram">
+          <div class="flow-step">1. git pull</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step" style="border-color:var(--orange);color:var(--orange);">2. Edit Files (write code)</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step">3. git status</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step">4. git add .</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step highlight">5. git commit -m "Your message"</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step">6. git push</div>
+          <div class="flow-arrow"></div>
+          <div class="flow-step" style="border-color:var(--green);color:var(--green);">✓ Done! Repeat tomorrow.</div>
+        </div>
+      </div>
+
+      <h2>Full workflow example — building a contact page:</h2>
+      <div class="code-wrap has-label">
+        <div class="code-label"><span>🖥️ Complete Session</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+        <pre><span class="tok-comment"># Step 1: Get the latest code before starting</span>
+<span class="tok-cmd">git pull</span>
+
+<span class="tok-comment"># ... you build the contact page in your editor ...</span>
+
+<span class="tok-comment"># Step 2: See what you changed</span>
+<span class="tok-cmd">git status</span>
+
+<span class="tok-comment"># Step 3: Stage all your changes</span>
+<span class="tok-cmd">git add</span> <span class="tok-flag">.</span>
+
+<span class="tok-comment"># Step 4: Save a snapshot with a description</span>
+<span class="tok-cmd">git commit</span> <span class="tok-flag">-m</span> <span class="tok-str">"Added contact page with form and map"</span>
+
+<span class="tok-comment"># Step 5: Upload to GitHub</span>
+<span class="tok-cmd">git push</span>
+
+<span class="tok-success"># ✓ Your work is saved, backed up, and visible to your team.</span></pre>
+      </div>
+
+      <div class="summary">
+        <div class="summary-icon">✅</div>
+        <div class="summary-text"><strong>Summary — The Golden Sequence</strong> Pull → Code → Status → Add → Commit → Push. Memorize this. Do it every single session. Even experienced engineers follow this exact loop every day.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEWORK 3 -->
+  <div class="hw-card" id="hw3">
+    <div class="hw-title">📝 Homework — Day 3 (Independent Practice)</div>
+    <ul class="hw-list">
+      <li><div><strong>Open your project in VS Code</strong></div></li>
+      <li><div><strong>Open the VS Code terminal</strong> — View → Terminal (or Ctrl + `)</div></li>
+      <li><div>Run <strong><code>git pull</code></strong> to get the latest changes</div></li>
+      <li><div>Add a new page (e.g., <code>projects.html</code>) — build it out</div></li>
+      <li><div>Run <strong><code>git status</code></strong> to see your changes</div></li>
+      <li><div>Run <strong><code>git add .</code></strong> to stage everything</div></li>
+      <li><div>Run <strong><code>git commit -m "Added projects page"</code></strong></div></li>
+      <li><div>Run <strong><code>git push</code></strong> to upload to GitHub</div></li>
+      <li><div>Verify it appears on <strong>github.com/your-username/your-repo</strong></div></li>
+      <li><div><strong>Repeat</strong> — Do the full workflow 2 more times independently</div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ FLASHCARDS ═══════════ -->
+  <div class="section" id="flashcards" style="margin-top:56px;">
+    <div class="day-header">
+      <div class="day-badge" style="background:linear-gradient(135deg,var(--purple),#7C3AED)">Revision</div>
+      <div>
+        <div class="day-title">Quick Revision — Flash Cards</div>
+        <div class="day-subtitle">Click each card to reveal the answer</div>
+      </div>
+    </div>
+
+    <div class="flashcards-grid">
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is Git?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">A <strong>Version Control System</strong> that runs on your computer and tracks every change made to your project files.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is GitHub?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">A <strong>website</strong> (cloud platform) that hosts Git repositories online. Like Google Drive — but for code.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is a Repository?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">A <strong>project folder</strong> tracked by Git. Contains all your files plus the complete history of every change ever made.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What does Commit do?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">Saves a <strong>snapshot</strong> of your project at that moment. Like pressing Save in a game — you can always come back to this point.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What does Push do?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Uploads</strong> your local commits to GitHub. Nothing is on GitHub until you push. Like syncing to Google Drive.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What does Pull do?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Downloads</strong> the latest changes from GitHub to your computer. Always pull before you start coding.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What does Clone do?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Copies</strong> a repository from GitHub to your computer for the first time — including all files and history.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is a Branch?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">A <strong>parallel copy</strong> of your project where you can safely build a new feature without touching the main version.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">Local vs Remote?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Local</strong> = on your computer. <strong>Remote</strong> = on GitHub's servers. You work locally, push to remote.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">Daily Workflow order?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Pull → Code → Status → Add → Commit → Push</strong>. Repeat every session.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is git add . ?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a"><strong>Stages</strong> all changed files, preparing them to be committed. The dot means "everything".</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+
+      <div class="flash-card" onclick="flipCard(this)">
+        <div class="flash-front">
+          <div class="flash-q-label">Question</div>
+          <div class="flash-q">What is git status?</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-a-label">Answer</div>
+          <div class="flash-a">Shows you <strong>which files changed</strong> since your last commit. Run before every commit.</div>
+        </div>
+        <div class="flash-hint">tap to reveal</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:24px;">
+      <button onclick="resetFlashCards()" style="background:var(--surface);border:1px solid var(--border);color:var(--text-muted);padding:10px 24px;border-radius:var(--radius);cursor:pointer;font-size:0.875rem;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">Reset All Cards</button>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+  // ── SEARCH DATA ──
+  const searchData = [
+    { title: 'Version Control', section: 'version-control', day: 'Day 1' },
+    { title: 'What is Git?', section: 'git', day: 'Day 1' },
+    { title: 'What is GitHub?', section: 'github', day: 'Day 1' },
+    { title: 'GitHub Desktop', section: 'github-desktop', day: 'Day 1' },
+    { title: 'Repository', section: 'repository', day: 'Day 1' },
+    { title: 'Local vs Remote Repository', section: 'local-remote', day: 'Day 1' },
+    { title: 'Clone', section: 'clone', day: 'Day 2' },
+    { title: 'Commit', section: 'commit', day: 'Day 2' },
+    { title: 'Push', section: 'push', day: 'Day 2' },
+    { title: 'Pull', section: 'pull', day: 'Day 2' },
+    { title: 'Branches', section: 'branches', day: 'Day 2' },
+    { title: 'Merge', section: 'merge', day: 'Day 2' },
+    { title: 'Git in VS Code', section: 'vscode-git', day: 'Day 3' },
+    { title: 'Git Commands', section: 'git-commands', day: 'Day 3' },
+    { title: 'Daily Workflow', section: 'daily-workflow', day: 'Day 3' },
+    { title: 'Flash Cards', section: 'flashcards', day: 'Revision' },
+  ];
+
+  function doSearch(q) {
+    const box = document.getElementById('search-results');
+    q = q.trim().toLowerCase();
+    if (!q) { box.style.display = 'none'; return; }
+    const results = searchData.filter(d => d.title.toLowerCase().includes(q));
+    if (!results.length) {
+      box.innerHTML = `<div class="search-item" style="color:var(--text-subtle);cursor:default;">No results for "${q}"</div>`;
+      box.style.display = 'block';
+      return;
+    }
+    box.innerHTML = results.map(r =>
+      `<div class="search-item" onmousedown="event.preventDefault();navTo('${r.section}');closeSearch()">
+        <div class="si-day">${r.day}</div>${r.title}</div>`
+    ).join('');
+    box.style.display = 'block';
+  }
+  function closeSearch() {
+    document.getElementById('search-results').style.display = 'none';
+    document.getElementById('search-box').value = '';
+  }
+
+  // ── SCROLL SPY ──
+  const sectionIds = searchData.map(d => d.section);
+  const sidebarLinks = document.querySelectorAll('.sb-link');
+
+  function updateScrollSpy() {
+    const scroll = window.scrollY + 100;
+    let current = '';
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scroll) current = id;
+    }
+    // also check hero
+    const heroEl = document.getElementById('hero');
+    if (heroEl && heroEl.offsetTop <= scroll) current = current || 'hero';
+    sidebarLinks.forEach(link => {
+      const fn = link.getAttribute('onclick') || '';
+      const match = fn.match(/navTo\('([^']+)'\)/);
+      if (match) link.classList.toggle('active', match[1] === current);
+    });
+  }
+
+  // ── PROGRESS BAR ──
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }
+
+  // ── BACK TO TOP ──
+  const backTop = document.getElementById('back-top');
+  function updateBackTop() {
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  }
+
+  window.addEventListener('scroll', () => {
+    updateProgress();
+    updateScrollSpy();
+    updateBackTop();
+  }, { passive: true });
+
+  // ── COLLAPSIBLE CARDS ──
+  function toggleCard(header) {
+    const card = header.closest('.concept-card');
+    card.classList.toggle('open');
+  }
+
+  // ── SCROLL TO ──
+  function navTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ── COPY CODE ──
+  function copyCode(btn) {
+    const pre = btn.closest('.code-wrap').querySelector('pre');
+    const text = pre.innerText || pre.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copied';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      btn.textContent = '✓ Copied'; btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // ── FLASH CARDS ──
+  function flipCard(card) {
+    card.classList.toggle('flipped');
+  }
+  function resetFlashCards() {
+    document.querySelectorAll('.flash-card').forEach(c => c.classList.remove('flipped'));
+  }
+
+  // ── SIDEBAR COLLAPSE (desktop) ──
+  let sbCollapsed = false;
+  function toggleSidebarCollapse() {
+    const sb = document.getElementById('sidebar');
+    const main = document.getElementById('main');
+    const btn = document.getElementById('sb-toggle');
+    sbCollapsed = !sbCollapsed;
+    sb.classList.toggle('collapsed', sbCollapsed);
+    main.classList.toggle('full', sbCollapsed);
+    btn.classList.toggle('collapsed', sbCollapsed);
+    btn.textContent = sbCollapsed ? '▶' : '◀';
+    btn.style.left = sbCollapsed ? '0' : 'var(--sidebar-w)';
+  }
+
+  // ── MOBILE SIDEBAR ──
+  let sidebarOpen = false;
+  function toggleSidebar() {
+    const sb = document.getElementById('sidebar');
+    sidebarOpen = !sidebarOpen;
+    if (sidebarOpen) {
+      sb.style.display = 'block';
+      sb.style.zIndex = '200';
+    } else {
+      sb.style.display = '';
+    }
+  }
+
+  // ── KEYBOARD NAV ──
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      document.getElementById('search-box').focus();
+    }
+    if (e.key === 'Escape') {
+      closeSearch();
+      document.getElementById('search-box').blur();
+    }
+  });
+
+  // Init
+  updateProgress();
+  updateScrollSpy();
+</script>
+</body>
+</html>
