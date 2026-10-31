@@ -1,0 +1,1361 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e3]:
+    - generic [ref=e6]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: https://qualitythought.in
+        - img "Quality Thought - Logo" [ref=e9]
+      - generic [ref=e11]:
+        - navigation "Global Menu" [ref=e13]:
+          - generic "Menu Toggle" [ref=e14]:
+            - list [ref=e15]:
+              - listitem [ref=e16]:
+                - generic [ref=e17] [cursor=pointer]:
+                  - generic [ref=e18]: Courses
+                  - button "Open Courses" [ref=e20]
+              - listitem [ref=e25]:
+                - generic [ref=e26] [cursor=pointer]:
+                  - generic [ref=e27]: Upcoming Batches
+                  - button "Open Upcoming Batches" [ref=e29]
+              - listitem [ref=e34]:
+                - generic [ref=e35] [cursor=pointer]:
+                  - generic [ref=e36]: Resources
+                  - button "Open Resources" [ref=e38]
+              - listitem [ref=e43]:
+                - generic [ref=e44] [cursor=pointer]:
+                  - generic [ref=e45]: Our Entities
+                  - button "Open Our Entities" [ref=e47]
+              - listitem [ref=e52]:
+                - generic [ref=e53] [cursor=pointer]:
+                  - generic [ref=e54]: Branches
+                  - button "Open Branches" [ref=e56]
+              - listitem [ref=e61]:
+                - generic [ref=e62] [cursor=pointer]:
+                  - generic [ref=e63]: More
+                  - button "Open More" [ref=e65]
+        - link "+91 9963486280" [ref=e71] [cursor=pointer]:
+          - /url: tel:+91%209963486280
+  - main [ref=e77]:
+    - generic [ref=e79]:
+      - generic [ref=e82]:
+        - list [ref=e84]:
+          - listitem [ref=e85]:
+            - generic [ref=e89]: Learn. Build. Innovate. Grow.
+        - heading "Learn Skills. Build Real-World Expertise. Grow Your Career." [level=1] [ref=e91]: Learn Skills. Build Real-World Expertise.Grow Your Career.
+        - paragraph [ref=e93]: Expert-led master classes, hands-on workshops, intensive boot camps and hackathons – practical learning experiences that move your career forward with confidence.
+        - link "Join a Free Master Class" [active] [ref=e96] [cursor=pointer]:
+          - /url: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY2ODk3IiwidG9nZ2xlIjpmYWxzZX0%3D"
+      - generic [ref=e103]:
+        - heading "Sathya Raj on Quality Thought Excellence" [level=2] [ref=e105]
+        - paragraph [ref=e107]: Hear what the acclaimed actor has to say about our training and results.
+        - iframe [ref=e110]:
+          - generic [ref=f10e1]:
+            - generic "YouTube Video Player" [ref=f10e3]
+            - button "Show player controls" [ref=f10e107] [cursor=pointer]
+      - generic [ref=e112]:
+        - heading "Trending Courses" [level=2] [ref=e114]
+        - paragraph [ref=e116]: Master in-demand skills with our specialized programs
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: Most Popular
+            - generic [ref=e124]:
+              - generic [ref=e127]:
+                - heading "Gen AI Development" [level=3] [ref=e128]
+                - paragraph [ref=e129]: Build with Generative AI
+              - list [ref=e131]:
+                - listitem [ref=e132]:
+                  - generic [ref=e136]: Industry Expert Instructors
+                - listitem [ref=e137]:
+                  - generic [ref=e141]: Mock Interviews & Career Support
+                - listitem [ref=e142]:
+                  - generic [ref=e146]: Mock Interviews & Career Support
+                - listitem [ref=e147]:
+                  - generic [ref=e151]: Industry Expert Instructors
+              - link "View Course Details" [ref=e153] [cursor=pointer]:
+                - /url: https://qualitythought.in/gen-ai/
+          - generic [ref=e159]:
+            - generic [ref=e160]: Fast Growing
+            - generic [ref=e166]:
+              - generic [ref=e169]:
+                - heading "Cyber Security" [level=3] [ref=e170]
+                - paragraph [ref=e171]: Protect Digital Assets
+              - list [ref=e173]:
+                - listitem [ref=e174]:
+                  - generic [ref=e178]: Online / Offline Classes
+                - listitem [ref=e179]:
+                  - generic [ref=e183]: Job Oriented Curriculum
+                - listitem [ref=e184]:
+                  - generic [ref=e188]: Mock Interviews & Career Support
+                - listitem [ref=e189]:
+                  - generic [ref=e193]: Hands-on Security Labs
+              - link "View Course Details" [ref=e195] [cursor=pointer]:
+                - /url: https://qualitythought.in/cyber-security-training/
+          - generic [ref=e201]:
+            - generic [ref=e202]: High Demand
+            - generic [ref=e208]:
+              - generic [ref=e211]:
+                - heading "Data Science" [level=3] [ref=e212]
+                - paragraph [ref=e213]: Unlock Intelligent Insights
+              - list [ref=e215]:
+                - listitem [ref=e216]:
+                  - generic [ref=e220]: Online / Offline Classes
+                - listitem [ref=e221]:
+                  - generic [ref=e225]: Job Oriented Curriculum
+                - listitem [ref=e226]:
+                  - generic [ref=e230]: Mock Interviews & Career Support
+                - listitem [ref=e231]:
+                  - generic [ref=e235]: Multi-Platform Certification
+              - link "View Course Details" [ref=e237] [cursor=pointer]:
+                - /url: https://qualitythought.in/data-science-training/
+          - generic [ref=e243]:
+            - generic [ref=e244]: High Demand
+            - generic [ref=e250]:
+              - generic [ref=e253]:
+                - heading "Cloud Data Engineer" [level=3] [ref=e254]
+                - paragraph [ref=e255]: Build Cloud Data Pipelines
+              - list [ref=e257]:
+                - listitem [ref=e258]:
+                  - generic [ref=e262]: Online / Offline Classes
+                - listitem [ref=e263]:
+                  - generic [ref=e267]: Job Oriented Curriculum
+                - listitem [ref=e268]:
+                  - generic [ref=e272]: Mock Interviews & Career Support
+                - listitem [ref=e273]:
+                  - generic [ref=e277]: Industry Expert Instructors
+              - link "View Course Details" [ref=e279] [cursor=pointer]:
+                - /url: https://qualitythought.in/google-cloud-platform-training/
+      - generic [ref=e286]:
+        - heading "Featured Courses" [level=2] [ref=e288]
+        - paragraph [ref=e290]: Industry-aligned curriculum designed by experts with 17+ years experience. Start your tech career today.
+        - generic [ref=e291]:
+          - generic [ref=e292]:
+            - list [ref=e294]:
+              - listitem [ref=e295]:
+                - generic [ref=e299]: Full-Stack Java
+            - list [ref=e301]:
+              - listitem [ref=e302]:
+                - generic [ref=e306]: 5 Months
+              - listitem [ref=e307]:
+                - generic [ref=e311]: 2,500+
+            - paragraph [ref=e313]: Master Java, Spring Boot, Microservices, React, and AWS deployment with real projects.
+            - generic [ref=e314]:
+              - list [ref=e316]:
+                - listitem [ref=e317]:
+                  - generic [ref=e318]: Spring Boot
+              - list [ref=e320]:
+                - listitem [ref=e321]:
+                  - generic [ref=e322]: Microservices
+              - list [ref=e324]:
+                - listitem [ref=e325]:
+                  - generic [ref=e326]: AWS
+              - list [ref=e328]:
+                - listitem [ref=e329]:
+                  - generic [ref=e330]: React
+            - generic [ref=e331]:
+              - img "Rated 4 out of 4" [ref=e334]
+              - paragraph [ref=e364]:
+                - strong [ref=e365]: "4.8"
+                - text: (500+ students)
+            - generic [ref=e366]:
+              - paragraph [ref=e368]: Training Fee
+              - paragraph [ref=e370]: ₹35,000
+            - link "View Course Details" [ref=e372] [cursor=pointer]:
+              - /url: https://qualitythought.in/full-stack-java-training-in-hyderabad/
+          - generic [ref=e378]:
+            - list [ref=e380]:
+              - listitem [ref=e381]:
+                - generic [ref=e385]: Quantum Computing
+            - list [ref=e387]:
+              - listitem [ref=e388]:
+                - generic [ref=e392]: 4 Months
+              - listitem [ref=e393]:
+                - generic [ref=e397]: 400+
+            - paragraph [ref=e402]: Gain a solid foundation in quantum mechanics, linear algebra, and quantum information theory.
+            - generic [ref=e403]:
+              - list [ref=e405]:
+                - listitem [ref=e406]:
+                  - generic [ref=e407]: Quantum Gates
+              - list [ref=e409]:
+                - listitem [ref=e410]:
+                  - generic [ref=e411]: Qubits
+              - list [ref=e413]:
+                - listitem [ref=e414]:
+                  - generic [ref=e415]: Quantum Algorithms
+            - generic [ref=e416]:
+              - img "Rated 4 out of 4" [ref=e419]
+              - paragraph [ref=e449]:
+                - strong [ref=e450]: "4.8"
+                - text: (500+ students)
+            - generic [ref=e451]:
+              - paragraph [ref=e453]: Training Fee
+              - paragraph [ref=e455]: ₹1,00,000
+            - link "View Course Details" [ref=e457] [cursor=pointer]:
+              - /url: https://qualitythought.in/quantum-computing-training/
+          - generic [ref=e463]:
+            - list [ref=e465]:
+              - listitem [ref=e466]:
+                - generic [ref=e470]: Gen AI Testing
+            - list [ref=e472]:
+              - listitem [ref=e473]:
+                - generic [ref=e477]: 3 Months
+              - listitem [ref=e478]:
+                - generic [ref=e482]: 3,000+
+            - paragraph [ref=e484]: learn to evaluate AI models, identify bugs, and maintain the ethical running of AI systems
+            - generic [ref=e485]:
+              - list [ref=e487]:
+                - listitem [ref=e488]:
+                  - generic [ref=e489]: AI models
+              - list [ref=e491]:
+                - listitem [ref=e492]:
+                  - generic [ref=e493]: Bug Detection
+              - list [ref=e495]:
+                - listitem [ref=e496]:
+                  - generic [ref=e497]: AI systems
+            - generic [ref=e498]:
+              - img "Rated 4 out of 4" [ref=e501]
+              - paragraph [ref=e531]:
+                - strong [ref=e532]: "4.9"
+                - text: (2,500+ students)
+            - generic [ref=e533]:
+              - paragraph [ref=e535]: Training Fee
+              - paragraph [ref=e537]: ₹40,000
+            - link "View Course Details" [ref=e539] [cursor=pointer]:
+              - /url: https://qualitythought.in/ai-testing-training-course/
+          - generic [ref=e545]:
+            - list [ref=e547]:
+              - listitem [ref=e548]:
+                - generic [ref=e552]: Gen AI Development
+            - list [ref=e554]:
+              - listitem [ref=e555]:
+                - generic [ref=e559]: 4 Months
+              - listitem [ref=e560]:
+                - generic [ref=e564]: 1,200+
+            - paragraph [ref=e566]: Deep dive into Neural Networks, NLP, Computer Vision, LLMs, and Generative AI technologies.
+            - generic [ref=e567]:
+              - list [ref=e569]:
+                - listitem [ref=e570]:
+                  - generic [ref=e571]: Computer Vision
+              - list [ref=e573]:
+                - listitem [ref=e574]:
+                  - generic [ref=e575]: NLP
+              - list [ref=e577]:
+                - listitem [ref=e578]:
+                  - generic [ref=e579]: Deep Learning
+              - list [ref=e581]:
+                - listitem [ref=e582]:
+                  - generic [ref=e583]: LLMs
+            - generic [ref=e584]:
+              - paragraph [ref=e586]:
+                - strong [ref=e587]: "4.6"
+                - text: (1,400+ students)
+              - img "Rated 5 out of 5" [ref=e590]
+            - generic [ref=e626]:
+              - paragraph [ref=e628]: Training Fee
+              - paragraph [ref=e630]: ₹60,000
+            - link "View Course Details" [ref=e632] [cursor=pointer]:
+              - /url: https://qualitythought.in/gen-ai/
+          - generic [ref=e638]:
+            - list [ref=e640]:
+              - listitem [ref=e641]:
+                - generic [ref=e645]: DevOps & Cloud Engineering
+            - list [ref=e647]:
+              - listitem [ref=e648]:
+                - generic [ref=e652]: 4 Months
+              - listitem [ref=e653]:
+                - generic [ref=e657]: 2,800+
+            - paragraph [ref=e659]: Master CI/CD pipelines, Docker, Kubernetes, AWS, Azure, and infrastructure automation.
+            - generic [ref=e660]:
+              - list [ref=e662]:
+                - listitem [ref=e663]:
+                  - generic [ref=e664]: Docker
+              - list [ref=e666]:
+                - listitem [ref=e667]:
+                  - generic [ref=e668]: Kubernetes
+              - list [ref=e670]:
+                - listitem [ref=e671]:
+                  - generic [ref=e672]: AWS
+              - list [ref=e674]:
+                - listitem [ref=e675]:
+                  - generic [ref=e676]: Terraform
+            - generic [ref=e677]:
+              - paragraph [ref=e679]:
+                - strong [ref=e680]: "4.6"
+                - text: (1,400+ students)
+              - img "Rated 5 out of 5" [ref=e683]
+            - generic [ref=e719]:
+              - paragraph [ref=e721]: Training Fee
+              - paragraph [ref=e723]: ₹60,000
+            - link "View Course Details" [ref=e725] [cursor=pointer]:
+              - /url: https://qualitythought.in/multi-cloud-engineer-training/
+          - generic [ref=e731]:
+            - list [ref=e733]:
+              - listitem [ref=e734]:
+                - generic [ref=e738]: Playwright Automation Testing
+            - list [ref=e740]:
+              - listitem [ref=e741]:
+                - generic [ref=e745]: 3 Months
+              - listitem [ref=e746]:
+                - generic [ref=e750]: 2,600+
+            - paragraph [ref=e752]: Master Playwright automation testing with JavaScript/TypeScript, end-to-end testing, API testing, test frameworks, and CI/CD integration.
+            - generic [ref=e753]:
+              - list [ref=e755]:
+                - listitem [ref=e756]:
+                  - generic [ref=e757]: JavaScript
+              - list [ref=e759]:
+                - listitem [ref=e760]:
+                  - generic [ref=e761]: TypeScript
+              - list [ref=e763]:
+                - listitem [ref=e764]:
+                  - generic [ref=e765]: API Testing
+            - generic [ref=e766]:
+              - paragraph [ref=e768]:
+                - strong [ref=e769]: "4.6"
+                - text: (1,400+ students)
+              - img "Rated 5 out of 5" [ref=e772]
+            - generic [ref=e808]:
+              - paragraph [ref=e810]: Training Fee
+              - paragraph [ref=e812]: ₹20,000
+            - link "View Course Details" [ref=e814] [cursor=pointer]:
+              - /url: https://qualitythought.in/playwright/
+      - generic [ref=e821]:
+        - heading "Choose Your Learning Journey" [level=5] [ref=e823]
+        - paragraph [ref=e827]: Master in-demand skills with our specialized programs
+        - generic "Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys." [ref=e829]:
+          - tablist [ref=e830]:
+            - tab "Professional Upskilling" [selected] [ref=e831] [cursor=pointer]
+            - tab "Placement Bootcamps" [ref=e833] [cursor=pointer]
+            - tab "Skill To Job" [ref=e835] [cursor=pointer]
+            - tab "Corporate Training" [ref=e837] [cursor=pointer]
+          - tabpanel "Professional Upskilling" [ref=e840]
+      - generic [ref=e842]:
+        - heading "Recognized Excellence" [level=6] [ref=e844]
+        - paragraph [ref=e849]: Our achievements and industry recognition over 17+ years
+        - generic [ref=e850]:
+          - generic [ref=e851]:
+            - heading "Top 6 EdTech Institute in India" [level=3] [ref=e859]
+            - heading "Featured in Telangana Today" [level=3] [ref=e867]
+            - heading "Industry Partner with 500+ Companies" [level=3] [ref=e875]
+            - heading "Trusted by 100+ Corporate Clients" [level=3] [ref=e883]
+            - generic [ref=e884]:
+              - heading "Featured In" [level=2] [ref=e886]
+              - generic [ref=e887]:
+                - list [ref=e889]:
+                  - listitem [ref=e890]:
+                    - generic [ref=e891]: Economic Times
+                - list [ref=e893]:
+                  - listitem [ref=e894]:
+                    - generic [ref=e895]: Times of India
+                - list [ref=e897]:
+                  - listitem [ref=e898]:
+                    - generic [ref=e899]: The Hindu
+                - list [ref=e901]:
+                  - listitem [ref=e902]:
+                    - generic [ref=e903]: Tech News
+                - list [ref=e905]:
+                  - listitem [ref=e906]:
+                    - generic [ref=e907]: India Today
+          - region "Image Carousel" [ref=e910]:
+            - generic [ref=e911]:
+              - group [aria-hidden] [ref=e912]:
+                - figure [ref=e913]
+              - group [aria-hidden] [ref=e915]:
+                - figure [ref=e916]
+              - group [aria-hidden] [ref=e2136]:
+                - figure [ref=e919]
+              - group [aria-hidden] [ref=e921]:
+                - figure [ref=e922]
+              - group [aria-hidden] [ref=e2140]:
+                - figure [ref=e925]
+              - group "1 / 4" [ref=e2142]:
+                - figure [ref=e928]:
+                  - img "Swamy Vivekananda Indian Icon Award Quality Thought, by Viswaguru World Records" [ref=e2143]
+            - generic [ref=e930]:
+              - button "Go to slide 1" [ref=e931] [cursor=pointer]
+              - button "Go to slide 2" [ref=e932] [cursor=pointer]
+              - button "Go to slide 3" [ref=e933] [cursor=pointer]
+              - button "Go to slide 4" [ref=e934] [cursor=pointer]
+      - generic [ref=e935]:
+        - heading "What Our Students Say On Google" [level=6] [ref=e937]
+        - paragraph [ref=e939]: Direct Google Reviews From Our Happy Learners
+        - generic [ref=e945]:
+          - button "Previous" [ref=e946] [cursor=pointer]
+          - generic [ref=e947]:
+            - generic [ref=e949]:
+              - generic [ref=e950]:
+                - img "saitej smiley profile picture" [ref=e952]
+                - generic [ref=e953]:
+                  - link "saitej smiley" [ref=e954] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/103616426872453959609/reviews
+                  - generic [ref=e955]: a week ago
+              - generic [ref=e957]: Good
+            - generic [ref=e960]:
+              - generic [ref=e961]:
+                - img "Nohini Reddy Jeeru profile picture" [ref=e963]
+                - generic [ref=e964]:
+                  - link "Nohini Reddy Jeeru" [ref=e965] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/117115806133017449243/reviews
+                  - generic [ref=e966]: 2 weeks ago
+              - generic [ref=e968]:
+                - generic [ref=e969]: I had a great experience with Quality Thought Training Institute. The Gen AI Testing course provides valuable insights into the latest AI testing tools, techniques, and industry trends. The training approach is practical and helps learners understand how Generative AI can be used in software testing. The institute provides a good learning environment for both beginners and working professionals who want to upgrade their skills in AI testing. Highly recommended for anyone looking to build their knowledge in Gen AI Testing!
+                - button "read more" [ref=e970] [cursor=pointer]
+            - generic [ref=e972]:
+              - generic [ref=e973]:
+                - img "Dudekula Vinitha profile picture" [ref=e975]
+                - generic [ref=e976]:
+                  - link "Dudekula Vinitha" [ref=e977] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/109707715979766888373/reviews
+                  - generic [ref=e978]: 2 weeks ago
+              - generic [ref=e980]:
+                - generic [ref=e981]: ⭐⭐⭐⭐⭐ I am having a great learning experience at Quality Thought Institute while pursuing my Cybersecurity course. A special thanks to Pavan Sir, our Cybersecurity Trainer, for explaining concepts clearly and teaching us from the basics in a simple and understandable way. His teaching approach makes learning easier for beginners and helps us build a strong foundation in Cybersecurity. I look forward to gaining more practical knowledge and improving my technical skills under his guidance. I would also like to thank Fathima Madam for her excellent support and guidance throughout the course enrollment process. She explained the course details clearly and made the entire process smooth and comfortable. I am happy to be learning at Quality Thought Institute and look forward to developing my skills and building a successful career in Cybersecurity. I would definitely recommend Quality Thought Institute to anyone interested in learning Cybersecurity! 💻🔐
+                - button "read more" [ref=e982] [cursor=pointer]
+            - generic [ref=e984]:
+              - generic [ref=e985]:
+                - img "sai darling profile picture" [ref=e987]
+                - generic [ref=e988]:
+                  - link "sai darling" [ref=e989] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/103037018329361646241/reviews
+                  - generic [ref=e990]: 2 weeks ago
+              - generic [ref=e992]: I have taken a full stack python course and classes gone very well gained lot of knowledge about full stack python
+            - generic [ref=e995]:
+              - generic [ref=e996]:
+                - img "Rajasri Gadhegani profile picture" [ref=e998]
+                - generic [ref=e999]:
+                  - link "Rajasri Gadhegani" [ref=e1000] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/105854423341485897049/reviews
+                  - generic [ref=e1001]: 3 weeks ago
+              - generic [ref=e1003]: Good support and quick response. My batch shift request was resolved smoothly. Thank you for your help!
+            - generic [ref=e1006]:
+              - generic [ref=e1007]:
+                - img "Mahendar Kola profile picture" [ref=e1009]
+                - generic [ref=e1010]:
+                  - link "Mahendar Kola" [ref=e1011] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/106558562247523819680/reviews
+                  - generic [ref=e1012]: 3 weeks ago
+              - generic [ref=e1014]:
+                - generic [ref=e1015]: I recently requested a batch change from Batch 37 to Batch 39 at Quality Thought, and the whole process was smooth and hassle-free. Yasmin and Pavan responded quickly, clearly explained what details were needed, and processed the transfer without any back-and-forth. It's great to see a training institute that is this responsive to student requests. Thank you to the team for making it so easy!
+                - button "read more" [ref=e1016] [cursor=pointer]
+            - generic [ref=e1018]:
+              - generic [ref=e1019]:
+                - img "BharathSimha Reddy profile picture" [ref=e1021]
+                - generic [ref=e1022]:
+                  - link "BharathSimha Reddy" [ref=e1023] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/102510416249682278759/reviews
+                  - generic [ref=e1024]: 3 weeks ago
+              - generic [ref=e1026]: Thankyou for the quick response
+            - generic [ref=e1029]:
+              - generic [ref=e1030]:
+                - img "Karthik Koppera profile picture" [ref=e1032]
+                - generic [ref=e1033]:
+                  - link "Karthik Koppera" [ref=e1034] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/113513373451621940084/reviews
+                  - generic [ref=e1035]: 3 weeks ago
+              - generic [ref=e1037]: "Better future for quality thought #quality thought Fullstack python and other IT courses the best suggestion for to join the quality thought"
+            - generic [ref=e1040]:
+              - generic [ref=e1041]:
+                - img "Krishna KK profile picture" [ref=e1043]
+                - generic [ref=e1044]:
+                  - link "Krishna KK" [ref=e1045] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/112218839659299199375/reviews
+                  - generic [ref=e1046]: a month ago
+              - generic [ref=e1048]:
+                - generic [ref=e1049]: The teaching quality was excellent. The concepts were explained clearly and in an easy-to-understand way. The instructor was knowledgeable, supportive, and patient while clearing doubts. The sessions were well structured and practical, which made learning more effective. Overall, I am very satisfied with the quality of teaching.
+                - button "read more" [ref=e1050] [cursor=pointer]
+            - generic [ref=e1052]:
+              - generic [ref=e1053]:
+                - img "Sreeja M profile picture" [ref=e1055]
+                - generic [ref=e1056]:
+                  - link "Sreeja M" [ref=e1057] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/101431204722531183235/reviews
+                  - generic [ref=e1058]: 2 months ago
+              - generic [ref=e1060]:
+                - generic [ref=e1061]: Quality thought Institute is a great platform for learning software courses. Abdullah sir's teaching is excellent and easy to understand for both beginners and experienced students. He also clarifies doubts quickly. I highly recommend this as the best institute for anyone looking to learn a software course.
+                - button "read more" [ref=e1062] [cursor=pointer]
+            - generic [ref=e1064]:
+              - generic [ref=e1065]:
+                - img "Manohar Chowdary profile picture" [ref=e1067]
+                - generic [ref=e1068]:
+                  - link "Manohar Chowdary" [ref=e1069] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/104932189761735451654/reviews
+                  - generic [ref=e1070]: 2 months ago
+              - generic [ref=e1072]: Good
+            - generic [ref=e1075]:
+              - generic [ref=e1076]:
+                - img "Surendar Magginoori profile picture" [ref=e1078]
+                - generic [ref=e1079]:
+                  - link "Surendar Magginoori" [ref=e1080] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/111116790254868411886/reviews
+                  - generic [ref=e1081]: 2 months ago
+              - generic [ref=e1083]: Best place to learn the courses with qualified tutors with great knowledge. And the institute is very supportive and addresses all your concerns with positive response.
+            - generic [ref=e1086]:
+              - generic [ref=e1087]:
+                - img "sri jashuva profile picture" [ref=e1089]
+                - generic [ref=e1090]:
+                  - link "sri jashuva" [ref=e1091] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/112950620765251233213/reviews
+                  - generic [ref=e1092]: 2 months ago
+              - generic [ref=e1094]: Good, very neat environment.
+            - generic [ref=e1097]:
+              - generic [ref=e1098]:
+                - img "Jayaraj Vanampalli profile picture" [ref=e1100]
+                - generic [ref=e1101]:
+                  - link "Jayaraj Vanampalli" [ref=e1102] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/100165695721121673465/reviews
+                  - generic [ref=e1103]: 2 months ago
+              - generic [ref=e1105]:
+                - generic [ref=e1106]: I am currently learning the Cyber Security course at Quality Thoughts, and my experience has been excellent. The trainers explain concepts in a simple and practical way, which makes learning easy even for beginners. The institute provides good guidance, hands- on practice, and support for career development. I have improved my technical skills and confidence significantly. I would highly recommend Quality Thoughts to anyone who wants to build a career in Cyber Security and the IT field. Fatima mam helped me a lot of selecting my career
+                - button "read more" [ref=e1107] [cursor=pointer]
+            - generic [ref=e1109]:
+              - generic [ref=e1110]:
+                - img "Chandu Gatreddi profile picture" [ref=e1112]
+                - generic [ref=e1113]:
+                  - link "Chandu Gatreddi" [ref=e1114] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/117035380607514109119/reviews
+                  - generic [ref=e1115]: 3 months ago
+              - generic [ref=e1117]:
+                - generic [ref=e1118]: I had a very positive experience with this institute. The faculty members are knowledgeable, supportive, and always willing to help students understand concepts clearly. The learning environment is friendly, well-organized, and encourages both academic and personal growth. The institute also provides good resources and practical learning opportunities that help build confidence and skills. I would recommend this institute to anyone looking for quality education and a supportive atmosphere.
+                - button "read more" [ref=e1119] [cursor=pointer]
+            - generic [ref=e1121]:
+              - generic [ref=e1122]:
+                - img "sakshant nagmote profile picture" [ref=e1124]
+                - generic [ref=e1125]:
+                  - link "sakshant nagmote" [ref=e1126] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/101700968799276616799/reviews
+                  - generic [ref=e1127]: 3 months ago
+              - generic [ref=e1129]: I want to do Python Full stack + Gen AI DSA course from Quality thought for Job placement, should I join for the job opportunities as a beginner student?
+            - generic [ref=e1132]:
+              - generic [ref=e1133]:
+                - img "kishore. ch profile picture" [ref=e1135]
+                - generic [ref=e1136]:
+                  - link "kishore. ch" [ref=e1137] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/112764557056825589619/reviews
+                  - generic [ref=e1138]: 3 months ago
+              - generic [ref=e1140]: Very supportive
+            - generic [ref=e1143]:
+              - generic [ref=e1144]:
+                - img "Vyshu Vyshnavi profile picture" [ref=e1146]
+                - generic [ref=e1147]:
+                  - link "Vyshu Vyshnavi" [ref=e1148] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/102108344927188994548/reviews
+                  - generic [ref=e1149]: 4 months ago
+              - generic [ref=e1151]:
+                - generic [ref=e1152]: I had a great learning experience in the Data Analytics with Generative AI course at Quality Thoughts. The course content was well-structured, practical, and easy to understand. Our mentor, Daniel Sir, explained every concept with patience and real-world examples, making even complex topics simple to learn. The hands-on sessions, assignments, and guidance throughout the course helped me improve my technical skills and confidence. I sincerely thank Daniel Sir and the Quality Thoughts team for their support and dedication. I highly recommend this institute to anyone who wants to build a career in Data Analytics and Generative AI.
+                - button "read more" [ref=e1153] [cursor=pointer]
+            - generic [ref=e1155]:
+              - generic [ref=e1156]:
+                - img "Surya Palika143 profile picture" [ref=e1158]
+                - generic [ref=e1159]:
+                  - link "Surya Palika143" [ref=e1160] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/106798146687885469051/reviews
+                  - generic [ref=e1161]: 4 months ago
+              - generic [ref=e1163]:
+                - generic [ref=e1164]: The Java Full Stack training program is helping me develop strong programming skills. Niyaz Sir provides clear explanations and practical demonstrations. The classes are well planned and cover all important technologies. The project-based learning approach enhances understanding significantly. I would definitely recommend this course.
+                - button "read more" [ref=e1165] [cursor=pointer]
+            - generic [ref=e1167]:
+              - generic [ref=e1168]:
+                - img "Gautami Samal profile picture" [ref=e1170]
+                - generic [ref=e1171]:
+                  - link "Gautami Samal" [ref=e1172] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/106504937469752106923/reviews
+                  - generic [ref=e1173]: 4 months ago
+              - generic [ref=e1175]:
+                - generic [ref=e1176]: Quality Thought is a good platform for anyone interested in building a career in Cyber Security. The faculty is knowledgeable, approachable, and focused on student learning. The course covers current industry trends, practical security concepts, and career-oriented guidance. I am gaining valuable knowledge and confidence through this training program.
+                - button "read more" [ref=e1177] [cursor=pointer]
+            - generic [ref=e1179]:
+              - generic [ref=e1180]:
+                - img "Cherukuri Alhad profile picture" [ref=e1182]
+                - generic [ref=e1183]:
+                  - link "Cherukuri Alhad" [ref=e1184] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/117730642533149741319/reviews
+                  - generic [ref=e1185]: 4 months ago
+              - generic [ref=e1187]: It is very good place to learn and improve coding skills.
+            - generic [ref=e1190]:
+              - generic [ref=e1191]:
+                - img "Parthu Marumeni profile picture" [ref=e1193]
+                - generic [ref=e1194]:
+                  - link "Parthu Marumeni" [ref=e1195] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/101694120449317363684/reviews
+                  - generic [ref=e1196]: 4 months ago
+              - generic [ref=e1198]: It is good place to learn coding
+            - generic [ref=e1201]:
+              - generic [ref=e1202]:
+                - img "Satya sindhur Gompu profile picture" [ref=e1204]
+                - generic [ref=e1205]:
+                  - link "Satya sindhur Gompu" [ref=e1206] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/113241716842082527477/reviews
+                  - generic [ref=e1207]: 4 months ago
+              - generic [ref=e1209]:
+                - generic [ref=e1210]: The Python training at Quality Thought is well structured and beginner-friendly. The trainer covers all fundamental concepts with real-time examples. The practical sessions make it easy to understand programming logic. Regular coding practice has improved my confidence significantly. I highly recommend this course to Python learners.
+                - button "read more" [ref=e1211] [cursor=pointer]
+            - generic [ref=e1213]:
+              - generic [ref=e1214]:
+                - img "Ayushi Sinha profile picture" [ref=e1216]
+                - generic [ref=e1217]:
+                  - link "Ayushi Sinha" [ref=e1218] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/101196117611867492093/reviews
+                  - generic [ref=e1219]: 4 months ago
+              - generic [ref=e1221]:
+                - generic [ref=e1222]: Quality Thought offers high-quality Python training with excellent faculty support. Abdullah Sir is always ready to clarify doubts and guide students. The practical assignments help reinforce learning. The classes are engaging and informative. It is one of the best places to learn Python.
+                - button "read more" [ref=e1223] [cursor=pointer]
+            - generic [ref=e1225]:
+              - generic [ref=e1226]:
+                - img "Pokala Haritha profile picture" [ref=e1228]
+                - generic [ref=e1229]:
+                  - link "Pokala Haritha" [ref=e1230] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/101459091856762213017/reviews
+                  - generic [ref=e1231]: 4 months ago
+              - generic [ref=e1233]:
+                - generic [ref=e1234]: I am currently attending the Data Analyst course at Quality Thought and have had a positive learning experience so far. The curriculum includes Statistics, Python, SQL, Excel, and Power BI, which are essential skills for a Data Analyst role. The trainer explains each topic in a simple and easy-to-understand manner, and the practical sessions help reinforce the concepts effectively.
+                - button "read more" [ref=e1235] [cursor=pointer]
+            - generic [ref=e1237]:
+              - generic [ref=e1238]:
+                - img "V. Amrutha profile picture" [ref=e1240]
+                - generic [ref=e1241]:
+                  - link "V. Amrutha" [ref=e1242] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/112491272830993604005/reviews
+                  - generic [ref=e1243]: 4 months ago
+              - generic [ref=e1245]:
+                - generic [ref=e1246]: I am currently learning Data Science at Quality Thought, and the experience has been very good so far. The faculty explains Python, Data Analysis, Machine Learning, and AI concepts in a simple and practical way. The sessions are interactive, and the real-time examples make learning easier. The support from the operations team and lab coordinators is also excellent. I am gaining confidence in Data Science concepts day by day.
+                - button "read more" [ref=e1247] [cursor=pointer]
+            - generic [ref=e1249]:
+              - generic [ref=e1250]:
+                - img "Krishna Rao Polamarasetty profile picture" [ref=e1252]
+                - generic [ref=e1253]:
+                  - link "Krishna Rao Polamarasetty" [ref=e1254] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/108269653475622402272/reviews
+                  - generic [ref=e1255]: 5 months ago
+              - generic [ref=e1257]:
+                - generic [ref=e1258]: Generative AI course in Quality Thought is quite useful to beginners as well as to the experienced professionals.The Course designed is market friendly and its way of teaching methodology is impressive and unique. Keeping in view the needs of current job scenario, Quality Thought has been maintaining it's speciality in delivering required knowledge through its content and more over Subject experts. I suggest that the Quality Thought Institution is highly recommended who wish to learn Generative AI along with practical experience aligned with updated live projects. Tq. Quality Thought for your extraordinary Service to the Young generation. NamastE 🙏
+                - button "read more" [ref=e1259] [cursor=pointer]
+            - generic [ref=e1261]:
+              - generic [ref=e1262]:
+                - img "Harshita Maddi profile picture" [ref=e1264]
+                - generic [ref=e1265]:
+                  - link "Harshita Maddi" [ref=e1266] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/102620442225685603515/reviews
+                  - generic [ref=e1267]: 5 months ago
+              - generic [ref=e1269]:
+                - generic [ref=e1270]: I had a great learning experience with the AI Testing, Generative AI Testing, and Agentic AI Testing program. The course provided a strong understanding of AI systems, testing methodologies, prompt engineering validation, and agentic workflows. The hands-on exercises and real-time examples made complex concepts easy to understand. The trainer was knowledgeable and supportive throughout the program. I would recommend this course to anyone looking to build expertise in next-generation AI testing technologies.
+                - button "read more" [ref=e1271] [cursor=pointer]
+            - generic [ref=e1273]:
+              - generic [ref=e1274]:
+                - img "dhilkush_divya profile picture" [ref=e1276]
+                - generic [ref=e1277]:
+                  - link "dhilkush_divya" [ref=e1278] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/105018803722662534735/reviews
+                  - generic [ref=e1279]: 5 months ago
+              - generic [ref=e1281]:
+                - generic [ref=e1282]: I recently completed the AI Testing course at Quality Thought, Hyderabad, and it was a valuable learning experience. The course curriculum was well-structured and covered AI testing concepts, Generative AI fundamentals, automation tools, and real-time testing scenarios. The trainers explained topics clearly with practical examples, making complex concepts easier to understand. I particularly appreciated the hands-on assignments, project-based learning approach, and continuous support provided throughout the course.
+                - button "read more" [ref=e1283] [cursor=pointer]
+            - generic [ref=e1285]:
+              - generic [ref=e1286]:
+                - img "Kishore profile picture" [ref=e1288]
+                - generic [ref=e1289]:
+                  - link "Kishore" [ref=e1290] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/109519069147660625620/reviews
+                  - generic [ref=e1291]: 5 months ago
+              - generic [ref=e1293]:
+                - generic [ref=e1294]: The AI Testing, Generative AI Testing, and Agentic AI Testing training provided by Quality Thought was outstanding. The program covered both foundational and advanced concepts with a strong focus on real-world applications. The trainers explained complex topics clearly and included practical examples, hands-on exercises, and industry-relevant use cases. The Agentic AI and GenAI testing modules were particularly insightful, helping me understand modern testing approaches for AI-driven systems. The course content was well-structured, up-to-date, and highly beneficial for professionals looking to enhance their skills in the rapidly evolving AI testing domain. I highly recommend this training to anyone interested in AI quality assurance and testing.
+                - button "read more" [ref=e1295] [cursor=pointer]
+            - generic [ref=e1297]:
+              - generic [ref=e1298]:
+                - img "Rahul designer profile picture" [ref=e1300]
+                - generic [ref=e1301]:
+                  - link "Rahul designer" [ref=e1302] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/102298195846262582068/reviews
+                  - generic [ref=e1303]: 5 months ago
+              - generic [ref=e1305]:
+                - generic [ref=e1306]: “Quality Thought Institute is one of the best places to build real-time IT skills. The trainers explain concepts clearly with practical examples, and the placement support is really helpful. A great institute for anyone looking to start or grow their career in software and technology.”
+                - button "read more" [ref=e1307] [cursor=pointer]
+            - generic [ref=e1309]:
+              - generic [ref=e1310]:
+                - img "PRIYANKA KANDULAPATI profile picture" [ref=e1312]
+                - generic [ref=e1313]:
+                  - link "PRIYANKA KANDULAPATI" [ref=e1314] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/111943477925708532931/reviews
+                  - generic [ref=e1315]: 5 months ago
+              - generic [ref=e1317]: I highly recommend Quality Thought for Playwright with AI training. Chaitanya Madam teaches with real world examples which helped me to gain practical explosure.
+            - generic [ref=e1320]:
+              - generic [ref=e1321]:
+                - img "Varsha Gunda profile picture" [ref=e1323]
+                - generic [ref=e1324]:
+                  - link "Varsha Gunda" [ref=e1325] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/115934984673381463766/reviews
+                  - generic [ref=e1326]: 7 months ago
+              - generic [ref=e1328]:
+                - generic [ref=e1329]: I recently completed a 6-month .NET Full Stack Development course, and it was a very valuable learning experience. The lecturer were well-structured and easy to follow, with clear explanations of each concept. Our Sir, focused on both theoretical knowledge and practical implementation. During the course, I learned technologies such as C#, ASP.NET Core, MVC, and SQL Server along with front-end integration. The hands-on project helped me understand how to build complete web application. I also improved my problem-solving and debugging skills. Overall, the course helped me gain strong confidence in .NET full stack development.
+                - button "read more" [ref=e1330] [cursor=pointer]
+            - generic [ref=e1332]:
+              - generic [ref=e1333]:
+                - img "Abdul Fayaz Mohammad profile picture" [ref=e1335]
+                - generic [ref=e1336]:
+                  - link "Abdul Fayaz Mohammad" [ref=e1337] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/118016881945232844647/reviews
+                  - generic [ref=e1338]: 9 months ago
+              - generic [ref=e1340]:
+                - generic [ref=e1341]: I had a great learning experience with Srinivas as my GCP tutor. He has a deep understanding of Google Cloud Platform and explains even complex concepts in a very clear, structured, and practical way. His teaching style is patient and interactive, and he always makes sure the fundamentals are strong before moving on to advanced topics. What I really appreciated is his real-world approach—he connects GCP services to actual use cases, which makes learning much more effective and confidence-building. He’s also very supportive, answers questions thoroughly, and encourages hands-on practice, which helped me gain practical skills rather than just theoretical knowledge. I would highly recommend Srinivas to anyone looking to learn or strengthen their GCP skills, whether you’re a beginner or someone preparing for real-world projects or certifications. An excellent tutor and mentor!
+                - button "read more" [ref=e1342] [cursor=pointer]
+            - generic [ref=e1344]:
+              - generic [ref=e1345]:
+                - img "Santhosh Murala profile picture" [ref=e1347]
+                - generic [ref=e1348]:
+                  - link "Santhosh Murala" [ref=e1349] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/111218535022239660427/reviews
+                  - generic [ref=e1350]: 9 months ago
+              - generic [ref=e1352]:
+                - generic [ref=e1353]: Quality Thought is an excellent institute for .NET training. The trainers have strong technical knowledge and explain concepts very clearly, from basics to advanced topics. The course structure is well planned and includes real-time examples, which helped me understand practical application development. The lab sessions and interview preparation were very helpful. The placement support team guided me well with mock interviews and resume preparation. Because of their support and training, I got placed in a good company. I strongly recommend Quality Thought to anyone who wants to build a strong career in .NET development
+                - button "read more" [ref=e1354] [cursor=pointer]
+            - generic [ref=e1356]:
+              - generic [ref=e1357]:
+                - img "Akhila Vejendla profile picture" [ref=e1359]
+                - generic [ref=e1360]:
+                  - link "Akhila Vejendla" [ref=e1361] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/110733686627497052932/reviews
+                  - generic [ref=e1362]: 9 months ago
+              - generic [ref=e1364]:
+                - generic [ref=e1365]: I had a great learning experience at this IT institute. The trainers are highly knowledgeable and explain concepts clearly with real-time examples. The course content is up to date with current industry standards, and there is good support for practical learning and doubt clarification. The institute also provides guidance on projects and career opportunities. Overall, it’s a good place for anyone looking to build a strong foundation in the IT sector.
+                - button "read more" [ref=e1366] [cursor=pointer]
+            - generic [ref=e1368]:
+              - generic [ref=e1369]:
+                - img "Dia Dechamma profile picture" [ref=e1371]
+                - generic [ref=e1372]:
+                  - link "Dia Dechamma" [ref=e1373] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/108897222946265573994/reviews
+                  - generic [ref=e1374]: 10 months ago
+              - generic [ref=e1376]:
+                - generic [ref=e1377]: I have opted for Gen AI testing and Playwright automation testing course from Quality thoughts recently and I would like share my experience on the same The Playwright Automation testing course by Chaitanya Mam is one of the best courses I have attended so far where everything is taught from scratch and basics with detailed understanding on Typescripts, Javascript and Playwright. I must say I am fully satisfied the way Chaitanya Mam teaches and makes sure we get the best from her teaching !!! In the Gen AI testing course, I wasn’t fully satisfied with the teaching and in the batch we weren’t able to understand wat was being taught. But the Python classes from Kalyan sir was again too good where he has taken all the efforts to make us understand about core python. As i wasnt satisfied with the Gen AI classes which i was registered for, the QT Admin team was so helpful in understanding the students issues and figuring out the best solution to fix this. I would like to thank Fathima who has always helped me from the beginning in understanding the concerns and also helped us join another Gen AI testing batch so that we get the best for the amount we hv paid and we are satisfied with the course. Fathima I’m very great full that you have taken this step to align again with the new batch and ensured to provide all the class recordings as well!!!
+                - button "read more" [ref=e1378] [cursor=pointer]
+            - generic [ref=e1380]:
+              - generic [ref=e1381]:
+                - img "Vijaya profile picture" [ref=e1383]
+                - generic [ref=e1384]:
+                  - link "Vijaya" [ref=e1385] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/100164845812019866605/reviews
+                  - generic [ref=e1386]: 10 months ago
+              - generic [ref=e1388]:
+                - generic [ref=e1389]: The python workshop was informative and easy to follow. It helped me understand the basics of python programming with practical examples that improved my confidence in coding. The sessions were well organized and useful for beginners
+                - button "read more" [ref=e1390] [cursor=pointer]
+            - generic [ref=e1392]:
+              - generic [ref=e1393]:
+                - img "Akanksha Dodla profile picture" [ref=e1395]
+                - generic [ref=e1396]:
+                  - link "Akanksha Dodla" [ref=e1397] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/110689888615894106529/reviews
+                  - generic [ref=e1398]: 10 months ago
+              - generic [ref=e1400]: I like the way of teaching of Abdullah sir...
+            - generic [ref=e1403]:
+              - generic [ref=e1404]:
+                - img "Pavithra Reddy profile picture" [ref=e1406]
+                - generic [ref=e1407]:
+                  - link "Pavithra Reddy" [ref=e1408] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/103339462937619626881/reviews
+                  - generic [ref=e1409]: 10 months ago
+              - generic [ref=e1411]:
+                - generic [ref=e1412]: My learning journey with Khaja Sir at Quality Thought has been truly special. His simple explanations, clear examples, and small diagrams make every concept easy to understand. His notes and practice exercises help us learn confidently. Every class feels meaningful because I always learn something new. He also shows many modern IT tools, which increased my passion for IT. I’m very thankful for his support and the way he teaches us. 🙏
+                - button "read more" [ref=e1413] [cursor=pointer]
+            - generic [ref=e1415]:
+              - generic [ref=e1416]:
+                - img "Lucky Varma Neelam profile picture" [ref=e1418]
+                - generic [ref=e1419]:
+                  - link "Lucky Varma Neelam" [ref=e1420] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/111008275450977650967/reviews
+                  - generic [ref=e1421]: 11 months ago
+              - generic [ref=e1423]:
+                - generic [ref=e1424]: I am extremely satisfied with the DevOps and Multi-Cloud training provided by Khaja Sir. His explanations are simple, structured, and supported by real-time examples. The study material and practical assignments are well-prepared and very helpful. He inspires confidence and makes complex topics easy to grasp. Truly grateful for his guidance help me understand every concept deeply. Every class makes me feel like I achieved something new. I am very thankful for his support and motivation. His examples and exercises help me learn quickly. I enjoy every class and feel I am improving day by day. Thank you, Sir, for your guidance.
+                - button "read more" [ref=e1425] [cursor=pointer]
+            - generic [ref=e1427]:
+              - generic [ref=e1428]:
+                - img "n harshitha profile picture" [ref=e1430]
+                - generic [ref=e1431]:
+                  - link "n harshitha" [ref=e1432] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/104934526262700122260/reviews
+                  - generic [ref=e1433]: 11 months ago
+              - generic [ref=e1435]:
+                - generic [ref=e1436]: Learning from Khaja Sir at Quality Thought has been a great experience. I joined the course DevOps & Multicloud. His teaching is clear, simple, and easy to understand. The notes and exercises are very helpful, and I learn something new every day. I truly appreciate his guidance and support. As a student, I feel very happy and grateful for his teaching style and the support he gives us throughout the learning journey. 🙏
+                - button "read more" [ref=e1437] [cursor=pointer]
+            - generic [ref=e1439]:
+              - generic [ref=e1440]:
+                - img "Shubham Yadav profile picture" [ref=e1442]
+                - generic [ref=e1443]:
+                  - link "Shubham Yadav" [ref=e1444] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/113185444681962321865/reviews
+                  - generic [ref=e1445]: 11 months ago
+              - generic [ref=e1447]:
+                - generic [ref=e1448]: I recently completed the Testing course at Quality Thought Institute, and my experience was extremely positive. The training was well-structured, beginner-friendly, and focused heavily on real-time examples, which made even complex concepts easy to understand. The faculty was very knowledgeable and supportive throughout the course. They explained every topic clearly—Manual Testing, Test Case Writing, Bug Reporting, and basic Automation concepts—and also provided practical assignments that helped me build confidence. I really liked the hands-on approach and the way the trainer connected theory with real industry scenarios. The study material, doubt-clearing sessions, and lab support were very helpful. Overall, Quality Thought is a great place to learn Testing. I feel more confident in my skills now and would recommend this institute to anyone looking to start a career in Software Testing.
+                - button "read more" [ref=e1449] [cursor=pointer]
+            - generic [ref=e1451]:
+              - generic [ref=e1452]:
+                - img "Srikanth Amgoth profile picture" [ref=e1454]
+                - generic [ref=e1455]:
+                  - link "Srikanth Amgoth" [ref=e1456] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/110812138793482028674/reviews
+                  - generic [ref=e1457]: 11 months ago
+              - generic [ref=e1459]:
+                - generic [ref=e1460]: It has been one of the best learning experiences for me. The video editing training is very clear, practical, and easy to understand. The trainers are highly skilled and support us at every step with real-time examples. My editing skills improved a lot after joining, and I now feel confident creating professional-quality videos. I truly appreciate the institute and the trainers for their dedication. I strongly recommend Quality Thought to anyone who wants to learn video editing."
+                - button "read more" [ref=e1461] [cursor=pointer]
+            - generic [ref=e1463]:
+              - generic [ref=e1464]:
+                - img "Trivi Mammu profile picture" [ref=e1466]
+                - generic [ref=e1467]:
+                  - link "Trivi Mammu" [ref=e1468] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/106652950071680623180/reviews
+                  - generic [ref=e1469]: 11 months ago
+              - generic [ref=e1471]:
+                - generic [ref=e1472]: The instructors at Quality Thought are highly knowledgeable and patient, providing clear and practical training. Their industry experience helped me gain real-world skills in both video editing and digital marketing. The personalized attention and support made learning easier and enjoyable. Quality Thought’s placement assistance is commendable, helping many students secure good job opportunities. The institute offers a great blend of theory and hands-on projects. I highly recommend it for anyone serious about career growth.
+                - button "read more" [ref=e1473] [cursor=pointer]
+            - generic [ref=e1475]:
+              - generic [ref=e1476]:
+                - img "Hema sirisha Kareti profile picture" [ref=e1478]
+                - generic [ref=e1479]:
+                  - link "Hema sirisha Kareti" [ref=e1480] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/106419002924494866683/reviews
+                  - generic [ref=e1481]: 11 months ago
+              - generic [ref=e1483]:
+                - generic [ref=e1484]: ⭐️⭐️⭐️⭐️⭐️ I recently attended a webinar conducted by the Institute of Quality Thought, and it was an excellent learning experience! The session was very informative, well-structured, and easy to follow. The speaker explained the concepts clearly with real-life examples, which made it engaging and practical. The organizers were professional, and the overall coordination—from registration to the Q&A session—was smooth. I especially appreciated the interactive approach and the opportunity to clarify doubts during the session. I would definitely recommend IQT webinars to anyone looking to enhance their knowledge and skills in quality and professional development.
+                - button "read more" [ref=e1485] [cursor=pointer]
+            - generic [ref=e1487]:
+              - generic [ref=e1488]:
+                - img "Manya Khanna profile picture" [ref=e1490]
+                - generic [ref=e1491]:
+                  - link "Manya Khanna" [ref=e1492] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/109431102721787891583/reviews
+                  - generic [ref=e1493]: a year ago
+              - generic [ref=e1495]: Very detailed workshop Absolutely loved it!!!
+            - generic [ref=e1498]:
+              - generic [ref=e1499]:
+                - img "Saranya Sataka profile picture" [ref=e1501]
+                - generic [ref=e1502]:
+                  - link "Saranya Sataka" [ref=e1503] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/114660978711433450263/reviews
+                  - generic [ref=e1504]: a year ago
+              - generic [ref=e1506]: This workshop is very interesting and helpful for beginners. I liked the way they explained.
+            - generic [ref=e1509]:
+              - generic [ref=e1510]:
+                - img "yakkaladevi Devi sri profile picture" [ref=e1512]
+                - generic [ref=e1513]:
+                  - link "yakkaladevi Devi sri" [ref=e1514] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/103906215325820514502/reviews
+                  - generic [ref=e1515]: a year ago
+              - generic [ref=e1517]: This session is too good to understand the topics of python very useful to write the code
+            - generic [ref=e1520]:
+              - generic [ref=e1521]:
+                - img "Steve Purimitla profile picture" [ref=e1523]
+                - generic [ref=e1524]:
+                  - link "Steve Purimitla" [ref=e1525] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/115046915028295651924/reviews
+                  - generic [ref=e1526]: a year ago
+              - generic [ref=e1528]:
+                - generic [ref=e1529]: I have taken the classes in this institution for software testing , it has been very informative and clear cut guidence into how we can enter into the field of Software testing and also Development . The teaching is just so clear and to the point , anyone looking for courses in Full Stack Development or other software Development Courses quality thought is the perfect place to join .you can even take demo classes and decide for your self .Most importantly the communication at the HR and NON Tech Department is excellent and are very helpful in Guiding us in the present situation of Tech Industry.
+                - button "read more" [ref=e1530] [cursor=pointer]
+            - generic [ref=e1532]:
+              - generic [ref=e1533]:
+                - img "Vidyasagar Allamsetti profile picture" [ref=e1535]
+                - generic [ref=e1536]:
+                  - link "Vidyasagar Allamsetti" [ref=e1537] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/114633950502567167607/reviews
+                  - generic [ref=e1538]: 2 years ago
+              - generic [ref=e1540]:
+                - generic [ref=e1541]: I have joined for Selenium with Java course in Quality thought. Thank you Chaitanya ma'am for explaining the topics in a detailed manner. First of all,while explaining every word in the theory is simultaneously typed in a word doc; I found these class notes very helpful. Examples are provided in the coding for each and every topic in the theory. These examples of code have been useful while practicing. The classes are also very interactive. Thank you Quality thought for the good learning experience .
+                - button "read more" [ref=e1542] [cursor=pointer]
+            - generic [ref=e1544]:
+              - generic [ref=e1545]:
+                - img "Nimitha Anand profile picture" [ref=e1547]
+                - generic [ref=e1548]:
+                  - link "Nimitha Anand" [ref=e1549] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/105647631934250610044/reviews
+                  - generic [ref=e1550]: 2 years ago
+              - generic [ref=e1552]:
+                - generic [ref=e1553]: I recently took one-on-one Cypress training with Ramprasad Sir, and I couldn't be happier with the experience! The curriculum was well-planned, covering everything from the basics to more advanced concepts, and his teaching style is clear, patient, and incredibly effective, making complex topics easy to understand. Ram Sir ensured that I gained hands-on experience and built a solid foundation in Cypress, which boosted my confidence in using it independently. The personalized attention in the sessions allowed me to progress at my own pace, and he was always available to answer questions, support, and motivate me throughout the journey. His constant encouragement kept me motivated and he always made sure I felt confident with what I was learning. If you're looking to learn Cypress from scratch or want to improve your skills, I highly recommend Ram Sir's training. His dedication to his students' success is truly inspiring!
+                - button "read more" [ref=e1554] [cursor=pointer]
+            - generic [ref=e1556]:
+              - generic [ref=e1557]:
+                - img "Vamshi Anugu profile picture" [ref=e1559]
+                - generic [ref=e1560]:
+                  - link "Vamshi Anugu" [ref=e1561] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/107825928689015439927/reviews
+                  - generic [ref=e1562]: 2 years ago
+              - generic [ref=e1564]:
+                - generic [ref=e1565]: I am vamshi i have completed b.tech (civil) in the year of 2023 . i have a passion to work in IT . for the sake of that i have enquired best institutes in ameerpet one of my friend suggested ihub . i have join *PYTHON INTERNSHIP PROGRAMME* in IHUB. Faculty was Excellent skilled explained everything in depth. Lab was high configured. Excellent software training institute with good infrastructure and skilled people to clarify doubts. Best software training institute I Hyderabad.
+                - button "read more" [ref=e1566] [cursor=pointer]
+            - generic [ref=e1568]:
+              - generic [ref=e1569]:
+                - img "supraja boppana profile picture" [ref=e1571]
+                - generic [ref=e1572]:
+                  - link "supraja boppana" [ref=e1573] [cursor=pointer]:
+                    - /url: https://www.google.com/maps/contrib/110159255493038097056/reviews
+                  - generic [ref=e1574]: 2 years ago
+              - generic [ref=e1576]:
+                - generic [ref=e1577]: Recommend to Join Testing Internship Learn from the live IT Environment @ Ramana soft IT They give real time scenarios with Live project hands-on experience RAM PRASAD SIR has given us Confidence to crack the interview.
+                - button "read more" [ref=e1578] [cursor=pointer]
+          - button "Next" [ref=e1579] [cursor=pointer]
+          - toolbar "Pages" [ref=e1581]:
+            - button "Go to page 1" [ref=e1582] [cursor=pointer]
+            - button "Go to page 2" [ref=e1583] [cursor=pointer]
+            - button "Go to page 3" [ref=e1584] [cursor=pointer]
+            - button "Go to page 4" [ref=e1585] [cursor=pointer]
+            - button "Go to page 5" [ref=e1586] [cursor=pointer]
+            - button "Go to page 6" [ref=e1587] [cursor=pointer]
+            - button "Go to page 7" [ref=e1588] [cursor=pointer]
+            - button "Go to page 8" [ref=e1589] [cursor=pointer]
+            - button "Go to page 9" [ref=e1590] [cursor=pointer]
+            - button "Go to page 10" [ref=e1591] [cursor=pointer]
+            - button "Go to page 11" [ref=e1592] [cursor=pointer]
+            - button "Go to page 12" [ref=e1593] [cursor=pointer]
+            - button "Go to page 13" [ref=e1594] [cursor=pointer]
+            - button "Go to page 14" [ref=e1595] [cursor=pointer]
+      - generic [ref=e1596]:
+        - heading "Where Our Students Work" [level=6] [ref=e1598]
+        - paragraph [ref=e1600]: "1000+ Student Placements • Average Salary: ₹6-12 LPA"
+        - region "Image Carousel" [ref=e1602]:
+          - generic [ref=e1603]:
+            - group [aria-hidden] [ref=e1604]:
+              - figure [ref=e1605]
+            - group [aria-hidden] [ref=e1607]:
+              - figure [ref=e1608]
+            - group [aria-hidden] [ref=e1610]:
+              - figure [ref=e1611]
+            - group [aria-hidden] [ref=e1613]:
+              - figure [ref=e1614]
+            - group [aria-hidden] [ref=e1616]:
+              - figure [ref=e1617]
+            - group [aria-hidden] [ref=e1619]:
+              - figure [ref=e1620]
+            - group [aria-hidden] [ref=e1622]:
+              - figure [ref=e1623]
+            - group [aria-hidden] [ref=e1625]:
+              - figure [ref=e1626]
+            - group "47 / 48" [ref=e1628]:
+              - figure [ref=e1629]:
+                - img "Recruiter (2)" [ref=e1630]
+            - group "48 / 48" [ref=e1631]:
+              - figure [ref=e1632]:
+                - img "Recruiter (1)" [ref=e1633]
+            - group "1 / 48" [ref=e1634]:
+              - figure [ref=e1635]:
+                - img "Recruiter (48)" [ref=e1636]
+            - group "2 / 48" [ref=e1637]:
+              - figure [ref=e1638]:
+                - img "Recruiter (47)" [ref=e1639]
+            - group "3 / 48" [ref=e1640]:
+              - figure [ref=e1641]:
+                - img "Recruiter (46)" [ref=e1642]
+            - group "4 / 48" [ref=e1643]:
+              - figure [ref=e1644]:
+                - img "Recruiter (45)" [ref=e1645]
+            - group "5 / 48" [ref=e1646]:
+              - figure [ref=e1647]:
+                - img "Recruiter (44)" [ref=e1648]
+            - group "6 / 48" [ref=e1649]:
+              - figure [ref=e1650]:
+                - img "Recruiter (43)" [ref=e1651]
+            - group "7 / 48" [ref=e1652]:
+              - figure [ref=e1653]:
+                - img "Recruiter (42)" [ref=e1654]
+            - group "8 / 48" [ref=e1655]:
+              - figure [ref=e1656]:
+                - img "Recruiter (41)" [ref=e1657]
+            - group "9 / 48" [ref=e1658]:
+              - figure [ref=e1659]:
+                - img "Recruiter (40)" [ref=e1660]
+            - group "10 / 48" [ref=e1661]:
+              - figure [ref=e1662]:
+                - img "Recruiter (39)" [ref=e1663]
+            - group "11 / 48" [ref=e1664]:
+              - figure [ref=e1665]:
+                - img "Recruiter (38)" [ref=e1666]
+            - group "12 / 48" [ref=e1667]:
+              - figure [ref=e1668]:
+                - img "Recruiter (37)" [ref=e1669]
+            - group "13 / 48" [ref=e1670]:
+              - figure [ref=e1671]:
+                - img "Recruiter (36)" [ref=e1672]
+            - group "14 / 48" [ref=e1673]:
+              - figure [ref=e1674]:
+                - img "Recruiter (35)" [ref=e1675]
+            - group "15 / 48" [ref=e1676]:
+              - figure [ref=e1677]:
+                - img "Recruiter (34)" [ref=e1678]
+            - group "16 / 48" [ref=e1679]:
+              - figure [ref=e1680]:
+                - img "Recruiter (33)" [ref=e1681]
+            - group "17 / 48" [ref=e1682]:
+              - figure [ref=e1683]:
+                - img "Recruiter (32)" [ref=e1684]
+            - group "18 / 48" [ref=e1685]:
+              - figure [ref=e1686]:
+                - img "Recruiter (31)" [ref=e1687]
+            - group "19 / 48" [ref=e1688]:
+              - figure [ref=e1689]:
+                - img "Recruiter (30)" [ref=e1690]
+            - group "20 / 48" [ref=e1691]:
+              - figure [ref=e1692]:
+                - img "Recruiter (29)" [ref=e1693]
+            - group "21 / 48" [ref=e1694]:
+              - figure [ref=e1695]:
+                - img "Recruiter (28)" [ref=e1696]
+            - group "22 / 48" [ref=e1697]:
+              - figure [ref=e1698]:
+                - img "Recruiter (27)" [ref=e1699]
+            - group "23 / 48" [ref=e1700]:
+              - figure [ref=e1701]:
+                - img "Recruiter (26)" [ref=e1702]
+            - group "24 / 48" [ref=e1703]:
+              - figure [ref=e1704]:
+                - img "Recruiter (25)" [ref=e1705]
+            - group "25 / 48" [ref=e1706]:
+              - figure [ref=e1707]:
+                - img "Recruiter (24)" [ref=e1708]
+            - group "26 / 48" [ref=e1709]:
+              - figure [ref=e1710]:
+                - img "Recruiter (23)" [ref=e1711]
+            - group "27 / 48" [ref=e1712]:
+              - figure [ref=e1713]:
+                - img "Recruiter (22)" [ref=e1714]
+            - group "28 / 48" [ref=e1715]:
+              - figure [ref=e1716]:
+                - img "Recruiter (21)" [ref=e1717]
+            - group "29 / 48" [ref=e1718]:
+              - figure [ref=e1719]:
+                - img "Recruiter (20)" [ref=e1720]
+            - group "30 / 48" [ref=e1721]:
+              - figure [ref=e1722]:
+                - img "Recruiter (19)" [ref=e1723]
+            - group "31 / 48" [ref=e1724]:
+              - figure [ref=e1725]:
+                - img "Recruiter (18)" [ref=e1726]
+            - group "32 / 48" [ref=e1727]:
+              - figure [ref=e1728]:
+                - img "Recruiter (17)" [ref=e1729]
+            - group "33 / 48" [ref=e1730]:
+              - figure [ref=e1731]:
+                - img "Recruiter (16)" [ref=e1732]
+            - group "34 / 48" [ref=e1733]:
+              - figure [ref=e1734]:
+                - img "Recruiter (15)" [ref=e1735]
+            - group "35 / 48" [ref=e1736]:
+              - figure [ref=e1737]:
+                - img "Recruiter (14)" [ref=e1738]
+            - group "36 / 48" [ref=e1739]:
+              - figure [ref=e1740]:
+                - img "Recruiter (13)" [ref=e1741]
+            - group "37 / 48" [ref=e1742]:
+              - figure [ref=e1743]:
+                - img "Recruiter (12)" [ref=e1744]
+            - group "38 / 48" [ref=e1745]:
+              - figure [ref=e1746]:
+                - img "Recruiter (11)" [ref=e1747]
+            - group "39 / 48" [ref=e1748]:
+              - figure [ref=e1749]:
+                - img "Recruiter (10)" [ref=e1750]
+            - group "40 / 48" [ref=e1751]:
+              - figure [ref=e1752]:
+                - img "Recruiter (9)" [ref=e1753]
+            - group "41 / 48" [ref=e1754]:
+              - figure [ref=e1755]:
+                - img "Recruiter (8)" [ref=e1756]
+            - group "42 / 48" [ref=e1757]:
+              - figure [ref=e1758]:
+                - img "Recruiter (7)" [ref=e1759]
+            - group "43 / 48" [ref=e1760]:
+              - figure [ref=e1761]:
+                - img "Recruiter (6)" [ref=e1762]
+            - group "44 / 48" [ref=e1763]:
+              - figure [ref=e1764]:
+                - img "Recruiter (5)" [ref=e1765]
+            - group "45 / 48" [ref=e1766]:
+              - figure [ref=e1767]:
+                - img "Recruiter (4)" [ref=e1768]
+            - group "46 / 48" [ref=e1769]:
+              - figure [ref=e1770]:
+                - img "Recruiter (3)" [ref=e1771]
+            - group "47 / 48" [ref=e1772]:
+              - figure [ref=e1773]:
+                - img "Recruiter (2)" [ref=e1774]
+            - group "48 / 48" [ref=e1775]:
+              - figure [ref=e1776]:
+                - img "Recruiter (1)" [ref=e1777]
+            - group "1 / 48" [ref=e1778]:
+              - figure [ref=e1779]:
+                - img "Recruiter (48)" [ref=e1780]
+            - group "2 / 48" [ref=e1781]:
+              - figure [ref=e1782]:
+                - img "Recruiter (47)" [ref=e1783]
+            - group "3 / 48" [ref=e1784]:
+              - figure [ref=e1785]:
+                - img "Recruiter (46)" [ref=e1786]
+            - group "4 / 48" [ref=e1787]:
+              - figure [ref=e1788]:
+                - img "Recruiter (45)" [ref=e1789]
+            - group "5 / 48" [ref=e1790]:
+              - figure [ref=e1791]:
+                - img "Recruiter (44)" [ref=e1792]
+            - group "6 / 48" [ref=e1793]:
+              - figure [ref=e1794]:
+                - img "Recruiter (43)" [ref=e1795]
+            - group "7 / 48" [ref=e1796]:
+              - figure [ref=e1797]:
+                - img "Recruiter (42)" [ref=e1798]
+            - group "8 / 48" [ref=e1799]:
+              - figure [ref=e1800]:
+                - img "Recruiter (41)" [ref=e1801]
+            - group "9 / 48" [ref=e1802]:
+              - figure [ref=e1803]:
+                - img "Recruiter (40)" [ref=e1804]
+            - group "10 / 48" [ref=e1805]:
+              - figure [ref=e1806]:
+                - img "Recruiter (39)" [ref=e1807]
+      - generic [ref=e1809]:
+        - generic [ref=e1810]:
+          - generic [ref=e1813]:
+            - heading "500+" [level=3] [ref=e1814]
+            - paragraph [ref=e1815]: Hiring Partners
+          - generic [ref=e1818]:
+            - heading "₹12 LPA" [level=3] [ref=e1819]
+            - paragraph [ref=e1820]: Highest Package
+          - generic [ref=e1823]:
+            - heading "₹6 LPA" [level=3] [ref=e1824]
+            - paragraph [ref=e1825]: Average Package
+          - generic [ref=e1828]:
+            - heading "95%" [level=3] [ref=e1829]
+            - paragraph [ref=e1830]: Placement Rate
+        - generic [ref=e1831]:
+          - generic [ref=e1838]:
+            - heading "Learning Portal" [level=3] [ref=e1839]
+            - paragraph [ref=e1840]: learn.qualitythought.in
+          - generic [ref=e1841]:
+            - generic [ref=e1844]:
+              - heading "Continue Learning 24/7" [level=3] [ref=e1845]
+              - paragraph [ref=e1846]: Access your courses, track progress, download resources anytime with our Learning Management System
+            - generic [ref=e1847]:
+              - list [ref=e1849]:
+                - listitem [ref=e1850]:
+                  - generic [ref=e1854]: Access course materials
+              - list [ref=e1856]:
+                - listitem [ref=e1857]:
+                  - generic [ref=e1861]: Track your learning progress
+              - list [ref=e1863]:
+                - listitem [ref=e1864]:
+                  - generic [ref=e1868]: Personalized learning paths
+              - list [ref=e1870]:
+                - listitem [ref=e1871]:
+                  - generic [ref=e1875]: Certifications & Achievements
+            - link "Login to LMS" [ref=e1877] [cursor=pointer]:
+              - /url: https://learn.qualitythought.in/
+      - generic [ref=e1884]:
+        - heading "Talk to Our Experts" [level=6] [ref=e1886]
+        - paragraph [ref=e1888]: Available 24/7 • Multiple Ways to Connect
+        - generic [ref=e1889]:
+          - generic [ref=e1890]:
+            - generic [ref=e1897]:
+              - heading "WhatsApp Chat" [level=3] [ref=e1898]
+              - paragraph [ref=e1899]: +91 9963486280
+            - link "Chat Now" [ref=e1901] [cursor=pointer]:
+              - /url: https://wa.me/919963486280?text=Hello%F0%9F%91%8B
+          - generic [ref=e1907]:
+            - generic [ref=e1914]:
+              - heading "Call Us" [level=3] [ref=e1915]
+              - paragraph [ref=e1916]: +91 9963486280
+            - link "Call Now" [ref=e1918] [cursor=pointer]:
+              - /url: tel:+919963486280
+          - generic [ref=e1924]:
+            - generic [ref=e1931]:
+              - heading "Email Us" [level=3] [ref=e1932]
+              - paragraph [ref=e1933]: info@qualitythought.in
+            - link "Send Mail" [ref=e1935] [cursor=pointer]:
+              - /url: mailto:info@qualitythought.in
+          - generic [ref=e1941]:
+            - generic [ref=e1948]:
+              - heading "Schedule Demo" [level=3] [ref=e1949]
+              - paragraph [ref=e1950]: Book a Free Demo Class
+            - link "Book Now" [ref=e1952] [cursor=pointer]:
+              - /url: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY2ODk3IiwidG9nZ2xlIjpmYWxzZX0%3D"
+      - generic [ref=e1959]:
+        - heading "Connect With Us" [level=6] [ref=e1961]
+        - paragraph [ref=e1963]: Follow us for updates, tips, and success stories
+        - generic [ref=e1964]:
+          - generic [ref=e1966]:
+            - link "Facebook" [ref=e1968] [cursor=pointer]:
+              - /url: https://www.facebook.com/QTTWorld
+            - generic [ref=e1971]:
+              - heading [level=3] [ref=e1972]:
+                - link "Facebook" [ref=e1973] [cursor=pointer]:
+                  - /url: https://www.facebook.com/QTTWorld
+              - paragraph [ref=e1974]: 4.9k+
+          - generic [ref=e1976]:
+            - link "Instagram" [ref=e1978] [cursor=pointer]:
+              - /url: https://www.instagram.com/qttechnology/
+            - generic [ref=e1981]:
+              - heading [level=3] [ref=e1982]:
+                - link "Instagram" [ref=e1983] [cursor=pointer]:
+                  - /url: https://www.instagram.com/qttechnology/
+              - paragraph [ref=e1984]: 23.9K+
+          - generic [ref=e1986]:
+            - link "Whatsapp" [ref=e1988] [cursor=pointer]:
+              - /url: https://www.whatsapp.com/channel/0029Vb7OO0bHQbS3XfXxiK1O
+            - generic [ref=e1991]:
+              - heading [level=3] [ref=e1992]:
+                - link "Whatsapp" [ref=e1993] [cursor=pointer]:
+                  - /url: https://www.whatsapp.com/channel/0029Vb7OO0bHQbS3XfXxiK1O
+              - paragraph [ref=e1994]: 8.2K+
+          - generic [ref=e1996]:
+            - link "LinkedIn" [ref=e1998] [cursor=pointer]:
+              - /url: http://linkedin.com/company/qttworld
+            - generic [ref=e2001]:
+              - heading [level=3] [ref=e2002]:
+                - link "LinkedIn" [ref=e2003] [cursor=pointer]:
+                  - /url: http://linkedin.com/company/qttworld
+              - paragraph [ref=e2004]: 4.2K+
+          - generic [ref=e2006]:
+            - link "YouTube" [ref=e2008] [cursor=pointer]:
+              - /url: https://www.youtube.com/@qualitythought
+            - generic [ref=e2011]:
+              - heading [level=3] [ref=e2012]:
+                - link "YouTube" [ref=e2013] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@qualitythought
+              - paragraph [ref=e2014]: 229K+
+          - generic [ref=e2016]:
+            - link "Telegram" [ref=e2018] [cursor=pointer]:
+              - /url: https://t.me/QTTWorld
+            - generic [ref=e2021]:
+              - heading [level=3] [ref=e2022]:
+                - link "Telegram" [ref=e2023] [cursor=pointer]:
+                  - /url: https://t.me/QTTWorld
+              - paragraph [ref=e2024]: 1.7K+
+  - contentinfo [ref=e2025]:
+    - generic [ref=e2027]:
+      - generic [ref=e2028]:
+        - generic [ref=e2029]:
+          - heading [level=2] [ref=e2031]:
+            - link "QUALITY THOUGHT" [ref=e2032] [cursor=pointer]:
+              - /url: http://qualitythought.in
+          - list [ref=e2034]:
+            - listitem [ref=e2035]:
+              - link "About Us" [ref=e2036] [cursor=pointer]:
+                - /url: https://qualitythought.in/about-us/
+            - listitem [ref=e2038]:
+              - link "Pay Now" [ref=e2039] [cursor=pointer]:
+                - /url: https://qualitythought.in/pay-now/
+            - listitem [ref=e2041]:
+              - link "Contact Us" [ref=e2042] [cursor=pointer]:
+                - /url: https://qualitythought.in/contact-us/
+            - listitem [ref=e2044]:
+              - link "Reviews" [ref=e2045] [cursor=pointer]:
+                - /url: https://g.co/kgs/1JscnLF
+        - generic [ref=e2047]:
+          - heading "TRENDING COURSES" [level=2] [ref=e2049]
+          - list [ref=e2051]:
+            - listitem [ref=e2052]:
+              - link "Data Science with AIML" [ref=e2053] [cursor=pointer]:
+                - /url: https://qualitythought.in/data-science-training/
+            - listitem [ref=e2055]:
+              - link "Full Stack Python" [ref=e2056] [cursor=pointer]:
+                - /url: https://qualitythought.in/advanced-python-training-in-hyderabad/
+            - listitem [ref=e2058]:
+              - link "Cybersecurity" [ref=e2059] [cursor=pointer]:
+                - /url: https://qualitythought.in/cyber-security-ethical-hacking-training/
+            - listitem [ref=e2061]:
+              - link "AI Testing" [ref=e2062] [cursor=pointer]:
+                - /url: https://qualitythought.in/ai-testing-training-course/
+            - listitem [ref=e2064]:
+              - link "Gen AI" [ref=e2065] [cursor=pointer]:
+                - /url: https://qualitythought.in/gen-ai/
+        - generic [ref=e2067]:
+          - heading "TOP CATEGORIES" [level=2] [ref=e2069]
+          - list [ref=e2071]:
+            - listitem [ref=e2072]:
+              - link "GCP Cloud Data Engineer" [ref=e2073] [cursor=pointer]:
+                - /url: https://qualitythought.in/google-cloud-platform-training/
+            - listitem [ref=e2075]:
+              - link "Quantum Computing" [ref=e2076] [cursor=pointer]:
+                - /url: https://qualitythought.in/quantum-computing-training/
+            - listitem [ref=e2078]:
+              - link "DevOps Engineer" [ref=e2079] [cursor=pointer]:
+                - /url: https://qualitythought.in/devops-training/
+            - listitem [ref=e2081]:
+              - link "Testing Tools" [ref=e2082] [cursor=pointer]:
+                - /url: https://qualitythought.in/testing-tools-training-hyderabad/
+            - listitem [ref=e2084]:
+              - link "Playwright" [ref=e2085] [cursor=pointer]:
+                - /url: https://qualitythought.in/playwright/
+        - generic [ref=e2087]:
+          - heading "DOWNLOAD PROFILE" [level=2] [ref=e2089]
+          - link [ref=e2091] [cursor=pointer]:
+            - /url: https://qualitythought.in/wp-content/uploads/2019/02/QualityThought-Brochure_2023.pdf
+            - img "Quality Thought - Profile" [ref=e2092]
+      - generic [ref=e2093]:
+        - link [ref=e2095] [cursor=pointer]:
+          - /url: https://qualitythought.in/
+          - img "Quality Thought - Logo" [ref=e2096]
+        - paragraph [ref=e2098]:
+          - generic [ref=e2099]:
+            - generic [ref=e2100]: All Rights Reserved Quality Thought Infosystems India Pvt. Ltd.
+            - link "FAQs" [ref=e2101] [cursor=pointer]:
+              - /url: https://qualitythought.in/faq/
+            - text: "|"
+            - link "Cancellation & Refunds" [ref=e2102] [cursor=pointer]:
+              - /url: https://qualitythought.in/cancellation_and_refund/
+            - text: "|"
+            - link "Privacy Policy" [ref=e2103] [cursor=pointer]:
+              - /url: https://qualitythought.in/privacy_policy/
+            - text: "|"
+            - link "Terms & Conditions" [ref=e2104] [cursor=pointer]:
+              - /url: https://qualitythought.in/terms_and_conditions/
+            - text: "*Note: The certification names and logos are the trademarks of their respective owners."
+            - link "View Disclaimer" [ref=e2105] [cursor=pointer]:
+              - /url: https://qualitythought.in/disclaimer/
+  - generic [ref=e2106]: desktop
+  - generic [ref=e2107]:
+    - generic [ref=e2108] [cursor=pointer]: Chat now
+    - generic [ref=e2110] [cursor=pointer]
+  - document [ref=e2144]:
+    - generic [ref=e2145]:
+      - button "Close" [ref=e2146] [cursor=pointer]
+      - generic [ref=e2152]:
+        - generic [ref=e2153]: Join a Free Master Class.
+        - paragraph [ref=e2157]: Pick a course and share your details – we’ll save you a seat.
+        - form "New Form" [ref=e2159]:
+          - generic [ref=e2160]:
+            - generic [ref=e2161]:
+              - generic [ref=e2162] [cursor=pointer]: Full Name
+              - textbox "Full Name" [ref=e2163]:
+                - /placeholder: Your name
+            - generic [ref=e2164]:
+              - generic [ref=e2165] [cursor=pointer]: Email address
+              - textbox "Email address" [ref=e2166]
+            - generic [ref=e2167]:
+              - generic [ref=e2168] [cursor=pointer]: Phone Number
+              - generic [ref=e2169]:
+                - combobox "Selected country" [ref=e2171]:
+                  - generic [ref=e2172]: India +91
+                  - generic [ref=e2176]: "+91"
+                - textbox "Phone Number" [ref=e2177]
+            - generic [ref=e2178]:
+              - generic [ref=e2179] [cursor=pointer]: Interested Course
+              - combobox "Interested Course" [ref=e2181]:
+                - option "Select A Course" [disabled]
+                - option "AI Testing" [selected]
+                - option "Azure Data Engineering"
+                - option "BIM"
+                - option "Content Creation"
+                - option "Cyber Security"
+                - option "Data Analyst"
+                - option "Data Science"
+                - option "DevOps Engineering"
+                - option "DevOps Multi Cloud"
+                - option "Dot Net"
+                - option "Embedded Systems"
+                - option "Forward Deployed Engineer (FDE)"
+                - option "Google Cloud Platform (GCP)"
+                - option "Gen AI Development"
+                - option "Full Stack Java"
+                - option "Medical Coding"
+                - option "Mern Stack"
+                - option "Playwright"
+                - option "Full Stack Python"
+                - option "Quantum Computing"
+                - option "Robotics"
+                - option "Testing Tools"
+                - option "UI/UX"
+                - option "VLSI"
+                - option "Others"
+            - button "Reserve my seat" [ref=e2183] [cursor=pointer]

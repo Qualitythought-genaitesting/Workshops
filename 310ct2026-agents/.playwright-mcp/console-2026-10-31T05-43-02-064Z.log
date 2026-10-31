@@ -1,0 +1,2 @@
+[  -20433ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://qualitythought.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1:1
+[  -14269ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0
