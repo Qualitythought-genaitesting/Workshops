@@ -1,0 +1,264 @@
+Good Morning !!!!!
+====================
+Thanks for joining with us !
+
+We would like to understand 
+==============================================================================
+1. what is AI application?
+2. Different types of AI applications?
+3. Specially what is agent ?
+4. how to understand agent anatomy or working with agent? 
+   to experience the real agent we need to setup 3 agents with in your VSCODE   
+   with the help of playwright . 
+a. Test_planner agent : An agent will create a comprehensive test plan 
+b. Test_generation agent :A simple manual test case will be automated with playwright => playwright automation script we can generate 
+c. Test_healer agent : A failed automation test will be fixed by agent 
+
+==============================================================================
+We know software testing => STLC 
+a. requirement analysis 
+b. test planning 
+c. test design 
+d. test execution 
+e. defects reporting and verification => DLC 
+f. test summary report. 
+==============================================================================
+Manual testing and automation testing : 
+playwright is a automation tool to do UI based and api automation with ease. 
+==============================================================================
+Ram prasad 
+20 years of experience in IT , Delivery manager for GenAI applications. 
+BlackBerry
+United Airlines 
+Genpact 
+Valuelabs 
+==============================================================================
+Manual testing /automation testing to latest testing trends => 
+
+a. we can use AI into your job 
+b. we need to test AI based application to deliver to the customer 
+==============================================================================
+1. what is AI application?
+AI => artificial intelligence : 
+A machine can think like a human and solve the problem => 
+
+Gen AI => Generative AI  => We are generating the response through artificial intelligence . 
+=> A Machine can think about your task and generate the answer . answer may be a text /img/video/ppt/excel/table/bullet ..... 
+
+example: open chatgpt and type 
+=> what is genAI ?  [ RAG based application] it is just answering for your question 
+
+ans: a paragraphs . 
+=> explain genAI with an image ? => output is an image 
+
+AI brain is having the intelligence => an artificial intelligence  => LLM 
+Large language Model  => this is a virtual human brain => 
+
+LLM => will provide you the answer for your question. 
+
+RAG => retrieval augment generation 
+
+Ask  => retrieval program [ go for best search - which docs are matching to the search query]  => augmentation [ question + retrieved docs] => LLM => Now LLM will understand question and generate the best answer for that question from the retrieved documents. 
+
+AI brain or LLM think like a human and able to answer the question 
+
+=> if it is do not know the answer , it should say I do not know. 
+sometimes AI Imaginate on their own and provide you confidently a lied answer. 
+A confident Lier => you need to test it . 
+
+=> Is there any information leakage ? 
+personal information 
+any financial information 
+are we leaking one user data to another user data ?
+injecting some lies in the question and try to the cheat ai=> but should reject the lie and mention it as a lie. 
+harmful answers should not be allowed. 
+
+here the limitation is only RAG application can answer not able to perform the task. 
+
+it should not be a personal assistant to you. 
+
+2. Different types of AI applications?
+
+Gen AI applications  => RAG chatbot 
+
+Agent based applications : AI brain + hands too
+AI brain => LLM 
+hands => tools 
+LLM + tools => to complete action. 
+
+I am not only answer the question but also do the task like human. 
+Agent is personal assistant to you. 
+what ever you direct the agent that task will be performed. 
+
+a. Generate test plan  => it will understand first what are the pre requisites to generate the test plan
+=> template 
+=> exploring the web and identify imp test scenarios 
+=> you need to open a browser 
+=> perform some actions 
+to understand the application like a manual tester => tools 
+
+=> document them is important 
+
+a. single agent application => LLM + tools for one agent 
+
+single agent do perform actions as follows:
+a. plan the task
+b. call the right tool 
+c. perform the action 
+d. get the output 
+e. consolidate or beautify the output and deliver to it 
+
+only single agent  => perform everything and deliver the outcome 
+
+individual contributor in your project .
+
+b. multi agent applications 
+
+if it a bigger task => split the task into small pieces => each piece is assigned to a agent 
+
+a team of agents will work together and generate the final outcome 
+orchestrator : lead agent  => plan the work and distribute the work between agents 
+agent#1 : do their specified task 
+agent#2 : do their specified task 
+etc..
+orchestrator : consolidate all agents task outputs and deliver to the customer 
+
+c. MCP agent application => [Playwright agent ]
+
+MCP model context protocol => a set of rules defined to the LLMs to connect with external sources . 
+
+External sources: agent  => customer support agent 
+you need to retrieve the customer details  => sitting in the external API or database like postgres/MySQL 
+it may be in the emails 
+it maybe in WhatsApp 
+
+to do your job external sources help is required , in this situation MCP will help us to write a simple instruction to connect with external sources. 
+
+external source do have their own => MCP server 
+playwright  => playwright MCP server 
+
+this playwright server connect with the AI application from any one MCP client and do the job. 
+
+Agents  => MCP client  => MCP servers  =>
+Playwright test planner agent  => VSCODE => playwright_test_MCP server 
+
+=> browser  => 
+=> API => API endpoints 
+
+d. Agentic AI application : autonomous AI => driverless  car: 
+Agent can take an action without human involvement => based on the provided use cases and constrains ai evaluate and take a decision. 
+
+=============================================================================
+3. Specially what is agent  with MCP?
+
+how to test Agent as a tester: 
+
+before run : 
+
+1. define what to do with this agent  => Task 
+   Task success criteria /acceptance criteria for User stories in JIRA 
+2. Test data should be available - it should not be on production 
+3.  All settings should be fixed 
+    [Versions  => prompt version /LLM model /temp]
+
+temperature: how much creativity you are expecting in this application 
+
+0 to 2 
+0 low creativity 
+2 top creativity 
+
+regular applications => 0.7 to 1 , not more than #1 
+
+
+during the run:
+1. understand and test complete Agent journey - not just output 
+a. tools selection 
+b. tools order 
+c. tools output 
+we can check closely 
+
+After the run : 
+a. classify the defects 
+b. fix those defects and rerun tests 
+
+
+how to setup playwright agents in your local computer and learn playwright from these agents. 
+
+1. VSCODE => download and install => done 
+2. nodejs => download and install => done
+3. check is node is installed / npm is installed 
+a. open VSCODE
+b. Create a folder and open that folder into the VSCODE 
+c. open the terminal 
+\310ct2026-agents> node -v
+v24.22.0
+\310ct2026-agents> npm -v
+11.19.1
+\310ct2026-agents> npx -v
+11.19.1
+
+4. playwright download and install  => done 
+  npm init playwright@latest 
+
+5. setup the GitHub account in the VScode to initiate the agents from git copilot 
+a. create an account in https://github.com 
+b. provide those details in VSCODE to connect VSCODE with GitHub 
+c. launch the GitHub copilot in the VSCODE 
+
+6. setup the agents : 
+
+we need to understand what is playwright MCP 
+
+🎭 planner explores the app and produces a Markdown test plan
+🎭 generator transforms the Markdown plan into the Playwright Test files
+🎭 healer executes the test suite and automatically repairs failing tests
+
+
+helping you to make your automation job a bit easy. 
+
+still you need to review and understand the code it is generated. 
+learn from it , fix any problem it caused. 
+
+this way we can learn playwright very easily and implement it .
+
+
+7. playwright agents : 
+
+gen AI tester : 
+
+as you are a testing domain expert =>
+read the .md file for every agent before start testing 
+and then follow the trajectory [ tool calling and tool ordering , tool output, tool arguments] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. how to understand agent anatomy or working with agent? 
+   to experience the real agent we need to setup 3 agents with in your VSCODE   
+   with the help of playwright . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
