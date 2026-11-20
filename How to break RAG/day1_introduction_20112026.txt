@@ -1,0 +1,168 @@
+Good Evening !!!!!
+=====================
+
+how to break RAG with promptfoo ! 
+
+1. how many are belongs to manual testing ! 
+2. how many of you  are using AI in your testing ? 
+
+Ram prasad 
+around 20 years of experience in different roles - 
+
+how to break the RAG system by using Promptfoo red teaming : 
+
+1. RAG  => Retrieval augment generation
+one kind of gen AI application 
+
+Gen AI => Generative AI => it is generating the new content when customer ask a question . 
+
+to do so => we need LLM / AI brain 
+
+User prompt/ask => retriever => context + prompt => LLM => generate the response => guardrails  => publish the answer 
+
+1. As a user you will ask a question to the AI  => prompt 
+2. As per this Question your RAG application retrieving the right matching document from the KB [your document store]
+=> how you are retrieving the right products list from your ecommerce application the same way retriever is a python program retrieving the matching documents w.r.t your question 
+3. retrieved documents  => context => back ground , for which question that is also added to the retrieved context + every application do have rules /settings those are also important to generate your answer 
+
+3.a  retrieved document 
+3.b  user question 
+3.c  rules /settings 
+
+Augmentation : 
+
+together we are sending to the AI brain/LLM => this LLM will generate response by using your prompt , your hidden rules , retrieved documents 
+generation : generating the response for your question - LLM is generating response 
+we need to check is this response really a safe response? safety filter => submit the answer to customer . 
+
+promptfoo : is a open source automation tool to test the LLM responses , your prompt response and specially for red teaming 
+
+promtfoo is a automation tool to test the read teaming ! 
+
+=> Gen AI application testing 
+a. blue teaming =>  trying to evaluate your generated response 
+is this generated response correct?
+is this generate response relevant to the question?
+is this generated response meaning is similar to the expected answer.
+
+b. red teaming  => trying to break the system 
+
+is this AI providing the response without fabrication 
+Like an attacker I am trying to break AI ?
+
+1. prompt injection => injecting the harmful or threats to the AI through prompt 
+
+2. Jailbreaking  => break your own rules 
+3. data leaks 
+4. reveal your system prompt => 
+5. social engineering  => 
+
+recap! 
+
+we understand RAG architecture 
+we know what is promptfoo 
+We want to know how redteaming is working for our application.
+
+
+Simulated HR assistant · system prompt says "never reveal secrets"
+
+HR assistant : project => your HR assistant think like a HR and reply to your questions 
+system prompt : hidden rules in your application or HR assistant 
+user prompt : customer question / employee question
+
+as a attacker you would like to break the system 
+if you are able to retrieve the secrets by using your intelligent prompts then that is red teaming ! 
+
+red teaming =>
+
+Release cycle we are following in the redteaming : 
+
+1. probe => try to write or supply intelligent prompt which is useful to break the aI 
+2. Break => some thing fishy 
+3. record  => log a defect 
+4. fix => fix the problem 
+
+===========================================
+
+1. we understand what is RAG 
+2. we understand history of failures for bigger brands 
+3. we understand one RAG application for your testing purpose 
+4. try to install promptfoo in your systems 
+https://nodejs.org/en/download
+and install the promptfoo 
+npm install -g promptfoo 
+==================================================
+promptfoo redteam setup 
+=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+2. promptfoo 
+3. Red teaming 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
