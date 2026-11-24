@@ -139,6 +139,40 @@ daily classes : 7PM to 8 pm
 
 Special sessions like how to use AI in your current testing with the help of Playwright agents . 
 
+w1: basics 
+w2 : prompt engineering & red teaming 
+w3: capstone project 
+w4 : rag/agent/MCP => 
+w5/6 : promptfoo automation tool 
+a. deterministic testing 
+b. LLM as a judge 
+
+w7/8/9/10 => development weeks  => python / rag /agent 
+Langchain / crewAI as a frameworks to develop 
+
+11 => deePEval and ragas 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
