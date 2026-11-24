@@ -1,0 +1,248 @@
+Good Evening !!!!!
+====================
+We are going to start our journey as a Gen AI tester. 
+
+Differences between your traditional testing and our new Gen AI testing ! 
+
+as of we are testing the applications by comparing the expected result with actual result .
+
+Expect Result  == Actual result to make a test PASS 
+Expected Result ! = Actual Result to make it as a FAIL => Log a bug 
+
+we are using this exact match strategy as a thumb rule in our testing . 
+
+but in the AI or Gen AI we need to understand whether it is fitting into Gen AI testing or not ?
+
+1. Open the chatgpt 
+2. ask what is gen AI testing 
+3. Observe the answer - copy the answer into a notepad or file 
+
+extension to the above observation do the same thing in a new chat for 2 more times and understand are you getting the same results again and again for 3 attempts 
+
+we tried 3 attempts =>
+
+all 3 attempts generated responses and those are about the Gen AI testing but those are not exactly same . so the current testing strategy is failed,
+
+to ensure we are testing correct for gen AI applications we need to define a new test strategy. 
+
+as we are getting the new answer every time the existing testing strategy [ exact match ] is failed .  as part of gen AI testing we are defining the new strategy now . 
+
+1. in your traditional testing we do consider exact match case - we do not consider this then what is alternative to this . 
+
+instead of exact match we do consider meaning matching / similar meaning for 3 attempts then our test pass
+
+Expected result mention in the test case should not be same as actual result available in generate response. 
+
+instead we need to consider meaning verification between expected result and actual result 
+ 
+
+2. only one time we execute and mention the verdict as pass or fail but now we need to execute at least 3/5 attempt to mention the verdict.
+
+so min 3 to 5 time we execute every test . 
+
+not one time go execution for each test case . at least 3 to 5 times we need to execute every test before mention pass or fail.
+
+
+
+3. what do we consider instead of exact match : 
+
+3.1 define important key sentences or words which contains in the actual result => verify those keywords or sentences exist in the all attempts or not 
+
+Example: in the question hat is genAi testing : 
+
+GenAI Testing (Generative AI Testing) is the process of testing AI applications to make sure they produce correct, relevant, safe, and useful answers based on user questions.
+
+this above sentence must be available in all 3 attempts
+
+a. safety? 
+b. relevancy?
+c. correctness
+
+3.2 Must not contains : keywords and sentences 
+
+d. grounding 
+e. factuality
+f. faithfulness 
+
+
+3.3 is the answer relevant to the question ? 
+3.4 is the answer truth ? 
+3.5 is the answer safe to use? any harmful or unsafe content present in the generated answer 
+
+how much accuracy of the answer from the AI brain. 
+
+average of all these 3 attempts we consider to calculate the accuracy or correctness or relevance or safety ? 
+
+alternative to exact match . 
+=============================================================================
+
+Differences between traditional testing and gen ai testing ?
+
+how you transform your self from traditional testing to gen AI testing ?
+
+
+a. Exact match => Traditional testing completely depends on exact match. so no other parameters are required to ensure whether it is pass or fail. but in the gen AI testing we are generating the answer newly for every attempt. Question is same but generation is different . so testing the gen ai apps with same strategy gets failed. 
+
+so to avoid this instead of exact match we do consider contains / must not contains 
+similar answer ?
+contains all keywords => safety/releance/correct /truth 
+contains any keywords => similar meaning keywords - syno name  => 
+
+manual testing and automation testing . 
+==============================================================================
+
+2. STLC no change 
+test plan template no change 
+test case template no change 
+defect template no change 
+only change is not single attempt => go min 3 attempts of execution to confirm the test verdict 
+
+evidences : 
+1. Screenshot / video 
+2. steps  => exact prompt you used or exact question you asked 
+3. capture entire answer for all attempts 
+4. suggest what went wrong as per your knowledge or experience 
+
+same JIRA /ALMS no tools change 
+test strategy changed to confirm the test case . 
+=============================================================================
+Important keywords in Gen AI Testing : 
+
+1. LLM 
+2. temperature 
+3. Context 
+4. context window 
+5. correctness 
+6. relevancy 
+7. factuality 
+8. faithfulness 
+9. grounded answer 
+10. citation 
+11.  answer relevancy 
+12. context relevancy 
+13. embeddings 
+14. tokens 
+15. tokenizer 
+16. vectors 
+17. vector DB 
+18. RAG - R /A G 
+19. Agents 
+20 MCP 
+21 blue teaming 
+22. red teaming 
+23. purple team 
+24. hallucination 
+25 biasing 
+26. etc...
+
+daily classes : 7PM to 8 pm 
+
+Special sessions like how to use AI in your current testing with the help of Playwright agents . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
