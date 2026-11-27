@@ -1,0 +1,176 @@
+Good evening !!!!!
+======================
+Recap ! 
+
+how to setup a sample Gen ai project to create test cases in your computer by
+using groq api services . 
+Groq api services are used to pick the model [ AI brain ] and temperature to generate the answer. 
+
+a. Model => AI brain 
+b. Temperature => creativity => 0 to 2 => 0 to 1 only 
+
+==============================================================================
+
+providers:
+  - anthropic:messages:claude-opus-5
+  - openai:gpt-5
+  - openai:gpt-5-mini
+  - google:gemini-3.6-flash
+  - id: vertex:gemini-3.6-flash
+    config:
+      region: global
+
+compare the models with list of frequently used prompt /Golden Data set 
+
+model evaluation or LLM evaluation => decide which model best suites you by comparing the generated answer for golden data set . 
+
+promptfoo kind of tool helping us to evaluate which model best suites to you - generate accurate response. 
+
+==============================================================================
+
+a. LLM or model 
+b. temperature 
+c. context => Background => question / ask/ prompt  or history 
+               an extra information capture from previous history or current prompt should provide this extra background . 
+
+d. context window => how much information we can send back to the LLM or AI brain at a time. 
+
+whiteboard :  10 lines at a time 
+
+11 th line is replacing first line 
+12th line second 
+13 - 3 
+14 - 4 
+
+exactly same based on the new input it is receiving as a context or background  if limit reaches - old one replaced with new background 
+
+this size calculated in terms of tokens 
+
+200000 tokens is the size of your context window => if you pump 2 days history it reached 200000 size then each new background replacing oldest tokens from the context 
+
+token : what is token ? 3/4 th of a word
+a bigger word may convert into 2 tokens 
+
+AI brain or LLM can understand w.r.t tokens only 
+
+tokens also not able to understand by AI brain ? 
+
+natural language what you are supplying to the chatgpt is really understand the natural language by gpt-6 . 
+
+what is gen ai testing ? 
+
+natural language to natural language  => 
+LLM or AI understand only numbers and its statistical relation ships between numbers. 
+
+Machine learning 
+deep learning 
+NLPs
+
+=> your question => tokens by using tokenizer 
+
+embeddings model  => model convert these text or small paragraphs into numeric vector . multi dimensional vector 
+[x, y] => coordinates of a position 
+
+like wise we can save every keyword or line or paragraph into the vectors db
+
+traditional db => postgre sql /MySQL/ sqlserver etc... 
+select* from tablename 
+
+vector database : we are storing the references of the meaning or paragraph 
+
+Hyderabad  => map  => coordinates 
+delhi => coordinates 
+the same way your words or tokens or chunks  will be saved under vector DB as vectors 
+
+tokens
+tokenizer 
+embeddings 
+vectors 
+vector DB 
+
+
+Dogs and puppies need protein rich food and plenty of exercise. Puppies should eat small meals three times a day. Never feed a dog chocolate or onions. A vet can recommend the right diet for your pet. Pasta is easy to cook with cheese and bread for dinner. Laptops run AI models and code faster with more memory. Football teams train daily and the coach plans every match. Save money each month by setting a budget for your salary. Doctors say sleep and water keep you healthy. Book a cheap flight and hotel for a beach holiday. Heavy rain and storms are expected this weekend.
+
+step#1 split the big paragraph into small 
+
+paragraph splits into 6 sentences 
+each sentence =< chunk 
+chunk to vector  => LLM understand vector 
+chunk to vector  => embeddings 
+
+32 dimension 
+
+[0.00, 0.00, 0.00, 0.00, 0.00, 0.59, 0.74, 0.00, 0.00, 0.00, 0.00, 0.00, 0.07, 0.00, 0.15, 0.07, 0.15, 0.00, 0.07, 0.00, 0.00, 0.00, 0.00, 0.00, 0.15, 0.07, 0.07, 0.07, 0.00, 0.00, 0.00, 0.00]
+
+[0.00, 0.00, 0.00, 0.00, 0.62, 0.00, 0.62, 0.00, 0.16, 0.00, 0.00, 0.00, 0.00, 0.00, 0.16, 0.00, 0.16, 0.00, 0.00, 0.31, 0.00, 0.00, 0.00, 0.00, 0.00, 0.16, 0.00, 0.16, 0.00, 0.00, 0.00, 0.00]
+
+
+LLM 
+Temperature
+token 
+tokenizer 
+embeddings 
+vector 
+vector DB 
+=> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+Good Evening !!!!!
+===================
+
+Today we would like to understand How Gen AI testing works for LLM based application. 
+
+A confident Lier  => an intern one who reads all internet data 
+
+=> Lied answer or a truth answer 
+
+a truth answer  => Factuality or grounded answer  => this is what we are expecting . if it is delivered by an Intern your test PASS 
+
+Lied answer => Imaginate or made-up or hallucination => if it is Delivered your Test FAIL. 
+
+
+Virtual environment : 
+
+as you are working with python -> we do have different packages or application with different versions 
+
+project #1 required - abc v1  => in your own env 
+project #2 required - abc v2 => you can run project#2 in its own env 
+
+our project is ready to use after generating the API key from groq console and updated in the application UI. 
+
+
+a. ask a question about creation of test cases for any sample requirement. 
+
+todo so 
+a. LLM => large language model  => groq/openai/20b 
+                                             /120b 
+b. temperature  => 
+less temperature => more deterministic => every time you may get exactly similar test cases 
+if you increase temperature => less deterministic  => every time we can see variations between different attempts test cases 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
