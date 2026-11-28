@@ -1,0 +1,236 @@
+Good Evening !!!!!
+=======================
+Thanks for joining with us !
+
+How to test AI agents ! 
+
+a. what is gen AI ? how we can test Gen AI applications 
+b. types of Gen AI applications 
+c. Agents => what is agent / how it looks like / how it is functioning 
+
+As a tester what kind of agents we can use ? for regular testing 
+As a tester how do you test agents like a pro! 
+
+Ram prasad  => around 20 years of experience 
+==============================================================================
+1. Still manual tester ? 
+2. Automation testers ?
+==============================================================================
+
+what is the current testing strategy we are implementing in your projects?
+
+Exact match between expected result and Actual Result 
+
+Expected Result == Actual Result 
+Expected Result != Actual Result  then we fail the test case and log a defect 
+
+Can we apply the same strategy to the Gen AI application. 
+
+Gen AI application : Generative AI application => This AI generate the new content based on question you asked. 
+
+Chatgpt  : ask a question like what is Gen AI => AI think about your problem and generate an instant answer . 
+testing means : verifying is this answer is really relevant to the question? 
+correct 
+truth 
+safe? 
+
+
+Claude
+perplexity 
+gemini 
+grok etc... 
+
+
+
+
+=> AI => Artificial intelligence => 
+
+New strategy required to test Gen AI applications. Why because Gen AI application generating different answer every time .
+Question is same / brain is also same but generated answer is different text.
+
+
+but meaning should be similar . 
+
+question you asked must be answer by Gen AI application.
+
+a. meaning should be similar => alternative exact match 
+b. correctness of the generated answer 
+c. Relevancy of the Generated answer with respect to the question 
+d. Truth / factual => factuality of the generated answer 
+e. safety => faithfulness 
+
+consider at least 3 to 5 attempt every test without fail / final verdict will be the average . PASS 
+
+Domain knowledge 
+facts about that question 
+possible expected answer => meaning comparison or reference or criteria we need to test .
+
+how do we conduct testing on these Gen AI applications :
+
+1. Manual testing  => human evaluation => Human brain is testing the AI brain generated response 
+2. Traditional automation /Deterministic testing : 
+Expected Result == actual result 
+Assertions in automations  => Tool will test these assertions in the applications 
+a. contains this keyword =>  LLM  => contains 
+b. I do not know should not be present in the answer =>not contains 
+=> contains all 
+=> contains any 
+=> latency 
+=> not contains all  => unsafe words 
+=> not contains any 
+
+3. Non deterministic testing :  LLM as a judge => latest skill in testing 
+expected == actual => 
+another AI brain is testing the AI brain generated response 
+
+=> you just feed me the criteria I need to test => based on your criteria I will test and give you the result. 
+
+Example: Please write a story  for the kids by using penguin and tropical island. it should be fun story and adventurous . 
+
+if you are a tester / manual tester : 
+
+a. Is the penguin main character in the story ? 
+b. is this story from the tropical island only?
+c. is this story allowed for kids ? 
+d. is this story fun story - at least one time you should laugh 
+e. is this adventures story -?  
+
+
+Now you understand - human evaluation => 
+
+automation => contains  => penguin is exist in all response 
+              contains  => tropical island 
+              contains  => adventure / kids etc... 
+
+LLM as a judge  => you feed above 5 questions to me , as a AI brain i can evaluate your answer w.r.t those 5 questions and provide verdict . 
+==============================================================================
+
+Types of Gen AI applications : 
+a. RAG =>Retrieval augment generation 
+ where can get the answer from feed documents 
+
+10 documents to the ai brain => ask questions from these 10 documents then i can answer 
+out of syllabus => i could not make it work. 
+Ai brain [LLM] only works to answer the question based on the KB 
+
+
+b. Agents  => AI brain + hands  => hands can perform a task 
+AI brain [ LLM ] => Large Language Model 
+gpt-6 
+sonnet 
+etc..
+
+hands => tools => perform an action 
+
+suppose you want to retrieve the order status from a ecommerce applications 
+a. search('1234') => it finds the order number 
+b. get_order_status('1234')=>
+c. cancel_order('1234','reason')
+d. refund()
+e.retrun() 
+
+Instead of you need to search AI brain will do the task with the help of tools 
+
+Where is my order -1234?  => AI brain => search() / get_order() > publish order is shipped today followed by link =>
+
+not only generate the answer but also perform a task 
+
+=> genai application test strategy 
+=> what is agent => 
+=> now we need to plan => how to test or what are new imp stages or steps in your agent testing 
+
+=> trajectory testing : it means as a tester you need to test the 
+a. is the tool selection is right or not ? 
+b. is the tool execution order right? 
+
+tool1
+tool3
+tool2 =? x 
+
+=> tool argument testing : 
+what inputs we need to supply to the tool selected by AI brain 
+
+Arguments => symbol : Reliance  => 
+
+a. supply right arguments 
+b. supply wrong arguments 
+c. supply empty arguments 
+=> before executing the tool , We must confirm that argument are correct ! => 
+
+=> is this tool in the safe tools list. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   1. Single 
+   2. multiple agents 
+   3. MCP agents 
+c. Agentic RAG 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
